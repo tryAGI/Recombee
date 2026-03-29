@@ -1,15 +1,24 @@
 # Microsoft.Extensions.AI Integration
 
-The Recombee SDK provides `AIFunction` tools that can be used with any `IChatClient` via [Microsoft.Extensions.AI](https://learn.microsoft.com/en-us/dotnet/ai/ai-extensions).
+!!! tip "Cross-SDK comparison"
+    See the [centralized MEAI documentation](https://tryagi.github.io/docs/meai/) for feature matrices and comparisons across all tryAGI SDKs.
+
+The Recombee SDK provides `AIFunction` tool wrappers compatible with [Microsoft.Extensions.AI](https://learn.microsoft.com/en-us/dotnet/ai/microsoft-extensions-ai). These tools can be used with any `IChatClient` to give AI models access to Recombee's personalized item recommendations, search, interaction recording, and catalog browsing.
+
+## Installation
+
+```bash
+dotnet add package Recombee
+```
 
 ## Available Tools
 
-| Tool | Description |
-|------|-------------|
-| `AsRecommendItemsTool()` | Get personalized item recommendations for a user |
-| `AsSearchItemsTool()` | Search items with personalized full-text search |
-| `AsAddInteractionTool()` | Record user interactions (view, purchase, rating, bookmark, cart) |
-| `AsListItemsTool()` | List items in the catalog with optional ReQL filter |
+| Method | Tool Name | Description |
+|--------|-----------|-------------|
+| `AsRecommendItemsTool(databaseId)` | `RecommendItems` | Get personalized item recommendations for a user |
+| `AsSearchItemsTool(databaseId)` | `SearchItems` | Search items with personalized full-text search |
+| `AsAddInteractionTool(databaseId)` | `AddInteraction` | Record user interactions (view, purchase, rating, bookmark, cart) |
+| `AsListItemsTool(databaseId)` | `ListItems` | List items in the catalog with optional filter |
 
 ## Usage
 
@@ -17,22 +26,43 @@ The Recombee SDK provides `AIFunction` tools that can be used with any `IChatCli
 using Recombee;
 using Microsoft.Extensions.AI;
 
-// Create Recombee client
-var client = new RecombeeClient(
-    apiKey: privateToken,
+var recombeeClient = new RecombeeClient(
+    apiKey: Environment.GetEnvironmentVariable("RECOMBEE_API_KEY")!,
     baseUri: new Uri("https://rapi-us-west.recombee.com"));
 
-var databaseId = "my-database";
+var databaseId = Environment.GetEnvironmentVariable("RECOMBEE_DATABASE_ID")!;
 
-// Create tools
-var tools = new[]
+var options = new ChatOptions
 {
-    client.AsRecommendItemsTool(databaseId),
-    client.AsSearchItemsTool(databaseId),
-    client.AsAddInteractionTool(databaseId),
-    client.AsListItemsTool(databaseId),
+    Tools =
+    [
+        recombeeClient.AsRecommendItemsTool(databaseId),
+        recombeeClient.AsSearchItemsTool(databaseId),
+        recombeeClient.AsAddInteractionTool(databaseId),
+        recombeeClient.AsListItemsTool(databaseId),
+    ],
 };
 
-// Use with any IChatClient
-var chatOptions = new ChatOptions { Tools = [.. tools] };
+IChatClient chatClient = /* your chat client */;
+
+var messages = new List<ChatMessage>
+{
+    new(ChatRole.User, "Get personalized recommendations for user 'user-123' and search for 'wireless headphones'."),
+};
+
+while (true)
+{
+    var response = await chatClient.GetResponseAsync(messages, options);
+    messages.AddRange(response.ToChatMessages());
+
+    if (response.FinishReason == ChatFinishReason.ToolCalls)
+    {
+        var results = await response.CallToolsAsync(options);
+        messages.AddRange(results);
+        continue;
+    }
+
+    Console.WriteLine(response.Text);
+    break;
+}
 ```
