@@ -357,6 +357,7 @@ namespace Recombee
             global::System.Collections.Generic.Dictionary<string, string>? reqlExpressions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
+
             var __request = new global::Recombee.SearchItemSegmentsParameters
             {
                 SearchQuery = searchQuery,
