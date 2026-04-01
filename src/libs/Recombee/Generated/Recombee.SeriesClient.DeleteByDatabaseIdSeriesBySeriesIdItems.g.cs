@@ -264,6 +264,7 @@ namespace Recombee
             string itemId,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
+
             var __request = new global::Recombee.RemoveSeriesItem
             {
                 ItemType = itemType,

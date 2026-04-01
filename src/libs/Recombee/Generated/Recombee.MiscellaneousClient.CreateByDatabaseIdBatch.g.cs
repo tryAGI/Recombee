@@ -293,6 +293,7 @@ namespace Recombee
             bool? distinctRecomms = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
+
             var __request = new global::Recombee.Batch
             {
                 Requests = requests,

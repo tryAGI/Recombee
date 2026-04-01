@@ -285,6 +285,7 @@ namespace Recombee
             object changes,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
+
             var __request = new global::Recombee.UpdateMoreItemsParameters
             {
                 Filter = filter,
