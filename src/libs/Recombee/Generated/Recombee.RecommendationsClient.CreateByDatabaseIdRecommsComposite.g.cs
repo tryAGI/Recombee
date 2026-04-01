@@ -337,7 +337,6 @@ namespace Recombee
             object? expertSettings = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-
             var __request = new global::Recombee.CompositeRecommendationParameters
             {
                 Scenario = scenario,
