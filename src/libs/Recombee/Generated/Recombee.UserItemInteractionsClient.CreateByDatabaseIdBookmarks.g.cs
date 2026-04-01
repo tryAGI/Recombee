@@ -305,7 +305,6 @@ namespace Recombee
             object? additionalData = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-
             var __request = new global::Recombee.Bookmark
             {
                 UserId = userId,

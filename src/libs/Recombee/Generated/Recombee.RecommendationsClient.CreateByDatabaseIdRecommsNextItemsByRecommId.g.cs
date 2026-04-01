@@ -297,7 +297,6 @@ namespace Recombee
             int count,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-
             var __request = new global::Recombee.RecommendNextItemsParameters
             {
                 Count = count,
