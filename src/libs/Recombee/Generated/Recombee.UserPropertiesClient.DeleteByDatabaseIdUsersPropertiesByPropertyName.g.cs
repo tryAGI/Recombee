@@ -5,6 +5,25 @@ namespace Recombee
 {
     public partial class UserPropertiesClient
     {
+
+
+        private static readonly global::Recombee.EndPointSecurityRequirement s_DeleteByDatabaseIdUsersPropertiesByPropertyNameSecurityRequirement0 =
+            new global::Recombee.EndPointSecurityRequirement
+            {
+                Authorizations = new global::Recombee.EndPointAuthorizationRequirement[]
+                {                    new global::Recombee.EndPointAuthorizationRequirement
+                    {
+                        Type = "Http",
+                        Location = "Header",
+                        Name = "Bearer",
+                        FriendlyName = "Bearer",
+                    },
+                },
+            };
+        private static readonly global::Recombee.EndPointSecurityRequirement[] s_DeleteByDatabaseIdUsersPropertiesByPropertyNameSecurityRequirements =
+            new global::Recombee.EndPointSecurityRequirement[]
+            {                s_DeleteByDatabaseIdUsersPropertiesByPropertyNameSecurityRequirement0,
+            };
         partial void PrepareDeleteByDatabaseIdUsersPropertiesByPropertyNameArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref string databaseId,
@@ -38,9 +57,15 @@ namespace Recombee
                 databaseId: ref databaseId,
                 propertyName: ref propertyName);
 
+
+            var __authorizations = global::Recombee.EndPointSecurityResolver.ResolveAuthorizations(
+                availableAuthorizations: Authorizations,
+                securityRequirements: s_DeleteByDatabaseIdUsersPropertiesByPropertyNameSecurityRequirements,
+                operationName: "DeleteByDatabaseIdUsersPropertiesByPropertyNameAsync");
+
             var __pathBuilder = new global::Recombee.PathBuilder(
                 path: $"/{databaseId}/users/properties/{propertyName}",
-                baseUri: HttpClient.BaseAddress); 
+                baseUri: HttpClient.BaseAddress);
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Delete,
@@ -50,7 +75,7 @@ namespace Recombee
             __httpRequest.VersionPolicy = global::System.Net.Http.HttpVersionPolicy.RequestVersionOrHigher;
 #endif
 
-            foreach (var __authorization in Authorizations)
+            foreach (var __authorization in __authorizations)
             {
                 if (__authorization.Type == "Http" ||
                     __authorization.Type == "OAuth2")

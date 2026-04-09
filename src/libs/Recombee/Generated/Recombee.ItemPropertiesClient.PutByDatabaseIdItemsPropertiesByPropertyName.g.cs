@@ -5,6 +5,25 @@ namespace Recombee
 {
     public partial class ItemPropertiesClient
     {
+
+
+        private static readonly global::Recombee.EndPointSecurityRequirement s_PutByDatabaseIdItemsPropertiesByPropertyNameSecurityRequirement0 =
+            new global::Recombee.EndPointSecurityRequirement
+            {
+                Authorizations = new global::Recombee.EndPointAuthorizationRequirement[]
+                {                    new global::Recombee.EndPointAuthorizationRequirement
+                    {
+                        Type = "Http",
+                        Location = "Header",
+                        Name = "Bearer",
+                        FriendlyName = "Bearer",
+                    },
+                },
+            };
+        private static readonly global::Recombee.EndPointSecurityRequirement[] s_PutByDatabaseIdItemsPropertiesByPropertyNameSecurityRequirements =
+            new global::Recombee.EndPointSecurityRequirement[]
+            {                s_PutByDatabaseIdItemsPropertiesByPropertyNameSecurityRequirement0,
+            };
         partial void PreparePutByDatabaseIdItemsPropertiesByPropertyNameArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref string databaseId,
@@ -43,12 +62,18 @@ namespace Recombee
                 propertyName: ref propertyName,
                 type: ref type);
 
+
+            var __authorizations = global::Recombee.EndPointSecurityResolver.ResolveAuthorizations(
+                availableAuthorizations: Authorizations,
+                securityRequirements: s_PutByDatabaseIdItemsPropertiesByPropertyNameSecurityRequirements,
+                operationName: "PutByDatabaseIdItemsPropertiesByPropertyNameAsync");
+
             var __pathBuilder = new global::Recombee.PathBuilder(
                 path: $"/{databaseId}/items/properties/{propertyName}",
                 baseUri: HttpClient.BaseAddress); 
             __pathBuilder
                 .AddRequiredParameter("type", type.ToValueString()) 
-                ; 
+                ;
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Put,
@@ -58,7 +83,7 @@ namespace Recombee
             __httpRequest.VersionPolicy = global::System.Net.Http.HttpVersionPolicy.RequestVersionOrHigher;
 #endif
 
-            foreach (var __authorization in Authorizations)
+            foreach (var __authorization in __authorizations)
             {
                 if (__authorization.Type == "Http" ||
                     __authorization.Type == "OAuth2")
