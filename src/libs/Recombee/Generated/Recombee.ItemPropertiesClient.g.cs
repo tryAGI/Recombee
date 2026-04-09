@@ -12,7 +12,7 @@ namespace Recombee
         /// <summary>
         /// Recombee API (default region)
         /// </summary>
-        public const string DefaultBaseUrl = "https://rapi.recombee.com";
+        public const string DefaultBaseUrl = "https://rapi.recombee.com/";
 
         private bool _disposeHttpClient = true;
 

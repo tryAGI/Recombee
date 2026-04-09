@@ -5,6 +5,25 @@ namespace Recombee
 {
     public partial class SearchClient
     {
+
+
+        private static readonly global::Recombee.EndPointSecurityRequirement s_GetByDatabaseIdSynonymsItemsSecurityRequirement0 =
+            new global::Recombee.EndPointSecurityRequirement
+            {
+                Authorizations = new global::Recombee.EndPointAuthorizationRequirement[]
+                {                    new global::Recombee.EndPointAuthorizationRequirement
+                    {
+                        Type = "Http",
+                        Location = "Header",
+                        Name = "Bearer",
+                        FriendlyName = "Bearer",
+                    },
+                },
+            };
+        private static readonly global::Recombee.EndPointSecurityRequirement[] s_GetByDatabaseIdSynonymsItemsSecurityRequirements =
+            new global::Recombee.EndPointSecurityRequirement[]
+            {                s_GetByDatabaseIdSynonymsItemsSecurityRequirement0,
+            };
         partial void PrepareGetByDatabaseIdSynonymsItemsArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref string databaseId,
@@ -48,13 +67,19 @@ namespace Recombee
                 count: ref count,
                 offset: ref offset);
 
+
+            var __authorizations = global::Recombee.EndPointSecurityResolver.ResolveAuthorizations(
+                availableAuthorizations: Authorizations,
+                securityRequirements: s_GetByDatabaseIdSynonymsItemsSecurityRequirements,
+                operationName: "GetByDatabaseIdSynonymsItemsAsync");
+
             var __pathBuilder = new global::Recombee.PathBuilder(
                 path: $"/{databaseId}/synonyms/items/",
                 baseUri: HttpClient.BaseAddress); 
             __pathBuilder
                 .AddOptionalParameter("count", count?.ToString())
                 .AddOptionalParameter("offset", offset?.ToString()) 
-                ; 
+                ;
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Get,
@@ -64,7 +89,7 @@ namespace Recombee
             __httpRequest.VersionPolicy = global::System.Net.Http.HttpVersionPolicy.RequestVersionOrHigher;
 #endif
 
-            foreach (var __authorization in Authorizations)
+            foreach (var __authorization in __authorizations)
             {
                 if (__authorization.Type == "Http" ||
                     __authorization.Type == "OAuth2")

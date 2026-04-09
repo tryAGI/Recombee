@@ -6,6 +6,7 @@ namespace Recombee
     public sealed partial class RecombeeClient
     {
         /// <inheritdoc cref="RecombeeClient(global::System.Net.Http.HttpClient?, global::System.Uri?, global::System.Collections.Generic.List{global::Recombee.EndPointAuthorization}?, bool)"/>
+
         public RecombeeClient(
             string apiKey,
             global::System.Net.Http.HttpClient? httpClient = null,
