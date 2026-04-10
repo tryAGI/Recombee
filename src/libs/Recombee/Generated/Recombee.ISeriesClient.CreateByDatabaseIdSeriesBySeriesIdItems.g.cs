@@ -11,6 +11,7 @@ namespace Recombee
         /// <param name="databaseId"></param>
         /// <param name="seriesId"></param>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Recombee.ApiException"></exception>
         global::System.Threading.Tasks.Task CreateByDatabaseIdSeriesBySeriesIdItemsAsync(
@@ -18,6 +19,7 @@ namespace Recombee
             string seriesId,
 
             global::Recombee.SeriesItem request,
+            global::Recombee.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Insert to Series<br/>
@@ -37,6 +39,7 @@ namespace Recombee
         /// <param name="cascadeCreate">
         /// Indicates that any non-existing entity specified within the request should be created (as if corresponding PUT requests were invoked). This concerns both the `seriesId` and the `itemId`. If `cascadeCreate` is set to true, the behavior also depends on the `itemType`. In case of `item`, an item is created, in case of `series` a series + corresponding item with the same ID is created.
         /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task CreateByDatabaseIdSeriesBySeriesIdItemsAsync(
@@ -46,6 +49,7 @@ namespace Recombee
             string itemId,
             double time,
             bool? cascadeCreate = default,
+            global::Recombee.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }
