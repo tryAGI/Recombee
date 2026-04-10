@@ -12,12 +12,14 @@ namespace Recombee
         /// </summary>
         /// <param name="databaseId"></param>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Recombee.ApiException"></exception>
         global::System.Threading.Tasks.Task CreateByDatabaseIdBatchAsync(
             string databaseId,
 
             global::Recombee.Batch request,
+            global::Recombee.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Batch<br/>
@@ -32,12 +34,14 @@ namespace Recombee
         /// <param name="distinctRecomms">
         /// Makes all the recommended items for a certain user distinct among multiple recommendation requests in the batch.
         /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task CreateByDatabaseIdBatchAsync(
             string databaseId,
             global::System.Collections.Generic.IList<object> requests,
             bool? distinctRecomms = default,
+            global::Recombee.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

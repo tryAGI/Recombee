@@ -13,12 +13,14 @@ namespace Recombee
         /// </summary>
         /// <param name="databaseId"></param>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Recombee.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::Recombee.SearchSynonym> CreateByDatabaseIdSynonymsItemsAsync(
             string databaseId,
 
             global::Recombee.SearchSynonymParams request,
+            global::Recombee.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Add Search Synonym<br/>
@@ -38,6 +40,7 @@ namespace Recombee
         /// If set to `true`, only `term` -&gt; `synonym` is considered. If set to `false`, also `synonym` -&gt; `term` works.<br/>
         /// Default: `false`.
         /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::Recombee.SearchSynonym> CreateByDatabaseIdSynonymsItemsAsync(
@@ -45,6 +48,7 @@ namespace Recombee
             string term,
             string synonym,
             bool? oneWay = default,
+            global::Recombee.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }
