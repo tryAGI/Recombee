@@ -98,6 +98,7 @@ namespace Recombee
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Recombee.SearchItemsParameters))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Recombee.SearchItemSegmentsParameters))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Recombee.RecommendNextItemsParameters))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Recombee.RecommendNextItemSegmentsParameters))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Recombee.CreatePropertyBasedSegmentationParameters))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Recombee.UpdatePropertyBasedSegmentationParameters))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Recombee.CreateAutoReQLSegmentationParameters))]

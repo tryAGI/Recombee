@@ -6,7 +6,7 @@ namespace Recombee
     {
         /// <summary>
         /// Composite Recommendation<br/>
-        /// Composite Recommendation returns both a *source entity* (e.g., an Item or [Item Segment](https://docs.recombee.com/segmentations.html)) and a list of related recommendations in a single response.<br/>
+        /// Composite Recommendation returns both a *source entity* (e.g., an Item or [Item Segment](https://docs.recombee.com/segmentations)) and a list of related recommendations in a single response.<br/>
         /// It is ideal for use cases such as personalized homepage sections (*Articles from &lt;category&gt;*), *Because You Watched &lt;movie&gt;*, or *Artists Related to Your Favorite Artist &lt;artist&gt;*.<br/>
         /// See detailed **examples and configuration guidance** in the [Composite Scenarios documentation](https://docs.recombee.com/scenarios#composite-recommendations).<br/>
         /// **Structure**<br/>
@@ -38,7 +38,7 @@ namespace Recombee
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Composite Recommendation<br/>
-        /// Composite Recommendation returns both a *source entity* (e.g., an Item or [Item Segment](https://docs.recombee.com/segmentations.html)) and a list of related recommendations in a single response.<br/>
+        /// Composite Recommendation returns both a *source entity* (e.g., an Item or [Item Segment](https://docs.recombee.com/segmentations)) and a list of related recommendations in a single response.<br/>
         /// It is ideal for use cases such as personalized homepage sections (*Articles from &lt;category&gt;*), *Because You Watched &lt;movie&gt;*, or *Artists Related to Your Favorite Artist &lt;artist&gt;*.<br/>
         /// See detailed **examples and configuration guidance** in the [Composite Scenarios documentation](https://docs.recombee.com/scenarios#composite-recommendations).<br/>
         /// **Structure**<br/>
@@ -76,6 +76,9 @@ namespace Recombee
         /// <param name="segmentId">
         /// ID of the segment from `contextSegmentationId` for which the recommendations are to be generated.
         /// </param>
+        /// <param name="searchQuery">
+        /// Search query provided by the user. It is used for the full-text search. Only applicable if the *scenario* corresponds to a search scenario.
+        /// </param>
         /// <param name="cascadeCreate">
         /// If the entity for the source recommendation does not exist in the database, returns a list of non-personalized recommendations and creates the user in the database. This allows, for example, rotations in the following recommendations for that entity, as the entity will be already known to the system.
         /// </param>
@@ -99,6 +102,7 @@ namespace Recombee
             string? userId = default,
             global::Recombee.Logic? logic = default,
             string? segmentId = default,
+            string? searchQuery = default,
             bool? cascadeCreate = default,
             object? sourceSettings = default,
             object? resultSettings = default,
