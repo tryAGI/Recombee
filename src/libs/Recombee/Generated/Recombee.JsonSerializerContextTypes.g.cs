@@ -196,163 +196,167 @@ namespace Recombee
         /// <summary>
         /// 
         /// </summary>
-        public global::Recombee.CreatePropertyBasedSegmentationParameters? Type42 { get; set; }
+        public global::Recombee.RecommendNextItemSegmentsParameters? Type42 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Recombee.UpdatePropertyBasedSegmentationParameters? Type43 { get; set; }
+        public global::Recombee.CreatePropertyBasedSegmentationParameters? Type43 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Recombee.CreateAutoReQLSegmentationParameters? Type44 { get; set; }
+        public global::Recombee.UpdatePropertyBasedSegmentationParameters? Type44 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Recombee.UpdateAutoReQLSegmentationParameters? Type45 { get; set; }
+        public global::Recombee.CreateAutoReQLSegmentationParameters? Type45 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Recombee.CreateManualReQLSegmentationParameters? Type46 { get; set; }
+        public global::Recombee.UpdateAutoReQLSegmentationParameters? Type46 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Recombee.UpdateManualReQLSegmentationParameters? Type47 { get; set; }
+        public global::Recombee.CreateManualReQLSegmentationParameters? Type47 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Recombee.ManualReQLSegmentParameters? Type48 { get; set; }
+        public global::Recombee.UpdateManualReQLSegmentationParameters? Type48 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Recombee.SearchResponse? Type49 { get; set; }
+        public global::Recombee.ManualReQLSegmentParameters? Type49 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::Recombee.Recommendation>? Type50 { get; set; }
+        public global::Recombee.SearchResponse? Type50 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Recombee.Recommendation? Type51 { get; set; }
+        public global::System.Collections.Generic.IList<global::Recombee.Recommendation>? Type51 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Recombee.RecommendationResponse? Type52 { get; set; }
+        public global::Recombee.Recommendation? Type52 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Recombee.CompositeRecommendationResponse? Type53 { get; set; }
+        public global::Recombee.RecommendationResponse? Type53 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Recombee.Batch? Type54 { get; set; }
+        public global::Recombee.CompositeRecommendationResponse? Type54 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<object>? Type55 { get; set; }
+        public global::Recombee.Batch? Type55 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Recombee.Item? Type56 { get; set; }
+        public global::System.Collections.Generic.IList<object>? Type56 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Recombee.User? Type57 { get; set; }
+        public global::Recombee.Item? Type57 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Recombee.Series? Type58 { get; set; }
+        public global::Recombee.User? Type58 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Recombee.Group? Type59 { get; set; }
+        public global::Recombee.Series? Type59 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Recombee.SearchSynonymParams? Type60 { get; set; }
+        public global::Recombee.Group? Type60 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Recombee.SearchSynonym? Type61 { get; set; }
+        public global::Recombee.SearchSynonymParams? Type61 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Recombee.ListSearchSynonymsResponse? Type62 { get; set; }
+        public global::Recombee.SearchSynonym? Type62 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::Recombee.SearchSynonym>? Type63 { get; set; }
+        public global::Recombee.ListSearchSynonymsResponse? Type63 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Recombee.Scenario? Type64 { get; set; }
+        public global::System.Collections.Generic.IList<global::Recombee.SearchSynonym>? Type64 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Recombee.Segmentation? Type65 { get; set; }
+        public global::Recombee.Scenario? Type65 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Recombee.ListSegmentationsResponse? Type66 { get; set; }
+        public global::Recombee.Segmentation? Type66 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::Recombee.Segmentation>? Type67 { get; set; }
+        public global::Recombee.ListSegmentationsResponse? Type67 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Recombee.PutItemsPropertiesType? Type68 { get; set; }
+        public global::System.Collections.Generic.IList<global::Recombee.Segmentation>? Type68 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Recombee.PutUsersPropertiesType? Type69 { get; set; }
+        public global::Recombee.PutItemsPropertiesType? Type69 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::Recombee.Item>? Type70 { get; set; }
+        public global::Recombee.PutUsersPropertiesType? Type70 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::Recombee.PropertyInfo>? Type71 { get; set; }
+        public global::System.Collections.Generic.IList<global::Recombee.Item>? Type71 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::Recombee.Series>? Type72 { get; set; }
+        public global::System.Collections.Generic.IList<global::Recombee.PropertyInfo>? Type72 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::Recombee.SeriesItem>? Type73 { get; set; }
+        public global::System.Collections.Generic.IList<global::Recombee.Series>? Type73 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::Recombee.User>? Type74 { get; set; }
+        public global::System.Collections.Generic.IList<global::Recombee.SeriesItem>? Type74 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::Recombee.DetailView>? Type75 { get; set; }
+        public global::System.Collections.Generic.IList<global::Recombee.User>? Type75 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::Recombee.Purchase>? Type76 { get; set; }
+        public global::System.Collections.Generic.IList<global::Recombee.DetailView>? Type76 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::Recombee.Rating>? Type77 { get; set; }
+        public global::System.Collections.Generic.IList<global::Recombee.Purchase>? Type77 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::Recombee.CartAddition>? Type78 { get; set; }
+        public global::System.Collections.Generic.IList<global::Recombee.Rating>? Type78 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::Recombee.Bookmark>? Type79 { get; set; }
+        public global::System.Collections.Generic.IList<global::Recombee.CartAddition>? Type79 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::Recombee.ViewPortion>? Type80 { get; set; }
+        public global::System.Collections.Generic.IList<global::Recombee.Bookmark>? Type80 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::Recombee.Scenario>? Type81 { get; set; }
+        public global::System.Collections.Generic.IList<global::Recombee.ViewPortion>? Type81 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.IList<global::Recombee.Scenario>? Type82 { get; set; }
 
         /// <summary>
         /// 

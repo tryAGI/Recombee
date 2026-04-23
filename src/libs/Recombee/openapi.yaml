@@ -2595,17 +2595,69 @@ paths:
           description: count is not a positive integer.
         '404':
           description: contextSegmentId not found in the context segmentation
+  /{databaseId}/recomms/next/item-segments/{recommId}:
+    post:
+      summary: Recommend Next Item Segments
+      description: "Returns [Item Segments](https://docs.recombee.com/segmentations) to be shown as the next recommendations when a user scrolls (e.g., within a carousel or feed of Item Segments such as\
+        \ brands, artists, topics, or categories).\n\nThe request requires the `recommId` of a base recommendation request and the number of Segments to return (`count`).\n\nThe base request can be one\
+        \ of:\n  - [Recommend Item Segments to Item](https://docs.recombee.com/api#recommend-item-segments-to-item)\n  - [Recommend Item Segments to User](https://docs.recombee.com/api#recommend-item-segments-to-user)\n\
+        \  - [Recommend Item Segments to Item Segment](https://docs.recombee.com/api#recommend-item-segments-to-item-segment)\n  - [Search Item Segments](https://docs.recombee.com/api#search-item-segments)\n\
+        \nAll other parameters are inherited from the base request associated with the provided `recommId`.\n\nThis endpoint can be called multiple times for a single `recommId`. Each call returns different\
+        \ Item Segments that have not been recommended in previous calls.\nThe number of calls made so far is returned in the `numberNextRecommsCalls` field.\n\nRequests can be made up to 30 minutes after\
+        \ the base request or the most recent Recommend Next Item Segments call.\n\nFor billing purposes, each call to this endpoint is counted as a separate recommendation request.\n"
+      tags:
+      - Recommendations
+      parameters:
+      - name: databaseId
+        in: path
+        description: ID of your database.
+        required: true
+        schema:
+          type: string
+      - name: recommId
+        in: path
+        description: ID of the base recommendation request for which next recommendations should be returned
+        required: true
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/RecommendNextItemSegmentsParameters'
+        description: Recommendation parameters definition
+        required: true
+      responses:
+        '200':
+          description: Successful operation.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RecommendationResponse'
+              examples:
+                response:
+                  value:
+                    recommId: 768448ea-10b3-4028-bb76-4b2f95121d19
+                    recomms:
+                    - id: Comedy
+                    - id: Drama
+                    - id: Action
+                    numberNextRecommsCalls: 4
+        '400':
+          description: Parameter `count` is not given or is not a positive integer. Parameter `recommId` is not an UUID.
+        '404':
+          description: Base request with the given `recommId` does not exist or has expired.
   /{databaseId}/recomms/composite/:
     post:
       summary: Composite Recommendation
-      description: "Composite Recommendation returns both a *source entity* (e.g., an Item or [Item Segment](https://docs.recombee.com/segmentations.html)) and a list of related recommendations in a single\
-        \ response.\n\nIt is ideal for use cases such as personalized homepage sections (*Articles from <category>*), *Because You Watched <movie>*, or *Artists Related to Your Favorite Artist <artist>*.\n\
-        \nSee detailed **examples and configuration guidance** in the [Composite Scenarios documentation](https://docs.recombee.com/scenarios#composite-recommendations).\n\n**Structure**\n\nThe endpoint\
-        \ operates in two stages:\n1. Recommends the *source* (e.g., an Item Segment or item) to the user.\n2. Recommends *results* (items or Item Segments) related to that *source*.\n\nFor example, *Articles\
-        \ from <category>* can be decomposed into:\n  - [Recommend Item Segments To User](https://docs.recombee.com/api#recommend-item-segments-to-user) to find the category.\n  - [Recommend Items To Item\
-        \ Segment](https://docs.recombee.com/api#recommend-items-to-item-segment) to recommend articles from that category.\n\nSince the first step uses [Recommend Item Segments To User](https://docs.recombee.com/api#recommend-items-to-user),\
-        \ you must include the `userId` parameter in the *Composite Recommendation* request.\n\nEach *Composite Recommendation* counts as a single recommendation API request for billing.\n\n**Stage-specific\
-        \ Parameters**\n\nAdditional parameters can be supplied via [sourceSettings](https://docs.recombee.com/api#composite-recommendation-param-sourceSettings) and [resultSettings](https://docs.recombee.com/api#composite-recommendation-param-resultSettings).\n\
+      description: "Composite Recommendation returns both a *source entity* (e.g., an Item or [Item Segment](https://docs.recombee.com/segmentations)) and a list of related recommendations in a single response.\n\
+        \nIt is ideal for use cases such as personalized homepage sections (*Articles from <category>*), *Because You Watched <movie>*, or *Artists Related to Your Favorite Artist <artist>*.\n\nSee detailed\
+        \ **examples and configuration guidance** in the [Composite Scenarios documentation](https://docs.recombee.com/scenarios#composite-recommendations).\n\n**Structure**\n\nThe endpoint operates in\
+        \ two stages:\n1. Recommends the *source* (e.g., an Item Segment or item) to the user.\n2. Recommends *results* (items or Item Segments) related to that *source*.\n\nFor example, *Articles from\
+        \ <category>* can be decomposed into:\n  - [Recommend Item Segments To User](https://docs.recombee.com/api#recommend-item-segments-to-user) to find the category.\n  - [Recommend Items To Item Segment](https://docs.recombee.com/api#recommend-items-to-item-segment)\
+        \ to recommend articles from that category.\n\nSince the first step uses [Recommend Item Segments To User](https://docs.recombee.com/api#recommend-items-to-user), you must include the `userId` parameter\
+        \ in the *Composite Recommendation* request.\n\nEach *Composite Recommendation* counts as a single recommendation API request for billing.\n\n**Stage-specific Parameters**\n\nAdditional parameters\
+        \ can be supplied via [sourceSettings](https://docs.recombee.com/api#composite-recommendation-param-sourceSettings) and [resultSettings](https://docs.recombee.com/api#composite-recommendation-param-resultSettings).\n\
         In the example above:\n  - `sourceSettings` may include any parameter valid for [Recommend Item Segments To User](https://docs.recombee.com/api#recommend-items-to-user) (e.g., `filter`, `booster`).\n\
         \  - `resultSettings` may include any parameter valid for [Recommend Items To Item Segment](https://docs.recombee.com/api#recommend-items-to-item-segment).\n\nSee [this example](https://docs.recombee.com/api#composite-recommendation-example-setting-parameters-for-individual-stages)\
         \ for more details.\n"
@@ -4672,6 +4724,11 @@ components:
 
             '
           type: string
+        searchQuery:
+          description: 'Search query provided by the user. It is used for the full-text search. Only applicable if the *scenario* corresponds to a search scenario.
+
+            '
+          type: string
         cascadeCreate:
           description: 'If the entity for the source recommendation does not exist in the database, returns a list of non-personalized recommendations and creates the user in the database. This allows,
             for example, rotations in the following recommendations for that entity, as the entity will be already known to the system.
@@ -4847,6 +4904,16 @@ components:
       properties:
         count:
           description: 'Number of items to be recommended
+
+            '
+          type: integer
+    RecommendNextItemSegmentsParameters:
+      type: object
+      required:
+      - count
+      properties:
+        count:
+          description: 'Number of item segments to be recommended
 
             '
           type: integer

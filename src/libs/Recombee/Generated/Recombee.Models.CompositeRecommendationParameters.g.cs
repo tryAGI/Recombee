@@ -49,6 +49,12 @@ namespace Recombee
         public string? SegmentId { get; set; }
 
         /// <summary>
+        /// Search query provided by the user. It is used for the full-text search. Only applicable if the *scenario* corresponds to a search scenario.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("searchQuery")]
+        public string? SearchQuery { get; set; }
+
+        /// <summary>
         /// If the entity for the source recommendation does not exist in the database, returns a list of non-personalized recommendations and creates the user in the database. This allows, for example, rotations in the following recommendations for that entity, as the entity will be already known to the system.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("cascadeCreate")]
@@ -99,6 +105,9 @@ namespace Recombee
         /// <param name="segmentId">
         /// ID of the segment from `contextSegmentationId` for which the recommendations are to be generated.
         /// </param>
+        /// <param name="searchQuery">
+        /// Search query provided by the user. It is used for the full-text search. Only applicable if the *scenario* corresponds to a search scenario.
+        /// </param>
         /// <param name="cascadeCreate">
         /// If the entity for the source recommendation does not exist in the database, returns a list of non-personalized recommendations and creates the user in the database. This allows, for example, rotations in the following recommendations for that entity, as the entity will be already known to the system.
         /// </param>
@@ -121,6 +130,7 @@ namespace Recombee
             string? userId,
             global::Recombee.Logic? logic,
             string? segmentId,
+            string? searchQuery,
             bool? cascadeCreate,
             object? sourceSettings,
             object? resultSettings,
@@ -132,6 +142,7 @@ namespace Recombee
             this.UserId = userId;
             this.Logic = logic;
             this.SegmentId = segmentId;
+            this.SearchQuery = searchQuery;
             this.CascadeCreate = cascadeCreate;
             this.SourceSettings = sourceSettings;
             this.ResultSettings = resultSettings;
