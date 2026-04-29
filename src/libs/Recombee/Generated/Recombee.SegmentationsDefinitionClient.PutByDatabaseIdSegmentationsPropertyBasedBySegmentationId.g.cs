@@ -141,8 +141,8 @@ namespace Recombee
                 PreparePutByDatabaseIdSegmentationsPropertyBasedBySegmentationIdRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    databaseId: databaseId,
-                    segmentationId: segmentationId,
+                    databaseId: databaseId!,
+                    segmentationId: segmentationId!,
                     request: request);
 
                 return __httpRequest;

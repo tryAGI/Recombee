@@ -157,7 +157,7 @@ namespace Recombee
                 PrepareGetByDatabaseIdItemsListRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    databaseId: databaseId,
+                    databaseId: databaseId!,
                     filter: filter,
                     count: count,
                     offset: offset,

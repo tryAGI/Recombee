@@ -130,8 +130,8 @@ namespace Recombee
                 PrepareGetByDatabaseIdItemsByItemIdDetailviewsRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    databaseId: databaseId,
-                    itemId: itemId);
+                    databaseId: databaseId!,
+                    itemId: itemId!);
 
                 return __httpRequest;
             }

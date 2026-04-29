@@ -120,7 +120,7 @@ namespace Recombee
                 PrepareDeleteByDatabaseIdRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    databaseId: databaseId);
+                    databaseId: databaseId!);
 
                 return __httpRequest;
             }

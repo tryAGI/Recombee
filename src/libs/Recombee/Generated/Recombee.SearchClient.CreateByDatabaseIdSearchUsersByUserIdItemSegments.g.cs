@@ -151,8 +151,8 @@ namespace Recombee
                 PrepareCreateByDatabaseIdSearchUsersByUserIdItemSegmentsRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    databaseId: databaseId,
-                    userId: userId,
+                    databaseId: databaseId!,
+                    userId: userId!,
                     request: request);
 
                 return __httpRequest;

@@ -133,8 +133,8 @@ namespace Recombee
                 PrepareGetByDatabaseIdSegmentationsListRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    databaseId: databaseId,
-                    sourceType: sourceType);
+                    databaseId: databaseId!,
+                    sourceType: sourceType!);
 
                 return __httpRequest;
             }

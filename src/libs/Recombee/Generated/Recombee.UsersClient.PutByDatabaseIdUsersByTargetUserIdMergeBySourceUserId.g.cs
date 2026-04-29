@@ -141,9 +141,9 @@ namespace Recombee
                 PreparePutByDatabaseIdUsersByTargetUserIdMergeBySourceUserIdRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    databaseId: databaseId,
-                    targetUserId: targetUserId,
-                    sourceUserId: sourceUserId,
+                    databaseId: databaseId!,
+                    targetUserId: targetUserId!,
+                    sourceUserId: sourceUserId!,
                     cascadeCreate: cascadeCreate);
 
                 return __httpRequest;

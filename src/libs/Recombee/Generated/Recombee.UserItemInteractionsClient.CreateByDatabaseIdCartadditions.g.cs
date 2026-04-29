@@ -134,7 +134,7 @@ namespace Recombee
                 PrepareCreateByDatabaseIdCartadditionsRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    databaseId: databaseId,
+                    databaseId: databaseId!,
                     request: request);
 
                 return __httpRequest;

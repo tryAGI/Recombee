@@ -139,7 +139,7 @@ namespace Recombee
                 PrepareGetByDatabaseIdSynonymsItemsRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    databaseId: databaseId,
+                    databaseId: databaseId!,
                     count: count,
                     offset: offset);
 

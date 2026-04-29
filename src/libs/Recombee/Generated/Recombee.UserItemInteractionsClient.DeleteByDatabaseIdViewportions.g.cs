@@ -140,9 +140,9 @@ namespace Recombee
                 PrepareDeleteByDatabaseIdViewportionsRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    databaseId: databaseId,
-                    userId: userId,
-                    itemId: itemId,
+                    databaseId: databaseId!,
+                    userId: userId!,
+                    itemId: itemId!,
                     sessionId: sessionId);
 
                 return __httpRequest;

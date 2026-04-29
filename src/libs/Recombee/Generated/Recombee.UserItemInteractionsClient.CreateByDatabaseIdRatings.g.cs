@@ -134,7 +134,7 @@ namespace Recombee
                 PrepareCreateByDatabaseIdRatingsRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    databaseId: databaseId,
+                    databaseId: databaseId!,
                     request: request);
 
                 return __httpRequest;

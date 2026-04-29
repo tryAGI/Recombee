@@ -139,8 +139,8 @@ namespace Recombee
                 PreparePutByDatabaseIdSeriesBySeriesIdRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    databaseId: databaseId,
-                    seriesId: seriesId,
+                    databaseId: databaseId!,
+                    seriesId: seriesId!,
                     request: request);
 
                 return __httpRequest;
