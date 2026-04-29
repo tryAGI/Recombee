@@ -144,9 +144,9 @@ namespace Recombee
                 PrepareCreateByDatabaseIdSegmentationsManualReqlBySegmentationIdSegmentsBySegmentIdRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    databaseId: databaseId,
-                    segmentationId: segmentationId,
-                    segmentId: segmentId,
+                    databaseId: databaseId!,
+                    segmentationId: segmentationId!,
+                    segmentId: segmentId!,
                     request: request);
 
                 return __httpRequest;

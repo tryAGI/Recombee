@@ -125,8 +125,8 @@ namespace Recombee
                 PrepareDeleteByDatabaseIdItemsPropertiesByPropertyNameRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    databaseId: databaseId,
-                    propertyName: propertyName);
+                    databaseId: databaseId!,
+                    propertyName: propertyName!);
 
                 return __httpRequest;
             }

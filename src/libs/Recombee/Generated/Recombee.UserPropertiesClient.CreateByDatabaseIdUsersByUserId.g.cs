@@ -147,8 +147,8 @@ namespace Recombee
                 PrepareCreateByDatabaseIdUsersByUserIdRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    databaseId: databaseId,
-                    userId: userId,
+                    databaseId: databaseId!,
+                    userId: userId!,
                     cascadeCreate: cascadeCreate,
                     request: request);
 

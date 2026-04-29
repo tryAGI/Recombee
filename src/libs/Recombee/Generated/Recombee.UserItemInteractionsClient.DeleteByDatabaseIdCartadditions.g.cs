@@ -140,9 +140,9 @@ namespace Recombee
                 PrepareDeleteByDatabaseIdCartadditionsRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    databaseId: databaseId,
-                    userId: userId,
-                    itemId: itemId,
+                    databaseId: databaseId!,
+                    userId: userId!,
+                    itemId: itemId!,
                     timestamp: timestamp);
 
                 return __httpRequest;

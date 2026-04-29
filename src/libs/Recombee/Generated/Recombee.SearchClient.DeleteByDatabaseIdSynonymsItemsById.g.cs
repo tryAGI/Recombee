@@ -125,8 +125,8 @@ namespace Recombee
                 PrepareDeleteByDatabaseIdSynonymsItemsByIdRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    databaseId: databaseId,
-                    id: id);
+                    databaseId: databaseId!,
+                    id: id!);
 
                 return __httpRequest;
             }

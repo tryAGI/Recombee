@@ -130,8 +130,8 @@ namespace Recombee
                 PrepareGetByDatabaseIdSeriesBySeriesIdItemsRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    databaseId: databaseId,
-                    seriesId: seriesId);
+                    databaseId: databaseId!,
+                    seriesId: seriesId!);
 
                 return __httpRequest;
             }

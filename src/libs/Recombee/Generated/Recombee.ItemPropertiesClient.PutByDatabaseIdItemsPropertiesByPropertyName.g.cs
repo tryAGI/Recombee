@@ -133,9 +133,9 @@ namespace Recombee
                 PreparePutByDatabaseIdItemsPropertiesByPropertyNameRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    databaseId: databaseId,
-                    propertyName: propertyName,
-                    type: type);
+                    databaseId: databaseId!,
+                    propertyName: propertyName!,
+                    type: type!);
 
                 return __httpRequest;
             }

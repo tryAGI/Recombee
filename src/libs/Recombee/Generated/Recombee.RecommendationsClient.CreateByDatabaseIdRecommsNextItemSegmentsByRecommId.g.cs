@@ -155,8 +155,8 @@ namespace Recombee
                 PrepareCreateByDatabaseIdRecommsNextItemSegmentsByRecommIdRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    databaseId: databaseId,
-                    recommId: recommId,
+                    databaseId: databaseId!,
+                    recommId: recommId!,
                     request: request);
 
                 return __httpRequest;

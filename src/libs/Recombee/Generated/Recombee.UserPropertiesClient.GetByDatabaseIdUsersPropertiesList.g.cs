@@ -125,7 +125,7 @@ namespace Recombee
                 PrepareGetByDatabaseIdUsersPropertiesListRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    databaseId: databaseId);
+                    databaseId: databaseId!);
 
                 return __httpRequest;
             }

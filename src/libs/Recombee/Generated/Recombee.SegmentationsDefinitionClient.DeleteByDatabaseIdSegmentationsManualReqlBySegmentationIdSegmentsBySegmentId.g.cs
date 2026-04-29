@@ -130,9 +130,9 @@ namespace Recombee
                 PrepareDeleteByDatabaseIdSegmentationsManualReqlBySegmentationIdSegmentsBySegmentIdRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    databaseId: databaseId,
-                    segmentationId: segmentationId,
-                    segmentId: segmentId);
+                    databaseId: databaseId!,
+                    segmentationId: segmentationId!,
+                    segmentId: segmentId!);
 
                 return __httpRequest;
             }
