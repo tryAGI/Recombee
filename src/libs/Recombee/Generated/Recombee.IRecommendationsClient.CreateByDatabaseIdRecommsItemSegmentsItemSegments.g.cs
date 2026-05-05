@@ -38,6 +38,28 @@ namespace Recombee
         /// It is also possible to use POST HTTP method (for example in case of very long ReQL filter) - query parameters then become body parameters.
         /// </summary>
         /// <param name="databaseId"></param>
+        /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::Recombee.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::Recombee.AutoSDKHttpResponse<global::Recombee.RecommendationResponse>> CreateByDatabaseIdRecommsItemSegmentsItemSegmentsAsResponseAsync(
+            string databaseId,
+
+            global::Recombee.RecommendItemSegmentsToItemSegmentParameters request,
+            global::Recombee.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Recommend Item Segments to Item Segment<br/>
+        /// Recommends Segments from a result [Segmentation](https://docs.recombee.com/segmentations) that are the most relevant to a particular Segment from a context Segmentation.<br/>
+        /// Based on the used Segmentations, this endpoint can be used for example for:<br/>
+        ///   - Recommending the related brands to particular brand<br/>
+        ///   - Recommending the related brands to particular category<br/>
+        ///   - Recommending the related artists to a particular genre (assuming songs are the Items)<br/>
+        /// You need to set the used context and result Segmentation the Admin UI in the [Scenario settings](https://docs.recombee.com/scenarios) prior to using this endpoint.<br/>
+        /// The returned segments are sorted by relevance (first segment being the most relevant).<br/>
+        /// It is also possible to use POST HTTP method (for example in case of very long ReQL filter) - query parameters then become body parameters.
+        /// </summary>
+        /// <param name="databaseId"></param>
         /// <param name="contextSegmentId">
         /// ID of the segment from `contextSegmentationId` for which the recommendations are to be generated.
         /// </param>

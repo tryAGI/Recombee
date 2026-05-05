@@ -30,6 +30,25 @@ namespace Recombee
         /// <param name="databaseId"></param>
         /// <param name="segmentationId"></param>
         /// <param name="segmentId"></param>
+        /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::Recombee.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::Recombee.AutoSDKHttpResponse> CreateByDatabaseIdSegmentationsManualReqlBySegmentationIdSegmentsBySegmentIdAsResponseAsync(
+            string databaseId,
+            string segmentationId,
+            string segmentId,
+
+            global::Recombee.ManualReQLSegmentParameters request,
+            global::Recombee.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Update Manual ReQL Segment<br/>
+        /// Update definition of the Segment.
+        /// </summary>
+        /// <param name="databaseId"></param>
+        /// <param name="segmentationId"></param>
+        /// <param name="segmentId"></param>
         /// <param name="filter">
         /// ReQL filter that returns `true` for items that belong to this Segment. Otherwise returns `false`.
         /// </param>

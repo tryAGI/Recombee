@@ -31,6 +31,25 @@ namespace Recombee
         /// </summary>
         /// <param name="databaseId"></param>
         /// <param name="itemId"></param>
+        /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::Recombee.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::Recombee.AutoSDKHttpResponse<global::Recombee.RecommendationResponse>> CreateByDatabaseIdRecommsItemsByItemIdUsersAsResponseAsync(
+            string databaseId,
+            string itemId,
+
+            global::Recombee.RecommendUsersToItemParameters request,
+            global::Recombee.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Recommend Users to Item<br/>
+        /// Recommends users that are likely to be interested in the given item.<br/>
+        /// It is also possible to use POST HTTP method (for example in the case of a very long ReQL filter) - query parameters then become body parameters.<br/>
+        /// The returned users are sorted by predicted interest in the item (the first user being the most interested).
+        /// </summary>
+        /// <param name="databaseId"></param>
+        /// <param name="itemId"></param>
         /// <param name="count">
         /// Number of users to be recommended (N for the top-N recommendation).
         /// </param>

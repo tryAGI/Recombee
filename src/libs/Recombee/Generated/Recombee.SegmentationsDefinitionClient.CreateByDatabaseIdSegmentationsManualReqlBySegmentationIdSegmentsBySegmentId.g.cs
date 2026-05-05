@@ -62,6 +62,36 @@ namespace Recombee
             global::Recombee.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
+            await CreateByDatabaseIdSegmentationsManualReqlBySegmentationIdSegmentsBySegmentIdAsResponseAsync(
+                databaseId: databaseId,
+                segmentationId: segmentationId,
+                segmentId: segmentId,
+
+                request: request,
+                requestOptions: requestOptions,
+                cancellationToken: cancellationToken
+            ).ConfigureAwait(false);
+        }
+        /// <summary>
+        /// Update Manual ReQL Segment<br/>
+        /// Update definition of the Segment.
+        /// </summary>
+        /// <param name="databaseId"></param>
+        /// <param name="segmentationId"></param>
+        /// <param name="segmentId"></param>
+        /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::Recombee.ApiException"></exception>
+        public async global::System.Threading.Tasks.Task<global::Recombee.AutoSDKHttpResponse> CreateByDatabaseIdSegmentationsManualReqlBySegmentationIdSegmentsBySegmentIdAsResponseAsync(
+            string databaseId,
+            string segmentationId,
+            string segmentId,
+
+            global::Recombee.ManualReQLSegmentParameters request,
+            global::Recombee.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default)
+        {
             request = request ?? throw new global::System.ArgumentNullException(nameof(request));
 
             PrepareArguments(
@@ -95,6 +125,7 @@ namespace Recombee
 
             global::System.Net.Http.HttpRequestMessage __CreateHttpRequest()
             {
+
                             var __pathBuilder = new global::Recombee.PathBuilder(
                                 path: $"/{databaseId}/segmentations/manual-reql/{segmentationId}/segments/{segmentId}",
                                 baseUri: HttpClient.BaseAddress);
@@ -177,6 +208,8 @@ namespace Recombee
                                 attempt: __attempt,
                                 maxAttempts: __maxAttempts,
                                 willRetry: false,
+                                retryDelay: null,
+                                retryReason: global::System.String.Empty,
                                 cancellationToken: __effectiveCancellationToken)).ConfigureAwait(false);
                     try
                     {
@@ -187,6 +220,11 @@ namespace Recombee
                     }
                     catch (global::System.Net.Http.HttpRequestException __exception)
                     {
+                        var __retryDelay = global::Recombee.AutoSDKRequestOptionsSupport.GetRetryDelay(
+                            clientOptions: Options,
+                            requestOptions: requestOptions,
+                            response: null,
+                            attempt: __attempt);
                         var __willRetry = __attempt < __maxAttempts && !__effectiveCancellationToken.IsCancellationRequested;
                         await global::Recombee.AutoSDKRequestOptionsSupport.OnAfterErrorAsync(
                             clientOptions: Options,
@@ -204,6 +242,8 @@ namespace Recombee
                                 attempt: __attempt,
                                 maxAttempts: __maxAttempts,
                                 willRetry: __willRetry,
+                                retryDelay: __willRetry ? __retryDelay : (global::System.TimeSpan?)null,
+                                retryReason: "exception",
                                 cancellationToken: __effectiveCancellationToken)).ConfigureAwait(false);
                         if (!__willRetry)
                         {
@@ -213,8 +253,7 @@ namespace Recombee
                         __httpRequest.Dispose();
                         __httpRequest = null;
                         await global::Recombee.AutoSDKRequestOptionsSupport.DelayBeforeRetryAsync(
-                            clientOptions: Options,
-                            requestOptions: requestOptions,
+                            retryDelay: __retryDelay,
                             cancellationToken: __effectiveCancellationToken).ConfigureAwait(false);
                         continue;
                     }
@@ -223,6 +262,11 @@ namespace Recombee
                         __attempt < __maxAttempts &&
                         global::Recombee.AutoSDKRequestOptionsSupport.ShouldRetryStatusCode(__response.StatusCode))
                     {
+                        var __retryDelay = global::Recombee.AutoSDKRequestOptionsSupport.GetRetryDelay(
+                            clientOptions: Options,
+                            requestOptions: requestOptions,
+                            response: __response,
+                            attempt: __attempt);
                         await global::Recombee.AutoSDKRequestOptionsSupport.OnAfterErrorAsync(
                             clientOptions: Options,
                             context: global::Recombee.AutoSDKRequestOptionsSupport.CreateHookContext(
@@ -239,14 +283,15 @@ namespace Recombee
                                 attempt: __attempt,
                                 maxAttempts: __maxAttempts,
                                 willRetry: true,
+                                retryDelay: __retryDelay,
+                                retryReason: "status:" + ((int)__response.StatusCode).ToString(global::System.Globalization.CultureInfo.InvariantCulture),
                                 cancellationToken: __effectiveCancellationToken)).ConfigureAwait(false);
                         __response.Dispose();
                         __response = null;
                         __httpRequest.Dispose();
                         __httpRequest = null;
                         await global::Recombee.AutoSDKRequestOptionsSupport.DelayBeforeRetryAsync(
-                            clientOptions: Options,
-                            requestOptions: requestOptions,
+                            retryDelay: __retryDelay,
                             cancellationToken: __effectiveCancellationToken).ConfigureAwait(false);
                         continue;
                     }
@@ -286,6 +331,8 @@ namespace Recombee
                                 attempt: __attemptNumber,
                                 maxAttempts: __maxAttempts,
                                 willRetry: false,
+                                retryDelay: null,
+                                retryReason: global::System.String.Empty,
                                 cancellationToken: __effectiveCancellationToken)).ConfigureAwait(false);
                 }
                 else
@@ -306,6 +353,8 @@ namespace Recombee
                                 attempt: __attemptNumber,
                                 maxAttempts: __maxAttempts,
                                 willRetry: false,
+                                retryDelay: null,
+                                retryReason: global::System.String.Empty,
                                 cancellationToken: __effectiveCancellationToken)).ConfigureAwait(false);
                 }
                             // 
@@ -392,6 +441,10 @@ namespace Recombee
                                 {
                                     __response.EnsureSuccessStatusCode();
 
+                return new global::Recombee.AutoSDKHttpResponse(
+                                        statusCode: __response.StatusCode,
+                                        headers: global::Recombee.AutoSDKHttpResponse.CreateHeaders(__response),
+                                        requestUri: __response.RequestMessage?.RequestUri);
                                 }
                                 catch (global::System.Exception __ex)
                                 {
@@ -413,6 +466,10 @@ namespace Recombee
                                 try
                                 {
                                     __response.EnsureSuccessStatusCode();
+                                    return new global::Recombee.AutoSDKHttpResponse(
+                                        statusCode: __response.StatusCode,
+                                        headers: global::Recombee.AutoSDKHttpResponse.CreateHeaders(__response),
+                                        requestUri: __response.RequestMessage?.RequestUri);
                                 }
                                 catch (global::System.Exception __ex)
                                 {

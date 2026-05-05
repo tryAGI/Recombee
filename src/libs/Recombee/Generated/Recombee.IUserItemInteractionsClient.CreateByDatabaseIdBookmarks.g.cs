@@ -24,6 +24,21 @@ namespace Recombee
         /// Adds a bookmark of the given item made by the given user.
         /// </summary>
         /// <param name="databaseId"></param>
+        /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::Recombee.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::Recombee.AutoSDKHttpResponse> CreateByDatabaseIdBookmarksAsResponseAsync(
+            string databaseId,
+
+            global::Recombee.Bookmark request,
+            global::Recombee.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Add Bookmark<br/>
+        /// Adds a bookmark of the given item made by the given user.
+        /// </summary>
+        /// <param name="databaseId"></param>
         /// <param name="userId">
         /// User who bookmarked the item
         /// </param>

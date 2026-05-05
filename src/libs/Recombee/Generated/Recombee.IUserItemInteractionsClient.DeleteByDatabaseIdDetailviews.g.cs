@@ -22,5 +22,23 @@ namespace Recombee
             double? timestamp = default,
             global::Recombee.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Delete Detail View<br/>
+        /// Deletes an existing detail view uniquely specified by (`userId`, `itemId`, and `timestamp`) or all the detail views with the given `userId` and `itemId` if `timestamp` is omitted.
+        /// </summary>
+        /// <param name="databaseId"></param>
+        /// <param name="userId"></param>
+        /// <param name="itemId"></param>
+        /// <param name="timestamp"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::Recombee.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::Recombee.AutoSDKHttpResponse> DeleteByDatabaseIdDetailviewsAsResponseAsync(
+            string databaseId,
+            string userId,
+            string itemId,
+            double? timestamp = default,
+            global::Recombee.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

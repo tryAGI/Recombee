@@ -41,6 +41,30 @@ namespace Recombee
         /// </summary>
         /// <param name="databaseId"></param>
         /// <param name="userId"></param>
+        /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::Recombee.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::Recombee.AutoSDKHttpResponse<global::Recombee.SearchResponse>> CreateByDatabaseIdSearchUsersByUserIdItemsAsResponseAsync(
+            string databaseId,
+            string userId,
+
+            global::Recombee.SearchItemsParameters request,
+            global::Recombee.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Search Items<br/>
+        /// Full-text personalized search. The results are based on the provided `searchQuery` and also on the user's past interactions (purchases, ratings, etc.) with the items (items more suitable for the user are preferred in the results).<br/>
+        /// All the string and set item properties are indexed by the search engine.<br/>
+        /// This endpoint should be used in a search box on your website/app. It can be called multiple times as the user is typing the query in order to get the most viable suggestions based on the current state of the query, or once after submitting the whole query. <br/>
+        /// The returned items are sorted by relevance (the first item being the most relevant).<br/>
+        /// Besides the recommended items, also a unique `recommId` is returned in the response. It can be used to:<br/>
+        /// - Let Recombee know that this search was successful (e.g., user clicked one of the recommended items). See [Reported metrics](https://docs.recombee.com/admin_ui#reported-metrics).<br/>
+        /// - Get subsequent search results when the user scrolls down or goes to the next page. See [Recommend Next Items](https://docs.recombee.com/api#recommend-next-items).<br/>
+        /// It is also possible to use POST HTTP method (for example in the case of a very long ReQL filter) - query parameters then become body parameters.
+        /// </summary>
+        /// <param name="databaseId"></param>
+        /// <param name="userId"></param>
         /// <param name="searchQuery">
         /// Search query provided by the user. It is used for the full-text search.
         /// </param>

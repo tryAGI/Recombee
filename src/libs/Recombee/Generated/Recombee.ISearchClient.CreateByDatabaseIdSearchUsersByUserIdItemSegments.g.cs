@@ -41,6 +41,30 @@ namespace Recombee
         /// </summary>
         /// <param name="databaseId"></param>
         /// <param name="userId"></param>
+        /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::Recombee.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::Recombee.AutoSDKHttpResponse<global::Recombee.SearchResponse>> CreateByDatabaseIdSearchUsersByUserIdItemSegmentsAsResponseAsync(
+            string databaseId,
+            string userId,
+
+            global::Recombee.SearchItemSegmentsParameters request,
+            global::Recombee.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Search Item Segments<br/>
+        /// Full-text personalized search that returns Segments from a Segmentation. The results are based on the provided `searchQuery` and also on the user's past interactions (purchases, ratings, etc.).<br/>
+        /// Based on the used Segmentation, this endpoint can be used for example for:<br/>
+        ///   - Searching within categories or brands<br/>
+        ///   - Searching within genres or artists<br/>
+        /// For example if the user is searching for "iPhone" this endpoint can return "cell phones" category.<br/>
+        /// You need to set the used Segmentation the Admin UI in the Scenario settings prior to using this endpoint.<br/>
+        /// The returned segments are sorted by relevance (first segment being the most relevant).<br/>
+        /// It is also possible to use POST HTTP method (for example in case of very long ReQL filter) - query parameters then become body parameters.
+        /// </summary>
+        /// <param name="databaseId"></param>
+        /// <param name="userId"></param>
         /// <param name="searchQuery">
         /// Search query provided by the user. It is used for the full-text search.
         /// </param>
