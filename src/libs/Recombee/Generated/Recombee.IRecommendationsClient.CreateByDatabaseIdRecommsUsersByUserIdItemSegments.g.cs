@@ -43,6 +43,31 @@ namespace Recombee
         /// </summary>
         /// <param name="databaseId"></param>
         /// <param name="userId"></param>
+        /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::Recombee.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::Recombee.AutoSDKHttpResponse<global::Recombee.RecommendationResponse>> CreateByDatabaseIdRecommsUsersByUserIdItemSegmentsAsResponseAsync(
+            string databaseId,
+            string userId,
+
+            global::Recombee.RecommendItemSegmentsToUserParameters request,
+            global::Recombee.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Recommend Item Segments to User<br/>
+        /// Recommends the top Segments from a [Segmentation](https://docs.recombee.com/segmentations) for a particular user, based on the user's past interactions.<br/>
+        /// Based on the used Segmentation, this endpoint can be used for example for:<br/>
+        ///   - Recommending the top categories for the user<br/>
+        ///   - Recommending the top genres for the user<br/>
+        ///   - Recommending the top brands for the user<br/>
+        ///   - Recommending the top artists for the user<br/>
+        /// You need to set the used Segmentation the Admin UI in the [Scenario settings](https://docs.recombee.com/scenarios) prior to using this endpoint.<br/>
+        /// The returned segments are sorted by relevance (first segment being the most relevant).<br/>
+        /// It is also possible to use POST HTTP method (for example in case of very long ReQL filter) - query parameters then become body parameters.
+        /// </summary>
+        /// <param name="databaseId"></param>
+        /// <param name="userId"></param>
         /// <param name="count">
         /// Number of item segments to be recommended (N for the top-N recommendation).
         /// </param>

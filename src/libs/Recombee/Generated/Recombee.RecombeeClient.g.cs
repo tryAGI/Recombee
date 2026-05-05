@@ -45,7 +45,7 @@ namespace Recombee
         /// <summary>
         /// 
         /// </summary>
-        public ItemPropertiesClient ItemProperties => new ItemPropertiesClient(HttpClient, authorizations: Authorizations, options: Options)
+        public ItemPropertiesClient ItemProperties => new ItemPropertiesClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerContext = JsonSerializerContext,
@@ -54,7 +54,7 @@ namespace Recombee
         /// <summary>
         /// 
         /// </summary>
-        public ItemsClient Items => new ItemsClient(HttpClient, authorizations: Authorizations, options: Options)
+        public ItemsClient Items => new ItemsClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerContext = JsonSerializerContext,
@@ -63,7 +63,7 @@ namespace Recombee
         /// <summary>
         /// 
         /// </summary>
-        public MiscellaneousClient Miscellaneous => new MiscellaneousClient(HttpClient, authorizations: Authorizations, options: Options)
+        public MiscellaneousClient Miscellaneous => new MiscellaneousClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerContext = JsonSerializerContext,
@@ -72,7 +72,7 @@ namespace Recombee
         /// <summary>
         /// 
         /// </summary>
-        public RecommendationsClient Recommendations => new RecommendationsClient(HttpClient, authorizations: Authorizations, options: Options)
+        public RecommendationsClient Recommendations => new RecommendationsClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerContext = JsonSerializerContext,
@@ -81,7 +81,7 @@ namespace Recombee
         /// <summary>
         /// 
         /// </summary>
-        public SearchClient Search => new SearchClient(HttpClient, authorizations: Authorizations, options: Options)
+        public SearchClient Search => new SearchClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerContext = JsonSerializerContext,
@@ -90,7 +90,7 @@ namespace Recombee
         /// <summary>
         /// 
         /// </summary>
-        public SegmentationsDefinitionClient SegmentationsDefinition => new SegmentationsDefinitionClient(HttpClient, authorizations: Authorizations, options: Options)
+        public SegmentationsDefinitionClient SegmentationsDefinition => new SegmentationsDefinitionClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerContext = JsonSerializerContext,
@@ -99,7 +99,7 @@ namespace Recombee
         /// <summary>
         /// 
         /// </summary>
-        public SeriesClient Series => new SeriesClient(HttpClient, authorizations: Authorizations, options: Options)
+        public SeriesClient Series => new SeriesClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerContext = JsonSerializerContext,
@@ -108,7 +108,7 @@ namespace Recombee
         /// <summary>
         /// 
         /// </summary>
-        public UserItemInteractionsClient UserItemInteractions => new UserItemInteractionsClient(HttpClient, authorizations: Authorizations, options: Options)
+        public UserItemInteractionsClient UserItemInteractions => new UserItemInteractionsClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerContext = JsonSerializerContext,
@@ -117,7 +117,7 @@ namespace Recombee
         /// <summary>
         /// 
         /// </summary>
-        public UserPropertiesClient UserProperties => new UserPropertiesClient(HttpClient, authorizations: Authorizations, options: Options)
+        public UserPropertiesClient UserProperties => new UserPropertiesClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerContext = JsonSerializerContext,
@@ -126,7 +126,7 @@ namespace Recombee
         /// <summary>
         /// 
         /// </summary>
-        public UsersClient Users => new UsersClient(HttpClient, authorizations: Authorizations, options: Options)
+        public UsersClient Users => new UsersClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerContext = JsonSerializerContext,
@@ -165,10 +165,10 @@ namespace Recombee
         /// <param name="options">Client-wide request defaults such as headers, query parameters, retries, and timeout.</param>
         /// <param name="disposeHttpClient">Dispose the HttpClient when the instance is disposed. True by default.</param>
         public RecombeeClient(
-            global::System.Net.Http.HttpClient? httpClient = null,
-            global::System.Uri? baseUri = null,
-            global::System.Collections.Generic.List<global::Recombee.EndPointAuthorization>? authorizations = null,
-            global::Recombee.AutoSDKClientOptions? options = null,
+            global::System.Net.Http.HttpClient? httpClient,
+            global::System.Uri? baseUri,
+            global::System.Collections.Generic.List<global::Recombee.EndPointAuthorization>? authorizations,
+            global::Recombee.AutoSDKClientOptions? options,
             bool disposeHttpClient = true)
         {
 

@@ -38,6 +38,28 @@ namespace Recombee
         /// It is also possible to use the POST HTTP method (for example, in the case of a very long ReQL filter) — query parameters then become body parameters.
         /// </summary>
         /// <param name="databaseId"></param>
+        /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::Recombee.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::Recombee.AutoSDKHttpResponse<global::Recombee.RecommendationResponse>> CreateByDatabaseIdRecommsItemSegmentsItemsAsResponseAsync(
+            string databaseId,
+
+            global::Recombee.RecommendItemsToItemSegmentParameters request,
+            global::Recombee.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Recommend Items to Item Segment<br/>
+        /// Recommends Items that are the most relevant to a particular Segment from a context [Segmentation](https://docs.recombee.com/segmentations).<br/>
+        /// Based on the used Segmentation, this endpoint can be used for example for:<br/>
+        /// - Recommending articles related to a particular topic<br/>
+        /// - Recommending songs belonging to a particular genre<br/>
+        /// - Recommending products produced by a particular brand<br/>
+        /// You need to set the used context Segmentation in the Admin UI in the [Scenario settings](https://docs.recombee.com/scenarios) prior to using this endpoint.<br/>
+        /// The returned items are sorted by relevance (the first item being the most relevant).<br/>
+        /// It is also possible to use the POST HTTP method (for example, in the case of a very long ReQL filter) — query parameters then become body parameters.
+        /// </summary>
+        /// <param name="databaseId"></param>
         /// <param name="contextSegmentId">
         /// ID of the segment from `contextSegmentationId` for which the recommendations are to be generated.
         /// </param>

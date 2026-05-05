@@ -30,6 +30,24 @@ namespace Recombee
         /// An example of a synonym can be `science fiction` for the term `sci-fi`.
         /// </summary>
         /// <param name="databaseId"></param>
+        /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::Recombee.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::Recombee.AutoSDKHttpResponse<global::Recombee.SearchSynonym>> CreateByDatabaseIdSynonymsItemsAsResponseAsync(
+            string databaseId,
+
+            global::Recombee.SearchSynonymParams request,
+            global::Recombee.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Add Search Synonym<br/>
+        /// Adds a new synonym for the [Search items](https://docs.recombee.com/api#search-items).<br/>
+        /// When the `term` is used in the search query, the `synonym` is also used for the full-text search.<br/>
+        /// Unless `oneWay=true`, it works also in the opposite way (`synonym` -&gt; `term`).<br/>
+        /// An example of a synonym can be `science fiction` for the term `sci-fi`.
+        /// </summary>
+        /// <param name="databaseId"></param>
         /// <param name="term">
         /// A word to which the `synonym` is specified.
         /// </param>

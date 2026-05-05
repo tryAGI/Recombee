@@ -31,6 +31,25 @@ namespace Recombee
         /// </summary>
         /// <param name="databaseId"></param>
         /// <param name="segmentationId"></param>
+        /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::Recombee.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::Recombee.AutoSDKHttpResponse> PutByDatabaseIdSegmentationsPropertyBasedBySegmentationIdAsResponseAsync(
+            string databaseId,
+            string segmentationId,
+
+            global::Recombee.CreatePropertyBasedSegmentationParameters request,
+            global::Recombee.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Create Property Based Segmentation<br/>
+        /// Creates a Segmentation that splits the items into segments based on values of a particular item property.<br/>
+        /// A segment is created for each unique value of the property.<br/>
+        /// In case of `set` properties, a segment is created for each value in the set. Item belongs to all these segments.
+        /// </summary>
+        /// <param name="databaseId"></param>
+        /// <param name="segmentationId"></param>
         /// <param name="sourceType">
         /// What type of data should be segmented. Currently only `items` are supported.
         /// </param>

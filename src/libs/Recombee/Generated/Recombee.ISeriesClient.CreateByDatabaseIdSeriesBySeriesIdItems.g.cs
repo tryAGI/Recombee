@@ -27,6 +27,23 @@ namespace Recombee
         /// </summary>
         /// <param name="databaseId"></param>
         /// <param name="seriesId"></param>
+        /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::Recombee.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::Recombee.AutoSDKHttpResponse> CreateByDatabaseIdSeriesBySeriesIdItemsAsResponseAsync(
+            string databaseId,
+            string seriesId,
+
+            global::Recombee.SeriesItem request,
+            global::Recombee.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Insert to Series<br/>
+        /// Inserts an existing item/series into a series of the given seriesId at a position determined by time.
+        /// </summary>
+        /// <param name="databaseId"></param>
+        /// <param name="seriesId"></param>
         /// <param name="itemType">
         /// `item` iff the regular item from the catalog is to be inserted, `series` iff series is inserted as the item.
         /// </param>
