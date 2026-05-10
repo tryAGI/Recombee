@@ -42,5 +42,6 @@ namespace Recombee
         public RecommendNextItemsParameters()
         {
         }
+
     }
 }

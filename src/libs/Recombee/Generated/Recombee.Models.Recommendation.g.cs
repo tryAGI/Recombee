@@ -66,5 +66,6 @@ namespace Recombee
         public Recommendation()
         {
         }
+
     }
 }

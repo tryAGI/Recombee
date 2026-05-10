@@ -53,5 +53,6 @@ namespace Recombee
         public User()
         {
         }
+
     }
 }

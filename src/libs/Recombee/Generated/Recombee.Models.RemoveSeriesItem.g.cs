@@ -54,5 +54,6 @@ namespace Recombee
         public RemoveSeriesItem()
         {
         }
+
     }
 }

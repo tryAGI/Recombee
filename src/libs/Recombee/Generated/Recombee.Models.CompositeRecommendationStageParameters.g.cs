@@ -408,5 +408,6 @@ namespace Recombee
         public CompositeRecommendationStageParameters()
         {
         }
+
     }
 }

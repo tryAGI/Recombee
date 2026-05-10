@@ -75,5 +75,6 @@ namespace Recombee
         public CompositeRecommendationResponse()
         {
         }
+
     }
 }

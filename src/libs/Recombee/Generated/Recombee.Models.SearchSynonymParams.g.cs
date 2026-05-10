@@ -67,5 +67,6 @@ namespace Recombee
         public SearchSynonymParams()
         {
         }
+
     }
 }

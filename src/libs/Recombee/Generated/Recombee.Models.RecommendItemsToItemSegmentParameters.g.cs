@@ -414,5 +414,6 @@ namespace Recombee
         public RecommendItemsToItemSegmentParameters()
         {
         }
+
     }
 }
