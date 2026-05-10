@@ -337,5 +337,6 @@ namespace Recombee
         public RecommendUsersToItemParameters()
         {
         }
+
     }
 }

@@ -77,5 +77,6 @@ namespace Recombee
         public SeriesItem()
         {
         }
+
     }
 }

@@ -155,5 +155,6 @@ namespace Recombee
         public CompositeRecommendationParameters()
         {
         }
+
     }
 }

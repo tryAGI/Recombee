@@ -64,5 +64,6 @@ namespace Recombee
         public CreateManualReQLSegmentationParameters()
         {
         }
+
     }
 }

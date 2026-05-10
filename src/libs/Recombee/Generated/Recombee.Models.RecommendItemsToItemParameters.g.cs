@@ -430,5 +430,6 @@ namespace Recombee
         public RecommendItemsToItemParameters()
         {
         }
+
     }
 }

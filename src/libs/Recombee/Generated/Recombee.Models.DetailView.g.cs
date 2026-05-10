@@ -121,5 +121,6 @@ namespace Recombee
         public DetailView()
         {
         }
+
     }
 }

@@ -365,5 +365,6 @@ namespace Recombee
         public RecommendUsersToUserParameters()
         {
         }
+
     }
 }

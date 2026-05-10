@@ -344,5 +344,6 @@ namespace Recombee
         public SearchItemsParameters()
         {
         }
+
     }
 }

@@ -76,5 +76,6 @@ namespace Recombee
         public CreatePropertyBasedSegmentationParameters()
         {
         }
+
     }
 }

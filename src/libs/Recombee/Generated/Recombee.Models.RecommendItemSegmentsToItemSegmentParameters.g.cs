@@ -244,5 +244,6 @@ namespace Recombee
         public RecommendItemSegmentsToItemSegmentParameters()
         {
         }
+
     }
 }

@@ -132,5 +132,6 @@ namespace Recombee
         public Purchase()
         {
         }
+
     }
 }

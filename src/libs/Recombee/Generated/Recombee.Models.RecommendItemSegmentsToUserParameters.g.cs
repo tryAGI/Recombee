@@ -196,5 +196,6 @@ namespace Recombee
         public RecommendItemSegmentsToUserParameters()
         {
         }
+
     }
 }

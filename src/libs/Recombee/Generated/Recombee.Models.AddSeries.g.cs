@@ -41,5 +41,6 @@ namespace Recombee
         public AddSeries()
         {
         }
+
     }
 }
