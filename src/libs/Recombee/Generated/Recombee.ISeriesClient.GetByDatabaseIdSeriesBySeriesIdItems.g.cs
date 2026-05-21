@@ -18,5 +18,19 @@ namespace Recombee
             string seriesId,
             global::Recombee.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// List Series Items<br/>
+        /// Lists all the items present in the given series, sorted according to their time index values.
+        /// </summary>
+        /// <param name="databaseId"></param>
+        /// <param name="seriesId"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::Recombee.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::Recombee.AutoSDKHttpResponse<global::System.Collections.Generic.IList<global::Recombee.SeriesItem>>> GetByDatabaseIdSeriesBySeriesIdItemsAsResponseAsync(
+            string databaseId,
+            string seriesId,
+            global::Recombee.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

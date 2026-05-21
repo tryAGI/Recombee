@@ -208,5 +208,6 @@ namespace Recombee
         public SearchItemSegmentsParameters()
         {
         }
+
     }
 }

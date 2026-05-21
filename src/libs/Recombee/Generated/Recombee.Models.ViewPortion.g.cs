@@ -144,5 +144,6 @@ namespace Recombee
         public ViewPortion()
         {
         }
+
     }
 }

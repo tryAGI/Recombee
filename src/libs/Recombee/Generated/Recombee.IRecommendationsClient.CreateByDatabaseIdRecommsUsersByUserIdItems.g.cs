@@ -39,6 +39,29 @@ namespace Recombee
         /// </summary>
         /// <param name="databaseId"></param>
         /// <param name="userId"></param>
+        /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::Recombee.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::Recombee.AutoSDKHttpResponse<global::Recombee.RecommendationResponse>> CreateByDatabaseIdRecommsUsersByUserIdItemsAsResponseAsync(
+            string databaseId,
+            string userId,
+
+            global::Recombee.RecommendItemsToUserParameters request,
+            global::Recombee.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Recommend Items to User<br/>
+        /// Based on the user's past interactions (purchases, ratings, etc.) with the items, recommends top-N items that are most likely to be of high value for the given user.<br/>
+        /// The most typical use cases are recommendations on the homepage, in some "Picked just for you" section, or in email.<br/>
+        /// The returned items are sorted by relevance (the first item being the most relevant).<br/>
+        /// Besides the recommended items, also a unique `recommId` is returned in the response. It can be used to:<br/>
+        /// - Let Recombee know that this recommendation was successful (e.g., user clicked one of the recommended items). See [Reported metrics](https://docs.recombee.com/admin_ui#reported-metrics).<br/>
+        /// - Get subsequent recommended items when the user scrolls down (*infinite scroll*) or goes to the next page. See [Recommend Next Items](https://docs.recombee.com/api#recommend-next-items).<br/>
+        /// It is also possible to use POST HTTP method (for example in the case of a very long ReQL filter) - query parameters then become body parameters.
+        /// </summary>
+        /// <param name="databaseId"></param>
+        /// <param name="userId"></param>
         /// <param name="count">
         /// Number of items to be recommended (N for the top-N recommendation).
         /// </param>

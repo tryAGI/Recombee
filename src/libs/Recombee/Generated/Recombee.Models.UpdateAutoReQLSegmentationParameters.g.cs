@@ -63,5 +63,6 @@ namespace Recombee
         public UpdateAutoReQLSegmentationParameters()
         {
         }
+
     }
 }

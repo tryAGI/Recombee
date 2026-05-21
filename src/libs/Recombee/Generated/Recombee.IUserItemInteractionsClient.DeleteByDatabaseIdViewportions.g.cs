@@ -22,5 +22,23 @@ namespace Recombee
             string? sessionId = default,
             global::Recombee.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Delete View Portion<br/>
+        /// Deletes an existing view portion specified by (`userId`, `itemId`, `sessionId`) from the database.
+        /// </summary>
+        /// <param name="databaseId"></param>
+        /// <param name="userId"></param>
+        /// <param name="itemId"></param>
+        /// <param name="sessionId"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::Recombee.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::Recombee.AutoSDKHttpResponse> DeleteByDatabaseIdViewportionsAsResponseAsync(
+            string databaseId,
+            string userId,
+            string itemId,
+            string? sessionId = default,
+            global::Recombee.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

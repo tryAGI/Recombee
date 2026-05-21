@@ -88,5 +88,6 @@ namespace Recombee
         public Segmentation()
         {
         }
+
     }
 }
