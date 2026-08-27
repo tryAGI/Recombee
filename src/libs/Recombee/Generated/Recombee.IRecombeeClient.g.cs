@@ -42,58 +42,58 @@ namespace Recombee
 
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         global::System.Text.Json.Serialization.JsonSerializerContext JsonSerializerContext { get; set; }
 
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ItemPropertiesClient ItemProperties { get; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ItemsClient Items { get; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public MiscellaneousClient Miscellaneous { get; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public RecommendationsClient Recommendations { get; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public SearchClient Search { get; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public SegmentationsDefinitionClient SegmentationsDefinition { get; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public SeriesClient Series { get; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public UserItemInteractionsClient UserItemInteractions { get; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public UserPropertiesClient UserProperties { get; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public UsersClient Users { get; }
 

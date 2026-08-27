@@ -4,7 +4,7 @@
 namespace Recombee
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class CompositeRecommendationResponse
     {
@@ -16,7 +16,7 @@ namespace Recombee
         public required string RecommId { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("source")]
         [global::System.Text.Json.Serialization.JsonRequired]

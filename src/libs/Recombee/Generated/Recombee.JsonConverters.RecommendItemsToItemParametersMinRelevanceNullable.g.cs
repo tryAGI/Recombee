@@ -20,7 +20,7 @@ namespace Recombee.JsonConverters
                     {
                         return global::Recombee.RecommendItemsToItemParametersMinRelevanceExtensions.ToEnum(stringValue);
                     }
-                    
+
                     break;
                 }
                 case global::System.Text.Json.JsonTokenType.Number:
