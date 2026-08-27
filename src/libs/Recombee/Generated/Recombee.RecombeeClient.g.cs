@@ -40,7 +40,7 @@ namespace Recombee
         internal global::System.Lazy<global::System.Text.Json.Serialization.JsonSerializerContext> JsonSerializerContextProvider { get; set; } = new(() => global::Recombee.SourceGenerationContext.Default);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::System.Text.Json.Serialization.JsonSerializerContext JsonSerializerContext
         {
@@ -50,7 +50,7 @@ namespace Recombee
 
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ItemPropertiesClient ItemProperties => new ItemPropertiesClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
@@ -59,7 +59,7 @@ namespace Recombee
         };
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ItemsClient Items => new ItemsClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
@@ -68,7 +68,7 @@ namespace Recombee
         };
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public MiscellaneousClient Miscellaneous => new MiscellaneousClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
@@ -77,7 +77,7 @@ namespace Recombee
         };
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public RecommendationsClient Recommendations => new RecommendationsClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
@@ -86,7 +86,7 @@ namespace Recombee
         };
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public SearchClient Search => new SearchClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
@@ -95,7 +95,7 @@ namespace Recombee
         };
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public SegmentationsDefinitionClient SegmentationsDefinition => new SegmentationsDefinitionClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
@@ -104,7 +104,7 @@ namespace Recombee
         };
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public SeriesClient Series => new SeriesClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
@@ -113,7 +113,7 @@ namespace Recombee
         };
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public UserItemInteractionsClient UserItemInteractions => new UserItemInteractionsClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
@@ -122,7 +122,7 @@ namespace Recombee
         };
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public UserPropertiesClient UserProperties => new UserPropertiesClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
@@ -131,7 +131,7 @@ namespace Recombee
         };
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public UsersClient Users => new UsersClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {

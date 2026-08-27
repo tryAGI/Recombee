@@ -4,7 +4,7 @@
 namespace Recombee
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class SearchItemsParameters
     {
@@ -115,7 +115,7 @@ namespace Recombee
         public string? Booster { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("logic")]
         public global::Recombee.Logic? Logic { get; set; }

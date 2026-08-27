@@ -4,7 +4,7 @@
 namespace Recombee
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class GetUsersResponse
     {

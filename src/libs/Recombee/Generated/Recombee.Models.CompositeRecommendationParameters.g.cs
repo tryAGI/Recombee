@@ -4,7 +4,7 @@
 namespace Recombee
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class CompositeRecommendationParameters
     {
@@ -37,7 +37,7 @@ namespace Recombee
         public string? UserId { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("logic")]
         public global::Recombee.Logic? Logic { get; set; }
