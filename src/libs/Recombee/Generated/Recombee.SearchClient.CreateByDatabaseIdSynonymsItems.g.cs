@@ -45,7 +45,7 @@ namespace Recombee
 
         /// <summary>
         /// Add Search Synonym<br/>
-        /// Adds a new synonym for the [Search items](https://docs.recombee.com/api#search-items).<br/>
+        /// Adds a new synonym for the [Search items](https://docs.recombee.com/api/search#search-items).<br/>
         /// When the `term` is used in the search query, the `synonym` is also used for the full-text search.<br/>
         /// Unless `oneWay=true`, it works also in the opposite way (`synonym` -&gt; `term`).<br/>
         /// An example of a synonym can be `science fiction` for the term `sci-fi`.
@@ -74,7 +74,7 @@ namespace Recombee
         }
         /// <summary>
         /// Add Search Synonym<br/>
-        /// Adds a new synonym for the [Search items](https://docs.recombee.com/api#search-items).<br/>
+        /// Adds a new synonym for the [Search items](https://docs.recombee.com/api/search#search-items).<br/>
         /// When the `term` is used in the search query, the `synonym` is also used for the full-text search.<br/>
         /// Unless `oneWay=true`, it works also in the opposite way (`synonym` -&gt; `term`).<br/>
         /// An example of a synonym can be `science fiction` for the term `sci-fi`.
@@ -514,7 +514,7 @@ namespace Recombee
         }
         /// <summary>
         /// Add Search Synonym<br/>
-        /// Adds a new synonym for the [Search items](https://docs.recombee.com/api#search-items).<br/>
+        /// Adds a new synonym for the [Search items](https://docs.recombee.com/api/search#search-items).<br/>
         /// When the `term` is used in the search query, the `synonym` is also used for the full-text search.<br/>
         /// Unless `oneWay=true`, it works also in the opposite way (`synonym` -&gt; `term`).<br/>
         /// An example of a synonym can be `science fiction` for the term `sci-fi`.

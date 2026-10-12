@@ -9,10 +9,10 @@ namespace Recombee
         /// Returns items that shall be shown to a user as next recommendations when the user e.g. scrolls the page down (*infinite scroll*) or goes to the next page.<br/>
         /// It accepts `recommId` of a base recommendation request (e.g., request from the first page) and the number of items that shall be returned (`count`).<br/>
         /// The base request can be one of:<br/>
-        ///   - [Recommend Items to Item](https://docs.recombee.com/api#recommend-items-to-item)<br/>
-        ///   - [Recommend Items to User](https://docs.recombee.com/api#recommend-items-to-user)<br/>
-        ///   - [Recommend Items to Item Segment](https://docs.recombee.com/api#recommend-items-to-item-segment)<br/>
-        ///   - [Search Items](https://docs.recombee.com/api#search-items)<br/>
+        ///   - [Recommend Items to Item](https://docs.recombee.com/api/recommendations#recommend-items-to-item)<br/>
+        ///   - [Recommend Items to User](https://docs.recombee.com/api/recommendations#recommend-items-to-user)<br/>
+        ///   - [Recommend Items to Item Segment](https://docs.recombee.com/api/recommendations#recommend-items-to-item-segment)<br/>
+        ///   - [Search Items](https://docs.recombee.com/api/search#search-items)<br/>
         /// All the other parameters are inherited from the base request.<br/>
         /// *Recommend next items* can be called many times for a single `recommId` and each call returns different (previously not recommended) items.<br/>
         /// The number of *Recommend next items* calls performed so far is returned in the `numberNextRecommsCalls` field.<br/>
@@ -37,10 +37,10 @@ namespace Recombee
         /// Returns items that shall be shown to a user as next recommendations when the user e.g. scrolls the page down (*infinite scroll*) or goes to the next page.<br/>
         /// It accepts `recommId` of a base recommendation request (e.g., request from the first page) and the number of items that shall be returned (`count`).<br/>
         /// The base request can be one of:<br/>
-        ///   - [Recommend Items to Item](https://docs.recombee.com/api#recommend-items-to-item)<br/>
-        ///   - [Recommend Items to User](https://docs.recombee.com/api#recommend-items-to-user)<br/>
-        ///   - [Recommend Items to Item Segment](https://docs.recombee.com/api#recommend-items-to-item-segment)<br/>
-        ///   - [Search Items](https://docs.recombee.com/api#search-items)<br/>
+        ///   - [Recommend Items to Item](https://docs.recombee.com/api/recommendations#recommend-items-to-item)<br/>
+        ///   - [Recommend Items to User](https://docs.recombee.com/api/recommendations#recommend-items-to-user)<br/>
+        ///   - [Recommend Items to Item Segment](https://docs.recombee.com/api/recommendations#recommend-items-to-item-segment)<br/>
+        ///   - [Search Items](https://docs.recombee.com/api/search#search-items)<br/>
         /// All the other parameters are inherited from the base request.<br/>
         /// *Recommend next items* can be called many times for a single `recommId` and each call returns different (previously not recommended) items.<br/>
         /// The number of *Recommend next items* calls performed so far is returned in the `numberNextRecommsCalls` field.<br/>
@@ -65,10 +65,10 @@ namespace Recombee
         /// Returns items that shall be shown to a user as next recommendations when the user e.g. scrolls the page down (*infinite scroll*) or goes to the next page.<br/>
         /// It accepts `recommId` of a base recommendation request (e.g., request from the first page) and the number of items that shall be returned (`count`).<br/>
         /// The base request can be one of:<br/>
-        ///   - [Recommend Items to Item](https://docs.recombee.com/api#recommend-items-to-item)<br/>
-        ///   - [Recommend Items to User](https://docs.recombee.com/api#recommend-items-to-user)<br/>
-        ///   - [Recommend Items to Item Segment](https://docs.recombee.com/api#recommend-items-to-item-segment)<br/>
-        ///   - [Search Items](https://docs.recombee.com/api#search-items)<br/>
+        ///   - [Recommend Items to Item](https://docs.recombee.com/api/recommendations#recommend-items-to-item)<br/>
+        ///   - [Recommend Items to User](https://docs.recombee.com/api/recommendations#recommend-items-to-user)<br/>
+        ///   - [Recommend Items to Item Segment](https://docs.recombee.com/api/recommendations#recommend-items-to-item-segment)<br/>
+        ///   - [Search Items](https://docs.recombee.com/api/search#search-items)<br/>
         /// All the other parameters are inherited from the base request.<br/>
         /// *Recommend next items* can be called many times for a single `recommId` and each call returns different (previously not recommended) items.<br/>
         /// The number of *Recommend next items* calls performed so far is returned in the `numberNextRecommsCalls` field.<br/>

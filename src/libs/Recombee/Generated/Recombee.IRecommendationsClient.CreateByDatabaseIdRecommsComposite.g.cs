@@ -8,22 +8,22 @@ namespace Recombee
         /// Composite Recommendation<br/>
         /// Composite Recommendation returns both a *source entity* (e.g., an Item or [Item Segment](https://docs.recombee.com/segmentations)) and a list of related recommendations in a single response.<br/>
         /// It is ideal for use cases such as personalized homepage sections (*Articles from &lt;category&gt;*), *Because You Watched &lt;movie&gt;*, or *Artists Related to Your Favorite Artist &lt;artist&gt;*.<br/>
-        /// See detailed **examples and configuration guidance** in the [Composite Scenarios documentation](https://docs.recombee.com/scenarios#composite-recommendations).<br/>
+        /// See detailed **examples and configuration guidance** in the [Composite Scenarios documentation](https://docs.recombee.com/scenarios/composite-recommendations).<br/>
         /// **Structure**<br/>
         /// The endpoint operates in two stages:<br/>
         /// 1. Recommends the *source* (e.g., an Item Segment or item) to the user.<br/>
         /// 2. Recommends *results* (items or Item Segments) related to that *source*.<br/>
         /// For example, *Articles from &lt;category&gt;* can be decomposed into:<br/>
-        ///   - [Recommend Item Segments To User](https://docs.recombee.com/api#recommend-item-segments-to-user) to find the category.<br/>
-        ///   - [Recommend Items To Item Segment](https://docs.recombee.com/api#recommend-items-to-item-segment) to recommend articles from that category.<br/>
-        /// Since the first step uses [Recommend Item Segments To User](https://docs.recombee.com/api#recommend-items-to-user), you must include the `userId` parameter in the *Composite Recommendation* request.<br/>
+        ///   - [Recommend Item Segments To User](https://docs.recombee.com/api/recommendations#recommend-item-segments-to-user) to find the category.<br/>
+        ///   - [Recommend Items To Item Segment](https://docs.recombee.com/api/recommendations#recommend-items-to-item-segment) to recommend articles from that category.<br/>
+        /// Since the first step uses [Recommend Item Segments To User](https://docs.recombee.com/api/recommendations#recommend-items-to-user), you must include the `userId` parameter in the *Composite Recommendation* request.<br/>
         /// Each *Composite Recommendation* counts as a single recommendation API request for billing.<br/>
         /// **Stage-specific Parameters**<br/>
-        /// Additional parameters can be supplied via [sourceSettings](https://docs.recombee.com/api#composite-recommendation-param-sourceSettings) and [resultSettings](https://docs.recombee.com/api#composite-recommendation-param-resultSettings).<br/>
+        /// Additional parameters can be supplied via [sourceSettings](https://docs.recombee.com/api/recommendations#composite-recommendation-param-sourceSettings) and [resultSettings](https://docs.recombee.com/api/recommendations#composite-recommendation-param-resultSettings).<br/>
         /// In the example above:<br/>
-        ///   - `sourceSettings` may include any parameter valid for [Recommend Item Segments To User](https://docs.recombee.com/api#recommend-items-to-user) (e.g., `filter`, `booster`).<br/>
-        ///   - `resultSettings` may include any parameter valid for [Recommend Items To Item Segment](https://docs.recombee.com/api#recommend-items-to-item-segment).<br/>
-        /// See [this example](https://docs.recombee.com/api#composite-recommendation-example-setting-parameters-for-individual-stages) for more details.
+        ///   - `sourceSettings` may include any parameter valid for [Recommend Item Segments To User](https://docs.recombee.com/api/recommendations#recommend-items-to-user) (e.g., `filter`, `booster`).<br/>
+        ///   - `resultSettings` may include any parameter valid for [Recommend Items To Item Segment](https://docs.recombee.com/api/recommendations#recommend-items-to-item-segment).<br/>
+        /// See [this example](https://docs.recombee.com/api/recommendations#composite-recommendation-example-setting-parameters-for-individual-stages) for more details.
         /// </summary>
         /// <param name="databaseId"></param>
         /// <param name="request"></param>
@@ -40,22 +40,22 @@ namespace Recombee
         /// Composite Recommendation<br/>
         /// Composite Recommendation returns both a *source entity* (e.g., an Item or [Item Segment](https://docs.recombee.com/segmentations)) and a list of related recommendations in a single response.<br/>
         /// It is ideal for use cases such as personalized homepage sections (*Articles from &lt;category&gt;*), *Because You Watched &lt;movie&gt;*, or *Artists Related to Your Favorite Artist &lt;artist&gt;*.<br/>
-        /// See detailed **examples and configuration guidance** in the [Composite Scenarios documentation](https://docs.recombee.com/scenarios#composite-recommendations).<br/>
+        /// See detailed **examples and configuration guidance** in the [Composite Scenarios documentation](https://docs.recombee.com/scenarios/composite-recommendations).<br/>
         /// **Structure**<br/>
         /// The endpoint operates in two stages:<br/>
         /// 1. Recommends the *source* (e.g., an Item Segment or item) to the user.<br/>
         /// 2. Recommends *results* (items or Item Segments) related to that *source*.<br/>
         /// For example, *Articles from &lt;category&gt;* can be decomposed into:<br/>
-        ///   - [Recommend Item Segments To User](https://docs.recombee.com/api#recommend-item-segments-to-user) to find the category.<br/>
-        ///   - [Recommend Items To Item Segment](https://docs.recombee.com/api#recommend-items-to-item-segment) to recommend articles from that category.<br/>
-        /// Since the first step uses [Recommend Item Segments To User](https://docs.recombee.com/api#recommend-items-to-user), you must include the `userId` parameter in the *Composite Recommendation* request.<br/>
+        ///   - [Recommend Item Segments To User](https://docs.recombee.com/api/recommendations#recommend-item-segments-to-user) to find the category.<br/>
+        ///   - [Recommend Items To Item Segment](https://docs.recombee.com/api/recommendations#recommend-items-to-item-segment) to recommend articles from that category.<br/>
+        /// Since the first step uses [Recommend Item Segments To User](https://docs.recombee.com/api/recommendations#recommend-items-to-user), you must include the `userId` parameter in the *Composite Recommendation* request.<br/>
         /// Each *Composite Recommendation* counts as a single recommendation API request for billing.<br/>
         /// **Stage-specific Parameters**<br/>
-        /// Additional parameters can be supplied via [sourceSettings](https://docs.recombee.com/api#composite-recommendation-param-sourceSettings) and [resultSettings](https://docs.recombee.com/api#composite-recommendation-param-resultSettings).<br/>
+        /// Additional parameters can be supplied via [sourceSettings](https://docs.recombee.com/api/recommendations#composite-recommendation-param-sourceSettings) and [resultSettings](https://docs.recombee.com/api/recommendations#composite-recommendation-param-resultSettings).<br/>
         /// In the example above:<br/>
-        ///   - `sourceSettings` may include any parameter valid for [Recommend Item Segments To User](https://docs.recombee.com/api#recommend-items-to-user) (e.g., `filter`, `booster`).<br/>
-        ///   - `resultSettings` may include any parameter valid for [Recommend Items To Item Segment](https://docs.recombee.com/api#recommend-items-to-item-segment).<br/>
-        /// See [this example](https://docs.recombee.com/api#composite-recommendation-example-setting-parameters-for-individual-stages) for more details.
+        ///   - `sourceSettings` may include any parameter valid for [Recommend Item Segments To User](https://docs.recombee.com/api/recommendations#recommend-items-to-user) (e.g., `filter`, `booster`).<br/>
+        ///   - `resultSettings` may include any parameter valid for [Recommend Items To Item Segment](https://docs.recombee.com/api/recommendations#recommend-items-to-item-segment).<br/>
+        /// See [this example](https://docs.recombee.com/api/recommendations#composite-recommendation-example-setting-parameters-for-individual-stages) for more details.
         /// </summary>
         /// <param name="databaseId"></param>
         /// <param name="request"></param>
@@ -72,22 +72,22 @@ namespace Recombee
         /// Composite Recommendation<br/>
         /// Composite Recommendation returns both a *source entity* (e.g., an Item or [Item Segment](https://docs.recombee.com/segmentations)) and a list of related recommendations in a single response.<br/>
         /// It is ideal for use cases such as personalized homepage sections (*Articles from &lt;category&gt;*), *Because You Watched &lt;movie&gt;*, or *Artists Related to Your Favorite Artist &lt;artist&gt;*.<br/>
-        /// See detailed **examples and configuration guidance** in the [Composite Scenarios documentation](https://docs.recombee.com/scenarios#composite-recommendations).<br/>
+        /// See detailed **examples and configuration guidance** in the [Composite Scenarios documentation](https://docs.recombee.com/scenarios/composite-recommendations).<br/>
         /// **Structure**<br/>
         /// The endpoint operates in two stages:<br/>
         /// 1. Recommends the *source* (e.g., an Item Segment or item) to the user.<br/>
         /// 2. Recommends *results* (items or Item Segments) related to that *source*.<br/>
         /// For example, *Articles from &lt;category&gt;* can be decomposed into:<br/>
-        ///   - [Recommend Item Segments To User](https://docs.recombee.com/api#recommend-item-segments-to-user) to find the category.<br/>
-        ///   - [Recommend Items To Item Segment](https://docs.recombee.com/api#recommend-items-to-item-segment) to recommend articles from that category.<br/>
-        /// Since the first step uses [Recommend Item Segments To User](https://docs.recombee.com/api#recommend-items-to-user), you must include the `userId` parameter in the *Composite Recommendation* request.<br/>
+        ///   - [Recommend Item Segments To User](https://docs.recombee.com/api/recommendations#recommend-item-segments-to-user) to find the category.<br/>
+        ///   - [Recommend Items To Item Segment](https://docs.recombee.com/api/recommendations#recommend-items-to-item-segment) to recommend articles from that category.<br/>
+        /// Since the first step uses [Recommend Item Segments To User](https://docs.recombee.com/api/recommendations#recommend-items-to-user), you must include the `userId` parameter in the *Composite Recommendation* request.<br/>
         /// Each *Composite Recommendation* counts as a single recommendation API request for billing.<br/>
         /// **Stage-specific Parameters**<br/>
-        /// Additional parameters can be supplied via [sourceSettings](https://docs.recombee.com/api#composite-recommendation-param-sourceSettings) and [resultSettings](https://docs.recombee.com/api#composite-recommendation-param-resultSettings).<br/>
+        /// Additional parameters can be supplied via [sourceSettings](https://docs.recombee.com/api/recommendations#composite-recommendation-param-sourceSettings) and [resultSettings](https://docs.recombee.com/api/recommendations#composite-recommendation-param-resultSettings).<br/>
         /// In the example above:<br/>
-        ///   - `sourceSettings` may include any parameter valid for [Recommend Item Segments To User](https://docs.recombee.com/api#recommend-items-to-user) (e.g., `filter`, `booster`).<br/>
-        ///   - `resultSettings` may include any parameter valid for [Recommend Items To Item Segment](https://docs.recombee.com/api#recommend-items-to-item-segment).<br/>
-        /// See [this example](https://docs.recombee.com/api#composite-recommendation-example-setting-parameters-for-individual-stages) for more details.
+        ///   - `sourceSettings` may include any parameter valid for [Recommend Item Segments To User](https://docs.recombee.com/api/recommendations#recommend-items-to-user) (e.g., `filter`, `booster`).<br/>
+        ///   - `resultSettings` may include any parameter valid for [Recommend Items To Item Segment](https://docs.recombee.com/api/recommendations#recommend-items-to-item-segment).<br/>
+        /// See [this example](https://docs.recombee.com/api/recommendations#composite-recommendation-example-setting-parameters-for-individual-stages) for more details.
         /// </summary>
         /// <param name="databaseId"></param>
         /// <param name="scenario">

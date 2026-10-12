@@ -40,7 +40,7 @@ namespace Recombee
 
         /// <summary>
         /// Delete Search Synonym<br/>
-        /// Deletes synonym of the given `id`. This synonym is no longer taken into account in the [Search items](https://docs.recombee.com/api#search-items).
+        /// Deletes synonym of the given `id`. This synonym is no longer taken into account in the [Search items](https://docs.recombee.com/api/search#search-items).
         /// </summary>
         /// <param name="databaseId"></param>
         /// <param name="id"></param>
@@ -62,7 +62,7 @@ namespace Recombee
         }
         /// <summary>
         /// Delete Search Synonym<br/>
-        /// Deletes synonym of the given `id`. This synonym is no longer taken into account in the [Search items](https://docs.recombee.com/api#search-items).
+        /// Deletes synonym of the given `id`. This synonym is no longer taken into account in the [Search items](https://docs.recombee.com/api/search#search-items).
         /// </summary>
         /// <param name="databaseId"></param>
         /// <param name="id"></param>
