@@ -5,9 +5,9 @@ namespace Recombee
 {
     /// <summary>
     /// **Expert option:** Only usable if the stage corresponds to the one of these recommendation endpoints:<br/>
-    /// - [Recommend Items To User](https://docs.recombee.com/api#recommend-items-to-user)<br/>
-    /// - [Recommend Items To Item](https://docs.recombee.com/api#recommend-items-to-item)<br/>
-    /// - [Recommend Items to Item Segment](https://docs.recombee.com/api#recommend-items-to-item-segment)<br/>
+    /// - [Recommend Items To User](https://docs.recombee.com/api/recommendations#recommend-items-to-user)<br/>
+    /// - [Recommend Items To Item](https://docs.recombee.com/api/recommendations#recommend-items-to-item)<br/>
+    /// - [Recommend Items to Item Segment](https://docs.recombee.com/api/recommendations#recommend-items-to-item-segment)<br/>
     /// If the *userId* is provided:  Specifies the threshold of how relevant must the recommended items be to the user.<br/>
     /// Possible values one of: `"low"`, `"medium"`, `"high"`.<br/>
     /// The default value is `"low"`, meaning that the system attempts to recommend a number of items equal to *count* at any cost. If there is not enough data (such as interactions or item properties), this may even lead to bestseller-based recommendations being appended to reach the full *count*.<br/>

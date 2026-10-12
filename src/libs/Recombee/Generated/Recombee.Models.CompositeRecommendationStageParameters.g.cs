@@ -114,11 +114,11 @@ namespace Recombee
 
         /// <summary>
         /// Only usable if the stage corresponds to the one of these recommendation endpoints:<br/>
-        /// - [Recommend Items To User](https://docs.recombee.com/api#recommend-items-to-user)<br/>
-        /// - [Recommend Items To Item](https://docs.recombee.com/api#recommend-items-to-item)<br/>
-        /// - [Recommend Items to Item Segment](https://docs.recombee.com/api#recommend-items-to-item-segment)<br/>
-        /// - [Recommend Users to Item](https://docs.recombee.com/api#recommend-users-to-item)<br/>
-        /// - [Recommend Users To User](https://docs.recombee.com/api#recommend-users-to-user)<br/>
+        /// - [Recommend Items To User](https://docs.recombee.com/api/recommendations#recommend-items-to-user)<br/>
+        /// - [Recommend Items To Item](https://docs.recombee.com/api/recommendations#recommend-items-to-item)<br/>
+        /// - [Recommend Items to Item Segment](https://docs.recombee.com/api/recommendations#recommend-items-to-item-segment)<br/>
+        /// - [Recommend Users to Item](https://docs.recombee.com/api/recommendations#recommend-users-to-item)<br/>
+        /// - [Recommend Users To User](https://docs.recombee.com/api/recommendations#recommend-users-to-user)<br/>
         /// A dictionary of [ReQL](https://docs.recombee.com/reql) expressions that will be executed for each recommended item.<br/>
         /// This can be used to compute additional properties of the recommended items that are not stored in the database.<br/>
         /// The keys are the names of the expressions, and the values are the actual ReQL expressions.<br/>
@@ -168,9 +168,9 @@ namespace Recombee
 
         /// <summary>
         /// **Expert option:** Only usable if the stage corresponds to the one of these recommendation endpoints:<br/>
-        /// - [Recommend Items To User](https://docs.recombee.com/api#recommend-items-to-user)<br/>
-        /// - [Recommend Items To Item](https://docs.recombee.com/api#recommend-items-to-item)<br/>
-        /// - [Recommend Items to Item Segment](https://docs.recombee.com/api#recommend-items-to-item-segment)<br/>
+        /// - [Recommend Items To User](https://docs.recombee.com/api/recommendations#recommend-items-to-user)<br/>
+        /// - [Recommend Items To Item](https://docs.recombee.com/api/recommendations#recommend-items-to-item)<br/>
+        /// - [Recommend Items to Item Segment](https://docs.recombee.com/api/recommendations#recommend-items-to-item-segment)<br/>
         /// If the *userId* is provided:  Specifies the threshold of how relevant must the recommended items be to the user.<br/>
         /// Possible values one of: `"low"`, `"medium"`, `"high"`.<br/>
         /// The default value is `"low"`, meaning that the system attempts to recommend a number of items equal to *count* at any cost. If there is not enough data (such as interactions or item properties), this may even lead to bestseller-based recommendations being appended to reach the full *count*.<br/>
@@ -182,10 +182,10 @@ namespace Recombee
 
         /// <summary>
         /// **Expert option:** Only usable if the stage corresponds to the one of these recommendation endpoints:<br/>
-        /// - [Recommend Items To User](https://docs.recombee.com/api#recommend-items-to-user)<br/>
-        /// - [Recommend Items To Item](https://docs.recombee.com/api#recommend-items-to-item)<br/>
-        /// - [Recommend Items to Item Segment](https://docs.recombee.com/api#recommend-items-to-item-segment)<br/>
-        /// - [Recommend Users To User](https://docs.recombee.com/api#recommend-users-to-user)<br/>
+        /// - [Recommend Items To User](https://docs.recombee.com/api/recommendations#recommend-items-to-user)<br/>
+        /// - [Recommend Items To Item](https://docs.recombee.com/api/recommendations#recommend-items-to-item)<br/>
+        /// - [Recommend Items to Item Segment](https://docs.recombee.com/api/recommendations#recommend-items-to-item-segment)<br/>
+        /// - [Recommend Users To User](https://docs.recombee.com/api/recommendations#recommend-users-to-user)<br/>
         /// If the *userId* is provided: If your users browse the system in real-time, it may easily happen that you wish to offer them recommendations multiple times. Here comes the question: how much should the recommendations change? Should they remain the same, or should they rotate? Recombee API allows you to control this per request in a backward fashion.<br/>
         /// You may penalize an item for being recommended in the near past. For the specific user, `rotationRate=1` means maximal rotation, `rotationRate=0` means absolutely no rotation. You may also use, for example, `rotationRate=0.2` for only slight rotation of recommended items.
         /// </summary>
@@ -194,10 +194,10 @@ namespace Recombee
 
         /// <summary>
         /// **Expert option:** Only usable if the stage corresponds to the one of these recommendation endpoints:<br/>
-        /// - [Recommend Items To User](https://docs.recombee.com/api#recommend-items-to-user)<br/>
-        /// - [Recommend Items To Item](https://docs.recombee.com/api#recommend-items-to-item)<br/>
-        /// - [Recommend Items to Item Segment](https://docs.recombee.com/api#recommend-items-to-item-segment)<br/>
-        /// - [Recommend Users To User](https://docs.recombee.com/api#recommend-users-to-user)<br/>
+        /// - [Recommend Items To User](https://docs.recombee.com/api/recommendations#recommend-items-to-user)<br/>
+        /// - [Recommend Items To Item](https://docs.recombee.com/api/recommendations#recommend-items-to-item)<br/>
+        /// - [Recommend Items to Item Segment](https://docs.recombee.com/api/recommendations#recommend-items-to-item-segment)<br/>
+        /// - [Recommend Users To User](https://docs.recombee.com/api/recommendations#recommend-users-to-user)<br/>
         /// If the *userId* is provided: Taking *rotationRate* into account, specifies how long it takes for an item to recover from the penalization. For example, `rotationTime=7200.0` means that items recommended less than 2 hours ago are penalized.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("rotationTime")]
@@ -301,11 +301,11 @@ namespace Recombee
         /// <param name="logic"></param>
         /// <param name="reqlExpressions">
         /// Only usable if the stage corresponds to the one of these recommendation endpoints:<br/>
-        /// - [Recommend Items To User](https://docs.recombee.com/api#recommend-items-to-user)<br/>
-        /// - [Recommend Items To Item](https://docs.recombee.com/api#recommend-items-to-item)<br/>
-        /// - [Recommend Items to Item Segment](https://docs.recombee.com/api#recommend-items-to-item-segment)<br/>
-        /// - [Recommend Users to Item](https://docs.recombee.com/api#recommend-users-to-item)<br/>
-        /// - [Recommend Users To User](https://docs.recombee.com/api#recommend-users-to-user)<br/>
+        /// - [Recommend Items To User](https://docs.recombee.com/api/recommendations#recommend-items-to-user)<br/>
+        /// - [Recommend Items To Item](https://docs.recombee.com/api/recommendations#recommend-items-to-item)<br/>
+        /// - [Recommend Items to Item Segment](https://docs.recombee.com/api/recommendations#recommend-items-to-item-segment)<br/>
+        /// - [Recommend Users to Item](https://docs.recombee.com/api/recommendations#recommend-users-to-item)<br/>
+        /// - [Recommend Users To User](https://docs.recombee.com/api/recommendations#recommend-users-to-user)<br/>
         /// A dictionary of [ReQL](https://docs.recombee.com/reql) expressions that will be executed for each recommended item.<br/>
         /// This can be used to compute additional properties of the recommended items that are not stored in the database.<br/>
         /// The keys are the names of the expressions, and the values are the actual ReQL expressions.<br/>
@@ -352,9 +352,9 @@ namespace Recombee
         /// </param>
         /// <param name="minRelevance">
         /// **Expert option:** Only usable if the stage corresponds to the one of these recommendation endpoints:<br/>
-        /// - [Recommend Items To User](https://docs.recombee.com/api#recommend-items-to-user)<br/>
-        /// - [Recommend Items To Item](https://docs.recombee.com/api#recommend-items-to-item)<br/>
-        /// - [Recommend Items to Item Segment](https://docs.recombee.com/api#recommend-items-to-item-segment)<br/>
+        /// - [Recommend Items To User](https://docs.recombee.com/api/recommendations#recommend-items-to-user)<br/>
+        /// - [Recommend Items To Item](https://docs.recombee.com/api/recommendations#recommend-items-to-item)<br/>
+        /// - [Recommend Items to Item Segment](https://docs.recombee.com/api/recommendations#recommend-items-to-item-segment)<br/>
         /// If the *userId* is provided:  Specifies the threshold of how relevant must the recommended items be to the user.<br/>
         /// Possible values one of: `"low"`, `"medium"`, `"high"`.<br/>
         /// The default value is `"low"`, meaning that the system attempts to recommend a number of items equal to *count* at any cost. If there is not enough data (such as interactions or item properties), this may even lead to bestseller-based recommendations being appended to reach the full *count*.<br/>
@@ -362,19 +362,19 @@ namespace Recombee
         /// </param>
         /// <param name="rotationRate">
         /// **Expert option:** Only usable if the stage corresponds to the one of these recommendation endpoints:<br/>
-        /// - [Recommend Items To User](https://docs.recombee.com/api#recommend-items-to-user)<br/>
-        /// - [Recommend Items To Item](https://docs.recombee.com/api#recommend-items-to-item)<br/>
-        /// - [Recommend Items to Item Segment](https://docs.recombee.com/api#recommend-items-to-item-segment)<br/>
-        /// - [Recommend Users To User](https://docs.recombee.com/api#recommend-users-to-user)<br/>
+        /// - [Recommend Items To User](https://docs.recombee.com/api/recommendations#recommend-items-to-user)<br/>
+        /// - [Recommend Items To Item](https://docs.recombee.com/api/recommendations#recommend-items-to-item)<br/>
+        /// - [Recommend Items to Item Segment](https://docs.recombee.com/api/recommendations#recommend-items-to-item-segment)<br/>
+        /// - [Recommend Users To User](https://docs.recombee.com/api/recommendations#recommend-users-to-user)<br/>
         /// If the *userId* is provided: If your users browse the system in real-time, it may easily happen that you wish to offer them recommendations multiple times. Here comes the question: how much should the recommendations change? Should they remain the same, or should they rotate? Recombee API allows you to control this per request in a backward fashion.<br/>
         /// You may penalize an item for being recommended in the near past. For the specific user, `rotationRate=1` means maximal rotation, `rotationRate=0` means absolutely no rotation. You may also use, for example, `rotationRate=0.2` for only slight rotation of recommended items.
         /// </param>
         /// <param name="rotationTime">
         /// **Expert option:** Only usable if the stage corresponds to the one of these recommendation endpoints:<br/>
-        /// - [Recommend Items To User](https://docs.recombee.com/api#recommend-items-to-user)<br/>
-        /// - [Recommend Items To Item](https://docs.recombee.com/api#recommend-items-to-item)<br/>
-        /// - [Recommend Items to Item Segment](https://docs.recombee.com/api#recommend-items-to-item-segment)<br/>
-        /// - [Recommend Users To User](https://docs.recombee.com/api#recommend-users-to-user)<br/>
+        /// - [Recommend Items To User](https://docs.recombee.com/api/recommendations#recommend-items-to-user)<br/>
+        /// - [Recommend Items To Item](https://docs.recombee.com/api/recommendations#recommend-items-to-item)<br/>
+        /// - [Recommend Items to Item Segment](https://docs.recombee.com/api/recommendations#recommend-items-to-item-segment)<br/>
+        /// - [Recommend Users To User](https://docs.recombee.com/api/recommendations#recommend-users-to-user)<br/>
         /// If the *userId* is provided: Taking *rotationRate* into account, specifies how long it takes for an item to recover from the penalization. For example, `rotationTime=7200.0` means that items recommended less than 2 hours ago are penalized.
         /// </param>
 #if NET7_0_OR_GREATER

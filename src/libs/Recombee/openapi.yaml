@@ -74,7 +74,7 @@ paths:
             item was already not present. If there is no additional info in the JSON response, you probably have an error in your URL.
     post:
       summary: Set Item Values
-      description: 'Sets/updates (some) property values of the given item. The properties (columns) must be previously created by [Add item property](https://docs.recombee.com/api#add-item-property).
+      description: 'Sets/updates (some) property values of the given item. The properties (columns) must be previously created by [Add item property](https://docs.recombee.com/api/item-properties#add-item-property).
 
         '
       tags:
@@ -754,7 +754,7 @@ paths:
             since the user was already not present. If there is no additional info in the JSON response, you probably have an error in your URL.
     post:
       summary: Set User Values
-      description: 'Sets/updates (some) property values of the given user. The properties (columns) must be previously created by [Add user property](https://docs.recombee.com/api#add-user-property).
+      description: 'Sets/updates (some) property values of the given user. The properties (columns) must be previously created by [Add user property](https://docs.recombee.com/api/user-properties#add-user-property).
 
         '
       tags:
@@ -2116,7 +2116,7 @@ paths:
 
         - Let Recombee know that this recommendation was successful (e.g., user clicked one of the recommended items). See [Reported metrics](https://docs.recombee.com/admin_ui#reported-metrics).
 
-        - Get subsequent recommended items when the user scrolls down (*infinite scroll*) or goes to the next page. See [Recommend Next Items](https://docs.recombee.com/api#recommend-next-items).
+        - Get subsequent recommended items when the user scrolls down (*infinite scroll*) or goes to the next page. See [Recommend Next Items](https://docs.recombee.com/api/recommendations#recommend-next-items).
 
 
         It is also possible to use POST HTTP method (for example in the case of a very long ReQL filter) - query parameters then become body parameters.
@@ -2180,7 +2180,7 @@ paths:
 
         - Let Recombee know that this recommendation was successful (e.g., user clicked one of the recommended items). See [Reported metrics](https://docs.recombee.com/admin_ui#reported-metrics).
 
-        - Get subsequent recommended items when the user scrolls down (*infinite scroll*) or goes to the next page. See [Recommend Next Items](https://docs.recombee.com/api#recommend-next-items).
+        - Get subsequent recommended items when the user scrolls down (*infinite scroll*) or goes to the next page. See [Recommend Next Items](https://docs.recombee.com/api/recommendations#recommend-next-items).
 
 
         It is also possible to use POST HTTP method (for example in the case of a very long ReQL filter) - query parameters then become body parameters.
@@ -2294,12 +2294,12 @@ paths:
     post:
       summary: Recommend Next Items
       description: "Returns items that shall be shown to a user as next recommendations when the user e.g. scrolls the page down (*infinite scroll*) or goes to the next page.\n\nIt accepts `recommId` of\
-        \ a base recommendation request (e.g., request from the first page) and the number of items that shall be returned (`count`).\nThe base request can be one of:\n  - [Recommend Items to Item](https://docs.recombee.com/api#recommend-items-to-item)\n\
-        \  - [Recommend Items to User](https://docs.recombee.com/api#recommend-items-to-user)\n  - [Recommend Items to Item Segment](https://docs.recombee.com/api#recommend-items-to-item-segment)\n  - [Search\
-        \ Items](https://docs.recombee.com/api#search-items)\n\nAll the other parameters are inherited from the base request.\n\n*Recommend next items* can be called many times for a single `recommId` and\
-        \ each call returns different (previously not recommended) items.\nThe number of *Recommend next items* calls performed so far is returned in the `numberNextRecommsCalls` field.\n\n*Recommend next\
-        \ items* can be requested up to 30 minutes after the base request or a previous *Recommend next items* call.\n\nFor billing purposes, each call to *Recommend next items* is counted as a separate\
-        \ recommendation request.\n"
+        \ a base recommendation request (e.g., request from the first page) and the number of items that shall be returned (`count`).\nThe base request can be one of:\n  - [Recommend Items to Item](https://docs.recombee.com/api/recommendations#recommend-items-to-item)\n\
+        \  - [Recommend Items to User](https://docs.recombee.com/api/recommendations#recommend-items-to-user)\n  - [Recommend Items to Item Segment](https://docs.recombee.com/api/recommendations#recommend-items-to-item-segment)\n\
+        \  - [Search Items](https://docs.recombee.com/api/search#search-items)\n\nAll the other parameters are inherited from the base request.\n\n*Recommend next items* can be called many times for a single\
+        \ `recommId` and each call returns different (previously not recommended) items.\nThe number of *Recommend next items* calls performed so far is returned in the `numberNextRecommsCalls` field.\n\
+        \n*Recommend next items* can be requested up to 30 minutes after the base request or a previous *Recommend next items* call.\n\nFor billing purposes, each call to *Recommend next items* is counted\
+        \ as a separate recommendation request.\n"
       tags:
       - Recommendations
       parameters:
@@ -2600,8 +2600,8 @@ paths:
       summary: Recommend Next Item Segments
       description: "Returns [Item Segments](https://docs.recombee.com/segmentations) to be shown as the next recommendations when a user scrolls (e.g., within a carousel or feed of Item Segments such as\
         \ brands, artists, topics, or categories).\n\nThe request requires the `recommId` of a base recommendation request and the number of Segments to return (`count`).\n\nThe base request can be one\
-        \ of:\n  - [Recommend Item Segments to Item](https://docs.recombee.com/api#recommend-item-segments-to-item)\n  - [Recommend Item Segments to User](https://docs.recombee.com/api#recommend-item-segments-to-user)\n\
-        \  - [Recommend Item Segments to Item Segment](https://docs.recombee.com/api#recommend-item-segments-to-item-segment)\n  - [Search Item Segments](https://docs.recombee.com/api#search-item-segments)\n\
+        \ of:\n  - [Recommend Item Segments to Item](https://docs.recombee.com/api/recommendations#recommend-item-segments-to-item)\n  - [Recommend Item Segments to User](https://docs.recombee.com/api/recommendations#recommend-item-segments-to-user)\n\
+        \  - [Recommend Item Segments to Item Segment](https://docs.recombee.com/api/recommendations#recommend-item-segments-to-item-segment)\n  - [Search Item Segments](https://docs.recombee.com/api/search#search-item-segments)\n\
         \nAll other parameters are inherited from the base request associated with the provided `recommId`.\n\nThis endpoint can be called multiple times for a single `recommId`. Each call returns different\
         \ Item Segments that have not been recommended in previous calls.\nThe number of calls made so far is returned in the `numberNextRecommsCalls` field.\n\nRequests can be made up to 30 minutes after\
         \ the base request or the most recent Recommend Next Item Segments call.\n\nFor billing purposes, each call to this endpoint is counted as a separate recommendation request.\n"
@@ -2652,14 +2652,15 @@ paths:
       summary: Composite Recommendation
       description: "Composite Recommendation returns both a *source entity* (e.g., an Item or [Item Segment](https://docs.recombee.com/segmentations)) and a list of related recommendations in a single response.\n\
         \nIt is ideal for use cases such as personalized homepage sections (*Articles from <category>*), *Because You Watched <movie>*, or *Artists Related to Your Favorite Artist <artist>*.\n\nSee detailed\
-        \ **examples and configuration guidance** in the [Composite Scenarios documentation](https://docs.recombee.com/scenarios#composite-recommendations).\n\n**Structure**\n\nThe endpoint operates in\
+        \ **examples and configuration guidance** in the [Composite Scenarios documentation](https://docs.recombee.com/scenarios/composite-recommendations).\n\n**Structure**\n\nThe endpoint operates in\
         \ two stages:\n1. Recommends the *source* (e.g., an Item Segment or item) to the user.\n2. Recommends *results* (items or Item Segments) related to that *source*.\n\nFor example, *Articles from\
-        \ <category>* can be decomposed into:\n  - [Recommend Item Segments To User](https://docs.recombee.com/api#recommend-item-segments-to-user) to find the category.\n  - [Recommend Items To Item Segment](https://docs.recombee.com/api#recommend-items-to-item-segment)\
-        \ to recommend articles from that category.\n\nSince the first step uses [Recommend Item Segments To User](https://docs.recombee.com/api#recommend-items-to-user), you must include the `userId` parameter\
-        \ in the *Composite Recommendation* request.\n\nEach *Composite Recommendation* counts as a single recommendation API request for billing.\n\n**Stage-specific Parameters**\n\nAdditional parameters\
-        \ can be supplied via [sourceSettings](https://docs.recombee.com/api#composite-recommendation-param-sourceSettings) and [resultSettings](https://docs.recombee.com/api#composite-recommendation-param-resultSettings).\n\
-        In the example above:\n  - `sourceSettings` may include any parameter valid for [Recommend Item Segments To User](https://docs.recombee.com/api#recommend-items-to-user) (e.g., `filter`, `booster`).\n\
-        \  - `resultSettings` may include any parameter valid for [Recommend Items To Item Segment](https://docs.recombee.com/api#recommend-items-to-item-segment).\n\nSee [this example](https://docs.recombee.com/api#composite-recommendation-example-setting-parameters-for-individual-stages)\
+        \ <category>* can be decomposed into:\n  - [Recommend Item Segments To User](https://docs.recombee.com/api/recommendations#recommend-item-segments-to-user) to find the category.\n  - [Recommend\
+        \ Items To Item Segment](https://docs.recombee.com/api/recommendations#recommend-items-to-item-segment) to recommend articles from that category.\n\nSince the first step uses [Recommend Item Segments\
+        \ To User](https://docs.recombee.com/api/recommendations#recommend-items-to-user), you must include the `userId` parameter in the *Composite Recommendation* request.\n\nEach *Composite Recommendation*\
+        \ counts as a single recommendation API request for billing.\n\n**Stage-specific Parameters**\n\nAdditional parameters can be supplied via [sourceSettings](https://docs.recombee.com/api/recommendations#composite-recommendation-param-sourceSettings)\
+        \ and [resultSettings](https://docs.recombee.com/api/recommendations#composite-recommendation-param-resultSettings).\nIn the example above:\n  - `sourceSettings` may include any parameter valid\
+        \ for [Recommend Item Segments To User](https://docs.recombee.com/api/recommendations#recommend-items-to-user) (e.g., `filter`, `booster`).\n  - `resultSettings` may include any parameter valid\
+        \ for [Recommend Items To Item Segment](https://docs.recombee.com/api/recommendations#recommend-items-to-item-segment).\n\nSee [this example](https://docs.recombee.com/api/recommendations#composite-recommendation-example-setting-parameters-for-individual-stages)\
         \ for more details.\n"
       tags:
       - Recommendations
@@ -2707,8 +2708,8 @@ paths:
         \ can be called multiple times as the user is typing the query in order to get the most viable suggestions based on the current state of the query, or once after submitting the whole query. \n\n\
         The returned items are sorted by relevance (the first item being the most relevant).\n\nBesides the recommended items, also a unique `recommId` is returned in the response. It can be used to:\n\n\
         - Let Recombee know that this search was successful (e.g., user clicked one of the recommended items). See [Reported metrics](https://docs.recombee.com/admin_ui#reported-metrics).\n- Get subsequent\
-        \ search results when the user scrolls down or goes to the next page. See [Recommend Next Items](https://docs.recombee.com/api#recommend-next-items).\n\nIt is also possible to use POST HTTP method\
-        \ (for example in the case of a very long ReQL filter) - query parameters then become body parameters.\n"
+        \ search results when the user scrolls down or goes to the next page. See [Recommend Next Items](https://docs.recombee.com/api/recommendations#recommend-next-items).\n\nIt is also possible to use\
+        \ POST HTTP method (for example in the case of a very long ReQL filter) - query parameters then become body parameters.\n"
       tags:
       - Search
       parameters:
@@ -2805,7 +2806,7 @@ paths:
   /{databaseId}/synonyms/items/:
     post:
       summary: Add Search Synonym
-      description: 'Adds a new synonym for the [Search items](https://docs.recombee.com/api#search-items).
+      description: 'Adds a new synonym for the [Search items](https://docs.recombee.com/api/search#search-items).
 
 
         When the `term` is used in the search query, the `synonym` is also used for the full-text search.
@@ -2913,7 +2914,7 @@ paths:
   /{databaseId}/synonyms/items/{id}:
     delete:
       summary: Delete Search Synonym
-      description: 'Deletes synonym of the given `id`. This synonym is no longer taken into account in the [Search items](https://docs.recombee.com/api#search-items).
+      description: 'Deletes synonym of the given `id`. This synonym is no longer taken into account in the [Search items](https://docs.recombee.com/api/search#search-items).
 
         '
       tags:
@@ -4603,15 +4604,16 @@ components:
         logic:
           $ref: '#/components/schemas/Logic'
         reqlExpressions:
-          description: "Only usable if the stage corresponds to the one of these recommendation endpoints:\n\n- [Recommend Items To User](https://docs.recombee.com/api#recommend-items-to-user)\n- [Recommend\
-            \ Items To Item](https://docs.recombee.com/api#recommend-items-to-item)\n- [Recommend Items to Item Segment](https://docs.recombee.com/api#recommend-items-to-item-segment)\n- [Recommend Users\
-            \ to Item](https://docs.recombee.com/api#recommend-users-to-item)\n- [Recommend Users To User](https://docs.recombee.com/api#recommend-users-to-user)\n\nA dictionary of [ReQL](https://docs.recombee.com/reql)\
-            \ expressions that will be executed for each recommended item.\nThis can be used to compute additional properties of the recommended items that are not stored in the database.\n\nThe keys are\
-            \ the names of the expressions, and the values are the actual ReQL expressions.\n\nExample request:\n```json\n{\n  \"reqlExpressions\": {\n    \"isInUsersCity\": \"context_user[\\\"city\\\"\
-            ] in 'cities'\",\n    \"distanceToUser\": \"earth_distance('location', context_user[\\\"location\\\"])\"\n  }\n}\n```\n\nExample response:\n```json\n{\n  \"recommId\": \"ce52ada4-e4d9-4885-943c-407db2dee837\"\
-            ,\n  \"source\": {\n    \"id\": \"restaurant-123\",\n    \"reqlEvaluations\": {\n      \"isInUsersCity\": true,\n      \"distanceToUser\": 3450.5\n    }\n  },\n  \"recomms\": \n    [\n     \
-            \ {\n        \"id\": \"restaurant-178\",\n        \"reqlEvaluations\": {\n          \"isInUsersCity\": true,\n          \"distanceToUser\": 5200.2\n        }\n      },\n      {\n        \"id\"\
-            : \"bar-42\",\n        \"reqlEvaluations\": {\n          \"isInUsersCity\": false,\n          \"distanceToUser\": 2516.0\n        }\n      }\n    ],\n   \"numberNextRecommsCalls\": 0\n}\n```\n"
+          description: "Only usable if the stage corresponds to the one of these recommendation endpoints:\n\n- [Recommend Items To User](https://docs.recombee.com/api/recommendations#recommend-items-to-user)\n\
+            - [Recommend Items To Item](https://docs.recombee.com/api/recommendations#recommend-items-to-item)\n- [Recommend Items to Item Segment](https://docs.recombee.com/api/recommendations#recommend-items-to-item-segment)\n\
+            - [Recommend Users to Item](https://docs.recombee.com/api/recommendations#recommend-users-to-item)\n- [Recommend Users To User](https://docs.recombee.com/api/recommendations#recommend-users-to-user)\n\
+            \nA dictionary of [ReQL](https://docs.recombee.com/reql) expressions that will be executed for each recommended item.\nThis can be used to compute additional properties of the recommended items\
+            \ that are not stored in the database.\n\nThe keys are the names of the expressions, and the values are the actual ReQL expressions.\n\nExample request:\n```json\n{\n  \"reqlExpressions\": {\n\
+            \    \"isInUsersCity\": \"context_user[\\\"city\\\"] in 'cities'\",\n    \"distanceToUser\": \"earth_distance('location', context_user[\\\"location\\\"])\"\n  }\n}\n```\n\nExample response:\n\
+            ```json\n{\n  \"recommId\": \"ce52ada4-e4d9-4885-943c-407db2dee837\",\n  \"source\": {\n    \"id\": \"restaurant-123\",\n    \"reqlEvaluations\": {\n      \"isInUsersCity\": true,\n      \"\
+            distanceToUser\": 3450.5\n    }\n  },\n  \"recomms\": \n    [\n      {\n        \"id\": \"restaurant-178\",\n        \"reqlEvaluations\": {\n          \"isInUsersCity\": true,\n          \"\
+            distanceToUser\": 5200.2\n        }\n      },\n      {\n        \"id\": \"bar-42\",\n        \"reqlEvaluations\": {\n          \"isInUsersCity\": false,\n          \"distanceToUser\": 2516.0\n\
+            \        }\n      }\n    ],\n   \"numberNextRecommsCalls\": 0\n}\n```\n"
           type: object
           additionalProperties:
             type: string
@@ -4619,11 +4621,11 @@ components:
           description: '**Expert option:** Only usable if the stage corresponds to the one of these recommendation endpoints:
 
 
-            - [Recommend Items To User](https://docs.recombee.com/api#recommend-items-to-user)
+            - [Recommend Items To User](https://docs.recombee.com/api/recommendations#recommend-items-to-user)
 
-            - [Recommend Items To Item](https://docs.recombee.com/api#recommend-items-to-item)
+            - [Recommend Items To Item](https://docs.recombee.com/api/recommendations#recommend-items-to-item)
 
-            - [Recommend Items to Item Segment](https://docs.recombee.com/api#recommend-items-to-item-segment)
+            - [Recommend Items to Item Segment](https://docs.recombee.com/api/recommendations#recommend-items-to-item-segment)
 
 
             If the *userId* is provided:  Specifies the threshold of how relevant must the recommended items be to the user.
@@ -4647,13 +4649,13 @@ components:
         rotationRate:
           description: '**Expert option:** Only usable if the stage corresponds to the one of these recommendation endpoints:
 
-            - [Recommend Items To User](https://docs.recombee.com/api#recommend-items-to-user)
+            - [Recommend Items To User](https://docs.recombee.com/api/recommendations#recommend-items-to-user)
 
-            - [Recommend Items To Item](https://docs.recombee.com/api#recommend-items-to-item)
+            - [Recommend Items To Item](https://docs.recombee.com/api/recommendations#recommend-items-to-item)
 
-            - [Recommend Items to Item Segment](https://docs.recombee.com/api#recommend-items-to-item-segment)
+            - [Recommend Items to Item Segment](https://docs.recombee.com/api/recommendations#recommend-items-to-item-segment)
 
-            - [Recommend Users To User](https://docs.recombee.com/api#recommend-users-to-user)
+            - [Recommend Users To User](https://docs.recombee.com/api/recommendations#recommend-users-to-user)
 
 
             If the *userId* is provided: If your users browse the system in real-time, it may easily happen that you wish to offer them recommendations multiple times. Here comes the question: how much
@@ -4669,13 +4671,13 @@ components:
         rotationTime:
           description: '**Expert option:** Only usable if the stage corresponds to the one of these recommendation endpoints:
 
-            - [Recommend Items To User](https://docs.recombee.com/api#recommend-items-to-user)
+            - [Recommend Items To User](https://docs.recombee.com/api/recommendations#recommend-items-to-user)
 
-            - [Recommend Items To Item](https://docs.recombee.com/api#recommend-items-to-item)
+            - [Recommend Items To Item](https://docs.recombee.com/api/recommendations#recommend-items-to-item)
 
-            - [Recommend Items to Item Segment](https://docs.recombee.com/api#recommend-items-to-item-segment)
+            - [Recommend Items to Item Segment](https://docs.recombee.com/api/recommendations#recommend-items-to-item-segment)
 
-            - [Recommend Users To User](https://docs.recombee.com/api#recommend-users-to-user)
+            - [Recommend Users To User](https://docs.recombee.com/api/recommendations#recommend-users-to-user)
 
 
             If the *userId* is provided: Taking *rotationRate* into account, specifies how long it takes for an item to recover from the penalization. For example, `rotationTime=7200.0` means that items

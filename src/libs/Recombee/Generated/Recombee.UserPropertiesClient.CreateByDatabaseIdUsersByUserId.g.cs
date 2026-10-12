@@ -44,7 +44,7 @@ namespace Recombee
 
         /// <summary>
         /// Set User Values<br/>
-        /// Sets/updates (some) property values of the given user. The properties (columns) must be previously created by [Add user property](https://docs.recombee.com/api#add-user-property).
+        /// Sets/updates (some) property values of the given user. The properties (columns) must be previously created by [Add user property](https://docs.recombee.com/api/user-properties#add-user-property).
         /// </summary>
         /// <param name="databaseId"></param>
         /// <param name="userId"></param>
@@ -74,7 +74,7 @@ namespace Recombee
         }
         /// <summary>
         /// Set User Values<br/>
-        /// Sets/updates (some) property values of the given user. The properties (columns) must be previously created by [Add user property](https://docs.recombee.com/api#add-user-property).
+        /// Sets/updates (some) property values of the given user. The properties (columns) must be previously created by [Add user property](https://docs.recombee.com/api/user-properties#add-user-property).
         /// </summary>
         /// <param name="databaseId"></param>
         /// <param name="userId"></param>

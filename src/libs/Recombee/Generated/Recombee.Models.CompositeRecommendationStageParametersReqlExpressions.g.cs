@@ -5,11 +5,11 @@ namespace Recombee
 {
     /// <summary>
     /// Only usable if the stage corresponds to the one of these recommendation endpoints:<br/>
-    /// - [Recommend Items To User](https://docs.recombee.com/api#recommend-items-to-user)<br/>
-    /// - [Recommend Items To Item](https://docs.recombee.com/api#recommend-items-to-item)<br/>
-    /// - [Recommend Items to Item Segment](https://docs.recombee.com/api#recommend-items-to-item-segment)<br/>
-    /// - [Recommend Users to Item](https://docs.recombee.com/api#recommend-users-to-item)<br/>
-    /// - [Recommend Users To User](https://docs.recombee.com/api#recommend-users-to-user)<br/>
+    /// - [Recommend Items To User](https://docs.recombee.com/api/recommendations#recommend-items-to-user)<br/>
+    /// - [Recommend Items To Item](https://docs.recombee.com/api/recommendations#recommend-items-to-item)<br/>
+    /// - [Recommend Items to Item Segment](https://docs.recombee.com/api/recommendations#recommend-items-to-item-segment)<br/>
+    /// - [Recommend Users to Item](https://docs.recombee.com/api/recommendations#recommend-users-to-item)<br/>
+    /// - [Recommend Users To User](https://docs.recombee.com/api/recommendations#recommend-users-to-user)<br/>
     /// A dictionary of [ReQL](https://docs.recombee.com/reql) expressions that will be executed for each recommended item.<br/>
     /// This can be used to compute additional properties of the recommended items that are not stored in the database.<br/>
     /// The keys are the names of the expressions, and the values are the actual ReQL expressions.<br/>

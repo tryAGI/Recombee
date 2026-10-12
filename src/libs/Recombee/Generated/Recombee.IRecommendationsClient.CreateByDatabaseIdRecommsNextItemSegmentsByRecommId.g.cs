@@ -9,10 +9,10 @@ namespace Recombee
         /// Returns [Item Segments](https://docs.recombee.com/segmentations) to be shown as the next recommendations when a user scrolls (e.g., within a carousel or feed of Item Segments such as brands, artists, topics, or categories).<br/>
         /// The request requires the `recommId` of a base recommendation request and the number of Segments to return (`count`).<br/>
         /// The base request can be one of:<br/>
-        ///   - [Recommend Item Segments to Item](https://docs.recombee.com/api#recommend-item-segments-to-item)<br/>
-        ///   - [Recommend Item Segments to User](https://docs.recombee.com/api#recommend-item-segments-to-user)<br/>
-        ///   - [Recommend Item Segments to Item Segment](https://docs.recombee.com/api#recommend-item-segments-to-item-segment)<br/>
-        ///   - [Search Item Segments](https://docs.recombee.com/api#search-item-segments)<br/>
+        ///   - [Recommend Item Segments to Item](https://docs.recombee.com/api/recommendations#recommend-item-segments-to-item)<br/>
+        ///   - [Recommend Item Segments to User](https://docs.recombee.com/api/recommendations#recommend-item-segments-to-user)<br/>
+        ///   - [Recommend Item Segments to Item Segment](https://docs.recombee.com/api/recommendations#recommend-item-segments-to-item-segment)<br/>
+        ///   - [Search Item Segments](https://docs.recombee.com/api/search#search-item-segments)<br/>
         /// All other parameters are inherited from the base request associated with the provided `recommId`.<br/>
         /// This endpoint can be called multiple times for a single `recommId`. Each call returns different Item Segments that have not been recommended in previous calls.<br/>
         /// The number of calls made so far is returned in the `numberNextRecommsCalls` field.<br/>
@@ -37,10 +37,10 @@ namespace Recombee
         /// Returns [Item Segments](https://docs.recombee.com/segmentations) to be shown as the next recommendations when a user scrolls (e.g., within a carousel or feed of Item Segments such as brands, artists, topics, or categories).<br/>
         /// The request requires the `recommId` of a base recommendation request and the number of Segments to return (`count`).<br/>
         /// The base request can be one of:<br/>
-        ///   - [Recommend Item Segments to Item](https://docs.recombee.com/api#recommend-item-segments-to-item)<br/>
-        ///   - [Recommend Item Segments to User](https://docs.recombee.com/api#recommend-item-segments-to-user)<br/>
-        ///   - [Recommend Item Segments to Item Segment](https://docs.recombee.com/api#recommend-item-segments-to-item-segment)<br/>
-        ///   - [Search Item Segments](https://docs.recombee.com/api#search-item-segments)<br/>
+        ///   - [Recommend Item Segments to Item](https://docs.recombee.com/api/recommendations#recommend-item-segments-to-item)<br/>
+        ///   - [Recommend Item Segments to User](https://docs.recombee.com/api/recommendations#recommend-item-segments-to-user)<br/>
+        ///   - [Recommend Item Segments to Item Segment](https://docs.recombee.com/api/recommendations#recommend-item-segments-to-item-segment)<br/>
+        ///   - [Search Item Segments](https://docs.recombee.com/api/search#search-item-segments)<br/>
         /// All other parameters are inherited from the base request associated with the provided `recommId`.<br/>
         /// This endpoint can be called multiple times for a single `recommId`. Each call returns different Item Segments that have not been recommended in previous calls.<br/>
         /// The number of calls made so far is returned in the `numberNextRecommsCalls` field.<br/>
@@ -65,10 +65,10 @@ namespace Recombee
         /// Returns [Item Segments](https://docs.recombee.com/segmentations) to be shown as the next recommendations when a user scrolls (e.g., within a carousel or feed of Item Segments such as brands, artists, topics, or categories).<br/>
         /// The request requires the `recommId` of a base recommendation request and the number of Segments to return (`count`).<br/>
         /// The base request can be one of:<br/>
-        ///   - [Recommend Item Segments to Item](https://docs.recombee.com/api#recommend-item-segments-to-item)<br/>
-        ///   - [Recommend Item Segments to User](https://docs.recombee.com/api#recommend-item-segments-to-user)<br/>
-        ///   - [Recommend Item Segments to Item Segment](https://docs.recombee.com/api#recommend-item-segments-to-item-segment)<br/>
-        ///   - [Search Item Segments](https://docs.recombee.com/api#search-item-segments)<br/>
+        ///   - [Recommend Item Segments to Item](https://docs.recombee.com/api/recommendations#recommend-item-segments-to-item)<br/>
+        ///   - [Recommend Item Segments to User](https://docs.recombee.com/api/recommendations#recommend-item-segments-to-user)<br/>
+        ///   - [Recommend Item Segments to Item Segment](https://docs.recombee.com/api/recommendations#recommend-item-segments-to-item-segment)<br/>
+        ///   - [Search Item Segments](https://docs.recombee.com/api/search#search-item-segments)<br/>
         /// All other parameters are inherited from the base request associated with the provided `recommId`.<br/>
         /// This endpoint can be called multiple times for a single `recommId`. Each call returns different Item Segments that have not been recommended in previous calls.<br/>
         /// The number of calls made so far is returned in the `numberNextRecommsCalls` field.<br/>

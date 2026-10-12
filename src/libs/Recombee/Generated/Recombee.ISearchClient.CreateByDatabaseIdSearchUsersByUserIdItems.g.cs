@@ -12,7 +12,7 @@ namespace Recombee
         /// The returned items are sorted by relevance (the first item being the most relevant).<br/>
         /// Besides the recommended items, also a unique `recommId` is returned in the response. It can be used to:<br/>
         /// - Let Recombee know that this search was successful (e.g., user clicked one of the recommended items). See [Reported metrics](https://docs.recombee.com/admin_ui#reported-metrics).<br/>
-        /// - Get subsequent search results when the user scrolls down or goes to the next page. See [Recommend Next Items](https://docs.recombee.com/api#recommend-next-items).<br/>
+        /// - Get subsequent search results when the user scrolls down or goes to the next page. See [Recommend Next Items](https://docs.recombee.com/api/recommendations#recommend-next-items).<br/>
         /// It is also possible to use POST HTTP method (for example in the case of a very long ReQL filter) - query parameters then become body parameters.
         /// </summary>
         /// <param name="databaseId"></param>
@@ -36,7 +36,7 @@ namespace Recombee
         /// The returned items are sorted by relevance (the first item being the most relevant).<br/>
         /// Besides the recommended items, also a unique `recommId` is returned in the response. It can be used to:<br/>
         /// - Let Recombee know that this search was successful (e.g., user clicked one of the recommended items). See [Reported metrics](https://docs.recombee.com/admin_ui#reported-metrics).<br/>
-        /// - Get subsequent search results when the user scrolls down or goes to the next page. See [Recommend Next Items](https://docs.recombee.com/api#recommend-next-items).<br/>
+        /// - Get subsequent search results when the user scrolls down or goes to the next page. See [Recommend Next Items](https://docs.recombee.com/api/recommendations#recommend-next-items).<br/>
         /// It is also possible to use POST HTTP method (for example in the case of a very long ReQL filter) - query parameters then become body parameters.
         /// </summary>
         /// <param name="databaseId"></param>
@@ -60,7 +60,7 @@ namespace Recombee
         /// The returned items are sorted by relevance (the first item being the most relevant).<br/>
         /// Besides the recommended items, also a unique `recommId` is returned in the response. It can be used to:<br/>
         /// - Let Recombee know that this search was successful (e.g., user clicked one of the recommended items). See [Reported metrics](https://docs.recombee.com/admin_ui#reported-metrics).<br/>
-        /// - Get subsequent search results when the user scrolls down or goes to the next page. See [Recommend Next Items](https://docs.recombee.com/api#recommend-next-items).<br/>
+        /// - Get subsequent search results when the user scrolls down or goes to the next page. See [Recommend Next Items](https://docs.recombee.com/api/recommendations#recommend-next-items).<br/>
         /// It is also possible to use POST HTTP method (for example in the case of a very long ReQL filter) - query parameters then become body parameters.
         /// </summary>
         /// <param name="databaseId"></param>
