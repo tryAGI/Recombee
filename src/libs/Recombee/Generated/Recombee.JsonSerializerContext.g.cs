@@ -11,6 +11,14 @@ namespace Recombee
         DefaultIgnoreCondition = global::System.Text.Json.Serialization.JsonIgnoreCondition.WhenWritingNull,
         Converters = new global::System.Type[]
         {
+            typeof(global::Recombee.JsonConverters.AddItemPropertyParametersTypeJsonConverter),
+
+            typeof(global::Recombee.JsonConverters.AddItemPropertyParametersTypeNullableJsonConverter),
+
+            typeof(global::Recombee.JsonConverters.AddUserPropertyParametersTypeJsonConverter),
+
+            typeof(global::Recombee.JsonConverters.AddUserPropertyParametersTypeNullableJsonConverter),
+
             typeof(global::Recombee.JsonConverters.RecommendItemsToUserParametersMinRelevanceJsonConverter),
 
             typeof(global::Recombee.JsonConverters.RecommendItemsToUserParametersMinRelevanceNullableJsonConverter),
@@ -30,14 +38,6 @@ namespace Recombee
             typeof(global::Recombee.JsonConverters.CompositeRecommendationStageParametersMinRelevanceJsonConverter),
 
             typeof(global::Recombee.JsonConverters.CompositeRecommendationStageParametersMinRelevanceNullableJsonConverter),
-
-            typeof(global::Recombee.JsonConverters.PutItemsPropertiesTypeJsonConverter),
-
-            typeof(global::Recombee.JsonConverters.PutItemsPropertiesTypeNullableJsonConverter),
-
-            typeof(global::Recombee.JsonConverters.PutUsersPropertiesTypeJsonConverter),
-
-            typeof(global::Recombee.JsonConverters.PutUsersPropertiesTypeNullableJsonConverter),
 
             typeof(global::Recombee.JsonConverters.OneOfJsonConverter<string, double?>),
 
@@ -59,6 +59,14 @@ namespace Recombee
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(string[]))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Recombee.PropertyInfo))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(string))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Recombee.PropertyRole))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::Recombee.PropertyMetadata>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Recombee.PropertyMetadata))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(object))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Recombee.AddItemPropertyParameters))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Recombee.AddItemPropertyParametersType), TypeInfoPropertyName = "AddItemPropertyParametersType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Recombee.AddUserPropertyParameters))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Recombee.AddUserPropertyParametersType), TypeInfoPropertyName = "AddUserPropertyParametersType2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Recombee.SeriesItem))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(double))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(bool))]
@@ -68,7 +76,6 @@ namespace Recombee
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Recombee.DetailView))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Recombee.OneOf<string, double?>), TypeInfoPropertyName = "OneOfStringDouble2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(int))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(object))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Recombee.Purchase))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Recombee.Rating))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Recombee.CartAddition))]
@@ -117,7 +124,6 @@ namespace Recombee
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Recombee.Item))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Recombee.User))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Recombee.Series))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Recombee.Group))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Recombee.SearchSynonymParams))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Recombee.SearchSynonym))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Recombee.ListSearchSynonymsResponse))]
@@ -126,8 +132,6 @@ namespace Recombee
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Recombee.Segmentation))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Recombee.ListSegmentationsResponse))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::Recombee.Segmentation>))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Recombee.PutItemsPropertiesType), TypeInfoPropertyName = "PutItemsPropertiesType2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Recombee.PutUsersPropertiesType), TypeInfoPropertyName = "PutUsersPropertiesType2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::Recombee.Item>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::Recombee.PropertyInfo>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::Recombee.Series>))]
@@ -140,6 +144,7 @@ namespace Recombee
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::Recombee.Bookmark>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::Recombee.ViewPortion>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::Recombee.Scenario>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Recombee.PropertyMetadata>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<string>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Recombee.Recommendation>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Recombee.SearchSynonym>))]

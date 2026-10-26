@@ -16,17 +16,22 @@ namespace Recombee
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Text.Json.JsonElement?))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Recombee.PropertyInfo))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(string))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Recombee.PropertyRole))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::Recombee.PropertyMetadata>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Recombee.PropertyMetadata))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(object))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Recombee.AddItemPropertyParameters))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Recombee.AddItemPropertyParametersType), TypeInfoPropertyName = "AddItemPropertyParametersType2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(bool))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(int))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(object))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Recombee.UpdateMoreItemsParameters))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Recombee.UpdateMoreItemsResponse))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<string>))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Recombee.PutItemsPropertiesType), TypeInfoPropertyName = "PutItemsPropertiesType2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::Recombee.PropertyInfo>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Recombee.AddItemPropertyParametersType?), TypeInfoPropertyName = "NullableAddItemPropertyParametersType2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(bool?))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(int?))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Recombee.PutItemsPropertiesType?), TypeInfoPropertyName = "NullablePutItemsPropertiesType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Recombee.PropertyMetadata>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<string>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Recombee.PropertyInfo>))]
     internal sealed partial class ItemPropertiesSourceGenerationContextChunk0 : global::System.Text.Json.Serialization.JsonSerializerContext
@@ -104,23 +109,23 @@ namespace Recombee
             public override bool CanConvert(global::System.Type typeToConvert)
             {
                 return
-                    typeToConvert == typeof(global::Recombee.PutItemsPropertiesType)
+                    typeToConvert == typeof(global::Recombee.AddItemPropertyParametersType)
 
-                    || typeToConvert == typeof(global::Recombee.PutItemsPropertiesType?);
+                    || typeToConvert == typeof(global::Recombee.AddItemPropertyParametersType?);
             }
 
             public override global::System.Text.Json.Serialization.JsonConverter CreateConverter(
                 global::System.Type typeToConvert,
                 global::System.Text.Json.JsonSerializerOptions options)
             {
-                if (typeToConvert == typeof(global::Recombee.PutItemsPropertiesType))
+                if (typeToConvert == typeof(global::Recombee.AddItemPropertyParametersType))
                 {
-                    return new global::Recombee.JsonConverters.PutItemsPropertiesTypeJsonConverter();
+                    return new global::Recombee.JsonConverters.AddItemPropertyParametersTypeJsonConverter();
                 }
 
-                if (typeToConvert == typeof(global::Recombee.PutItemsPropertiesType?))
+                if (typeToConvert == typeof(global::Recombee.AddItemPropertyParametersType?))
                 {
-                    return new global::Recombee.JsonConverters.PutItemsPropertiesTypeNullableJsonConverter();
+                    return new global::Recombee.JsonConverters.AddItemPropertyParametersTypeNullableJsonConverter();
                 }
                 throw new global::System.NotSupportedException($"No generated enum converter is registered for '{typeToConvert}'.");
             }

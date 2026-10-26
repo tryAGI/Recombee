@@ -4,7 +4,7 @@
 namespace Recombee
 {
     /// <summary>
-    /// A dictionary of additional data for the interaction.
+    /// Additional data associated with the interaction. The expected structure is defined for specific use cases and will be provided by the Recombee Support team when applicable.
     /// </summary>
     public sealed partial class CartAdditionAdditionalData
     {

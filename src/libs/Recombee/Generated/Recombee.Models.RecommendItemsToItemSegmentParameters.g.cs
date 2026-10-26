@@ -95,7 +95,7 @@ namespace Recombee
         /// ```json<br/>
         ///   {<br/>
         ///     "recommId": "6842c725-a79f-4537-a02c-f34d668a3f80",<br/>
-        ///     "recomms": <br/>
+        ///     "recomms":<br/>
         ///       [<br/>
         ///         {<br/>
         ///           "id": "tv-178",<br/>
@@ -286,7 +286,7 @@ namespace Recombee
         /// ```json<br/>
         ///   {<br/>
         ///     "recommId": "6842c725-a79f-4537-a02c-f34d668a3f80",<br/>
-        ///     "recomms": <br/>
+        ///     "recomms":<br/>
         ///       [<br/>
         ///         {<br/>
         ///           "id": "tv-178",<br/>

@@ -29,13 +29,13 @@ namespace Recombee
             global::System.Net.Http.HttpClient httpClient,
             ref string databaseId,
             ref string propertyName,
-            ref global::Recombee.PutUsersPropertiesType type);
+            global::Recombee.AddUserPropertyParameters request);
         partial void PreparePutByDatabaseIdUsersPropertiesByPropertyNameRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             string databaseId,
             string propertyName,
-            global::Recombee.PutUsersPropertiesType type);
+            global::Recombee.AddUserPropertyParameters request);
         partial void ProcessPutByDatabaseIdUsersPropertiesByPropertyNameResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -46,21 +46,23 @@ namespace Recombee
         /// </summary>
         /// <param name="databaseId"></param>
         /// <param name="propertyName"></param>
-        /// <param name="type"></param>
+        /// <param name="request"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Recombee.ApiException"></exception>
         public async global::System.Threading.Tasks.Task PutByDatabaseIdUsersPropertiesByPropertyNameAsync(
             string databaseId,
             string propertyName,
-            global::Recombee.PutUsersPropertiesType type,
+
+            global::Recombee.AddUserPropertyParameters request,
             global::Recombee.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             await PutByDatabaseIdUsersPropertiesByPropertyNameAsResponseAsync(
                 databaseId: databaseId,
                 propertyName: propertyName,
-                type: type,
+
+                request: request,
                 requestOptions: requestOptions,
                 cancellationToken: cancellationToken
             ).ConfigureAwait(false);
@@ -71,24 +73,27 @@ namespace Recombee
         /// </summary>
         /// <param name="databaseId"></param>
         /// <param name="propertyName"></param>
-        /// <param name="type"></param>
+        /// <param name="request"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Recombee.ApiException"></exception>
         public async global::System.Threading.Tasks.Task<global::Recombee.AutoSDKHttpResponse> PutByDatabaseIdUsersPropertiesByPropertyNameAsResponseAsync(
             string databaseId,
             string propertyName,
-            global::Recombee.PutUsersPropertiesType type,
+
+            global::Recombee.AddUserPropertyParameters request,
             global::Recombee.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
+            request = request ?? throw new global::System.ArgumentNullException(nameof(request));
+
             PrepareArguments(
                 client: HttpClient);
             PreparePutByDatabaseIdUsersPropertiesByPropertyNameArguments(
                 httpClient: HttpClient,
                 databaseId: ref databaseId,
                 propertyName: ref propertyName,
-                type: ref type);
+                request: request);
 
 
             var __authorizations = global::Recombee.EndPointSecurityResolver.ResolveAuthorizations(
@@ -116,9 +121,6 @@ namespace Recombee
                             var __pathBuilder = new global::Recombee.PathBuilder(
                                 path: $"/{databaseId}/users/properties/{propertyName}",
                                 baseUri: HttpClient.BaseAddress);
-                            __pathBuilder
-                                .AddRequiredParameter("type", type.ToValueString())
-                                ;
                             var __path = __pathBuilder.ToString();
                 __path = global::Recombee.AutoSDKRequestOptionsSupport.AppendQueryParameters(
                     path: __path,
@@ -148,6 +150,12 @@ namespace Recombee
                     __httpRequest.Headers.Add(__authorization.Name, __authorization.Value);
                 }
             }
+                            var __httpRequestContentBody = request.ToJson(JsonSerializerContext);
+                            var __httpRequestContent = new global::System.Net.Http.StringContent(
+                                content: __httpRequestContentBody,
+                                encoding: global::System.Text.Encoding.UTF8,
+                                mediaType: "application/json");
+                            __httpRequest.Content = __httpRequestContent;
                 global::Recombee.AutoSDKRequestOptionsSupport.ApplyHeaders(
                     request: __httpRequest,
                     clientHeaders: Options.Headers,
@@ -161,7 +169,7 @@ namespace Recombee
                     httpRequestMessage: __httpRequest,
                     databaseId: databaseId,
                     propertyName: propertyName,
-                    type: type);
+                    request: request);
 
                 return __httpRequest;
             }
@@ -483,6 +491,51 @@ namespace Recombee
             {
                 __httpRequest?.Dispose();
             }
+        }
+        /// <summary>
+        /// Add User Property<br/>
+        /// Adding a user property is somewhat equivalent to adding a column to the table of users. The users may be characterized by various properties of different types.
+        /// </summary>
+        /// <param name="databaseId"></param>
+        /// <param name="propertyName"></param>
+        /// <param name="type">
+        /// Value type of the user property to be created. One of: `int`, `double`, `string`, `boolean`, `timestamp`, `set`.<br/>
+        /// * `int` - Signed integer number.<br/>
+        /// * `double` - Floating point number. It uses 64-bit base-2 format (IEEE 754 standard).<br/>
+        /// * `string` - UTF-8 string.<br/>
+        /// * `boolean` - *true* / *false*<br/>
+        /// * `timestamp` - Value representing date and time. ISO8601-1 pattern (string) or UTC epoch time (number).<br/>
+        /// * `set` - Set of strings.
+        /// </param>
+        /// <param name="role"></param>
+        /// <param name="metadata">
+        /// List of [metadata](https://docs.recombee.com/api/property_roles_metadata#metadata) entries to assign to the property.
+        /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::System.InvalidOperationException"></exception>
+        public async global::System.Threading.Tasks.Task PutByDatabaseIdUsersPropertiesByPropertyNameAsync(
+            string databaseId,
+            string propertyName,
+            global::Recombee.AddUserPropertyParametersType type,
+            global::Recombee.PropertyRole? role = default,
+            global::System.Collections.Generic.IList<global::Recombee.PropertyMetadata>? metadata = default,
+            global::Recombee.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default)
+        {
+            var __request = new global::Recombee.AddUserPropertyParameters
+            {
+                Type = type,
+                Role = role,
+                Metadata = metadata,
+            };
+
+            await PutByDatabaseIdUsersPropertiesByPropertyNameAsync(
+                databaseId: databaseId,
+                propertyName: propertyName,
+                request: __request,
+                requestOptions: requestOptions,
+                cancellationToken: cancellationToken).ConfigureAwait(false);
         }
     }
 }

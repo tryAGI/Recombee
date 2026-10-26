@@ -13,7 +13,7 @@ namespace Recombee
         /// - Recommending products produced by a particular brand<br/>
         /// You need to set the used context Segmentation in the Admin UI in the [Scenario settings](https://docs.recombee.com/scenarios) prior to using this endpoint.<br/>
         /// The returned items are sorted by relevance (the first item being the most relevant).<br/>
-        /// It is also possible to use the POST HTTP method (for example, in the case of a very long ReQL filter) — query parameters then become body parameters.
+        /// It is also possible to use GET HTTP method - body parameters then become query parameters.
         /// </summary>
         /// <param name="databaseId"></param>
         /// <param name="request"></param>
@@ -35,7 +35,7 @@ namespace Recombee
         /// - Recommending products produced by a particular brand<br/>
         /// You need to set the used context Segmentation in the Admin UI in the [Scenario settings](https://docs.recombee.com/scenarios) prior to using this endpoint.<br/>
         /// The returned items are sorted by relevance (the first item being the most relevant).<br/>
-        /// It is also possible to use the POST HTTP method (for example, in the case of a very long ReQL filter) — query parameters then become body parameters.
+        /// It is also possible to use GET HTTP method - body parameters then become query parameters.
         /// </summary>
         /// <param name="databaseId"></param>
         /// <param name="request"></param>
@@ -57,7 +57,7 @@ namespace Recombee
         /// - Recommending products produced by a particular brand<br/>
         /// You need to set the used context Segmentation in the Admin UI in the [Scenario settings](https://docs.recombee.com/scenarios) prior to using this endpoint.<br/>
         /// The returned items are sorted by relevance (the first item being the most relevant).<br/>
-        /// It is also possible to use the POST HTTP method (for example, in the case of a very long ReQL filter) — query parameters then become body parameters.
+        /// It is also possible to use GET HTTP method - body parameters then become query parameters.
         /// </summary>
         /// <param name="databaseId"></param>
         /// <param name="contextSegmentId">
@@ -126,7 +126,7 @@ namespace Recombee
         /// ```json<br/>
         ///   {<br/>
         ///     "recommId": "6842c725-a79f-4537-a02c-f34d668a3f80",<br/>
-        ///     "recomms": <br/>
+        ///     "recomms":<br/>
         ///       [<br/>
         ///         {<br/>
         ///           "id": "tv-178",<br/>

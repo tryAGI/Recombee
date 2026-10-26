@@ -58,7 +58,7 @@ namespace Recombee
         /// If this detail view is based on a recommendation request, `recommId` is the id of the clicked recommendation.
         /// </param>
         /// <param name="additionalData">
-        /// A dictionary of additional data for the interaction.
+        /// Additional data associated with the interaction. The expected structure is defined for specific use cases and will be provided by the Recombee Support team when applicable.
         /// </param>
         /// <param name="autoPresented">
         /// Indicates whether the item was automatically presented to the user (e.g., in a swiping feed) or explicitly requested by the user (e.g., by clicking on a link). Defaults to `false`.

@@ -542,7 +542,7 @@ namespace Recombee
         /// If this cart addition is based on a recommendation request, `recommId` is the id of the clicked recommendation.
         /// </param>
         /// <param name="additionalData">
-        /// A dictionary of additional data for the interaction.
+        /// Additional data associated with the interaction. The expected structure is defined for specific use cases and will be provided by the Recombee Support team when applicable.
         /// </param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>

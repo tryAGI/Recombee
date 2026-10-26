@@ -17,7 +17,8 @@ namespace Recombee
         /// This endpoint can be called multiple times for a single `recommId`. Each call returns different Item Segments that have not been recommended in previous calls.<br/>
         /// The number of calls made so far is returned in the `numberNextRecommsCalls` field.<br/>
         /// Requests can be made up to 30 minutes after the base request or the most recent Recommend Next Item Segments call.<br/>
-        /// For billing purposes, each call to this endpoint is counted as a separate recommendation request.
+        /// For billing purposes, each call to this endpoint is counted as a separate recommendation request.<br/>
+        /// It is also possible to use GET HTTP method - body parameters then become query parameters.
         /// </summary>
         /// <param name="databaseId"></param>
         /// <param name="recommId"></param>
@@ -45,7 +46,8 @@ namespace Recombee
         /// This endpoint can be called multiple times for a single `recommId`. Each call returns different Item Segments that have not been recommended in previous calls.<br/>
         /// The number of calls made so far is returned in the `numberNextRecommsCalls` field.<br/>
         /// Requests can be made up to 30 minutes after the base request or the most recent Recommend Next Item Segments call.<br/>
-        /// For billing purposes, each call to this endpoint is counted as a separate recommendation request.
+        /// For billing purposes, each call to this endpoint is counted as a separate recommendation request.<br/>
+        /// It is also possible to use GET HTTP method - body parameters then become query parameters.
         /// </summary>
         /// <param name="databaseId"></param>
         /// <param name="recommId"></param>
@@ -73,7 +75,8 @@ namespace Recombee
         /// This endpoint can be called multiple times for a single `recommId`. Each call returns different Item Segments that have not been recommended in previous calls.<br/>
         /// The number of calls made so far is returned in the `numberNextRecommsCalls` field.<br/>
         /// Requests can be made up to 30 minutes after the base request or the most recent Recommend Next Item Segments call.<br/>
-        /// For billing purposes, each call to this endpoint is counted as a separate recommendation request.
+        /// For billing purposes, each call to this endpoint is counted as a separate recommendation request.<br/>
+        /// It is also possible to use GET HTTP method - body parameters then become query parameters.
         /// </summary>
         /// <param name="databaseId"></param>
         /// <param name="recommId"></param>

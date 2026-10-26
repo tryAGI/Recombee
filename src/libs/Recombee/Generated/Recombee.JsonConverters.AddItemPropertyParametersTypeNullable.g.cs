@@ -3,10 +3,10 @@
 namespace Recombee.JsonConverters
 {
     /// <inheritdoc />
-    public sealed class PutItemsPropertiesTypeNullableJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::Recombee.PutItemsPropertiesType?>
+    public sealed class AddItemPropertyParametersTypeNullableJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::Recombee.AddItemPropertyParametersType?>
     {
         /// <inheritdoc />
-        public override global::Recombee.PutItemsPropertiesType? Read(
+        public override global::Recombee.AddItemPropertyParametersType? Read(
             ref global::System.Text.Json.Utf8JsonReader reader,
             global::System.Type typeToConvert,
             global::System.Text.Json.JsonSerializerOptions options)
@@ -18,7 +18,7 @@ namespace Recombee.JsonConverters
                     var stringValue = reader.GetString();
                     if (stringValue != null)
                     {
-                        return global::Recombee.PutItemsPropertiesTypeExtensions.ToEnum(stringValue);
+                        return global::Recombee.AddItemPropertyParametersTypeExtensions.ToEnum(stringValue);
                     }
 
                     break;
@@ -26,11 +26,11 @@ namespace Recombee.JsonConverters
                 case global::System.Text.Json.JsonTokenType.Number:
                 {
                     var numValue = reader.GetInt32();
-                    return (global::Recombee.PutItemsPropertiesType)numValue;
+                    return (global::Recombee.AddItemPropertyParametersType)numValue;
                 }
                 case global::System.Text.Json.JsonTokenType.Null:
                 {
-                    return default(global::Recombee.PutItemsPropertiesType?);
+                    return default(global::Recombee.AddItemPropertyParametersType?);
                 }
                 default:
                     throw new global::System.ArgumentOutOfRangeException(nameof(reader));
@@ -42,7 +42,7 @@ namespace Recombee.JsonConverters
         /// <inheritdoc />
         public override void Write(
             global::System.Text.Json.Utf8JsonWriter writer,
-            global::Recombee.PutItemsPropertiesType? value,
+            global::Recombee.AddItemPropertyParametersType? value,
             global::System.Text.Json.JsonSerializerOptions options)
         {
             writer = writer ?? throw new global::System.ArgumentNullException(nameof(writer));
@@ -53,7 +53,7 @@ namespace Recombee.JsonConverters
             }
             else
             {
-                writer.WriteStringValue(global::Recombee.PutItemsPropertiesTypeExtensions.ToValueString(value.Value));
+                writer.WriteStringValue(global::Recombee.AddItemPropertyParametersTypeExtensions.ToValueString(value.Value));
             }
         }
     }

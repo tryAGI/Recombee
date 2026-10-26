@@ -54,7 +54,7 @@ namespace Recombee
         public string? RecommId { get; set; }
 
         /// <summary>
-        /// A dictionary of additional data for the interaction.
+        /// Additional data associated with the interaction. The expected structure is defined for specific use cases and will be provided by the Recombee Support team when applicable.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("additionalData")]
         public object? AdditionalData { get; set; }
@@ -90,7 +90,7 @@ namespace Recombee
         /// If this cart addition is based on a recommendation request, `recommId` is the id of the clicked recommendation.
         /// </param>
         /// <param name="additionalData">
-        /// A dictionary of additional data for the interaction.
+        /// Additional data associated with the interaction. The expected structure is defined for specific use cases and will be provided by the Recombee Support team when applicable.
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]

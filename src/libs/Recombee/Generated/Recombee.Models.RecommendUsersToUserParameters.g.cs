@@ -35,7 +35,7 @@ namespace Recombee
         /// ```json<br/>
         ///   {<br/>
         ///     "recommId": "9cb9c55d-50ba-4478-84fd-ab456136156e",<br/>
-        ///     "recomms": <br/>
+        ///     "recomms":<br/>
         ///       [<br/>
         ///         {<br/>
         ///           "id": "user-17",<br/>
@@ -211,7 +211,7 @@ namespace Recombee
         /// ```json<br/>
         ///   {<br/>
         ///     "recommId": "9cb9c55d-50ba-4478-84fd-ab456136156e",<br/>
-        ///     "recomms": <br/>
+        ///     "recomms":<br/>
         ///       [<br/>
         ///         {<br/>
         ///           "id": "user-17",<br/>
