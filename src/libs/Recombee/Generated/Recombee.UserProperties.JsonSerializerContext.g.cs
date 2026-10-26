@@ -16,12 +16,17 @@ namespace Recombee
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Text.Json.JsonElement?))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Recombee.PropertyInfo))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(string))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(bool))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Recombee.PropertyRole))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::Recombee.PropertyMetadata>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Recombee.PropertyMetadata))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(object))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Recombee.PutUsersPropertiesType), TypeInfoPropertyName = "PutUsersPropertiesType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Recombee.AddUserPropertyParameters))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Recombee.AddUserPropertyParametersType), TypeInfoPropertyName = "AddUserPropertyParametersType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(bool))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::Recombee.PropertyInfo>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Recombee.AddUserPropertyParametersType?), TypeInfoPropertyName = "NullableAddUserPropertyParametersType2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(bool?))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Recombee.PutUsersPropertiesType?), TypeInfoPropertyName = "NullablePutUsersPropertiesType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Recombee.PropertyMetadata>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Recombee.PropertyInfo>))]
     internal sealed partial class UserPropertiesSourceGenerationContextChunk0 : global::System.Text.Json.Serialization.JsonSerializerContext
     {
@@ -98,23 +103,23 @@ namespace Recombee
             public override bool CanConvert(global::System.Type typeToConvert)
             {
                 return
-                    typeToConvert == typeof(global::Recombee.PutUsersPropertiesType)
+                    typeToConvert == typeof(global::Recombee.AddUserPropertyParametersType)
 
-                    || typeToConvert == typeof(global::Recombee.PutUsersPropertiesType?);
+                    || typeToConvert == typeof(global::Recombee.AddUserPropertyParametersType?);
             }
 
             public override global::System.Text.Json.Serialization.JsonConverter CreateConverter(
                 global::System.Type typeToConvert,
                 global::System.Text.Json.JsonSerializerOptions options)
             {
-                if (typeToConvert == typeof(global::Recombee.PutUsersPropertiesType))
+                if (typeToConvert == typeof(global::Recombee.AddUserPropertyParametersType))
                 {
-                    return new global::Recombee.JsonConverters.PutUsersPropertiesTypeJsonConverter();
+                    return new global::Recombee.JsonConverters.AddUserPropertyParametersTypeJsonConverter();
                 }
 
-                if (typeToConvert == typeof(global::Recombee.PutUsersPropertiesType?))
+                if (typeToConvert == typeof(global::Recombee.AddUserPropertyParametersType?))
                 {
-                    return new global::Recombee.JsonConverters.PutUsersPropertiesTypeNullableJsonConverter();
+                    return new global::Recombee.JsonConverters.AddUserPropertyParametersTypeNullableJsonConverter();
                 }
                 throw new global::System.NotSupportedException($"No generated enum converter is registered for '{typeToConvert}'.");
             }

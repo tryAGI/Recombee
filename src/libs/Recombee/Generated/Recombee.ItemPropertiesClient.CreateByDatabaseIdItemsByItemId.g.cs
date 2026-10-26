@@ -44,7 +44,7 @@ namespace Recombee
 
         /// <summary>
         /// Set Item Values<br/>
-        /// Sets/updates (some) property values of the given item. The properties (columns) must be previously created by [Add item property](https://docs.recombee.com/api/item-properties#add-item-property).
+        /// Sets/updates (some) property values of the given item. The properties (columns) must be previously created by [Add Item Property](https://docs.recombee.com/api/item-properties#add-item-property).
         /// </summary>
         /// <param name="databaseId"></param>
         /// <param name="itemId"></param>
@@ -74,7 +74,7 @@ namespace Recombee
         }
         /// <summary>
         /// Set Item Values<br/>
-        /// Sets/updates (some) property values of the given item. The properties (columns) must be previously created by [Add item property](https://docs.recombee.com/api/item-properties#add-item-property).
+        /// Sets/updates (some) property values of the given item. The properties (columns) must be previously created by [Add Item Property](https://docs.recombee.com/api/item-properties#add-item-property).
         /// </summary>
         /// <param name="databaseId"></param>
         /// <param name="itemId"></param>

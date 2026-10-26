@@ -58,7 +58,8 @@ namespace Recombee
         /// *Recommend next items* can be called many times for a single `recommId` and each call returns different (previously not recommended) items.<br/>
         /// The number of *Recommend next items* calls performed so far is returned in the `numberNextRecommsCalls` field.<br/>
         /// *Recommend next items* can be requested up to 30 minutes after the base request or a previous *Recommend next items* call.<br/>
-        /// For billing purposes, each call to *Recommend next items* is counted as a separate recommendation request.
+        /// For billing purposes, each call to *Recommend next items* is counted as a separate recommendation request.<br/>
+        /// It is also possible to use GET HTTP method - body parameters then become query parameters.
         /// </summary>
         /// <param name="databaseId"></param>
         /// <param name="recommId"></param>
@@ -98,7 +99,8 @@ namespace Recombee
         /// *Recommend next items* can be called many times for a single `recommId` and each call returns different (previously not recommended) items.<br/>
         /// The number of *Recommend next items* calls performed so far is returned in the `numberNextRecommsCalls` field.<br/>
         /// *Recommend next items* can be requested up to 30 minutes after the base request or a previous *Recommend next items* call.<br/>
-        /// For billing purposes, each call to *Recommend next items* is counted as a separate recommendation request.
+        /// For billing purposes, each call to *Recommend next items* is counted as a separate recommendation request.<br/>
+        /// It is also possible to use GET HTTP method - body parameters then become query parameters.
         /// </summary>
         /// <param name="databaseId"></param>
         /// <param name="recommId"></param>
@@ -550,7 +552,8 @@ namespace Recombee
         /// *Recommend next items* can be called many times for a single `recommId` and each call returns different (previously not recommended) items.<br/>
         /// The number of *Recommend next items* calls performed so far is returned in the `numberNextRecommsCalls` field.<br/>
         /// *Recommend next items* can be requested up to 30 minutes after the base request or a previous *Recommend next items* call.<br/>
-        /// For billing purposes, each call to *Recommend next items* is counted as a separate recommendation request.
+        /// For billing purposes, each call to *Recommend next items* is counted as a separate recommendation request.<br/>
+        /// It is also possible to use GET HTTP method - body parameters then become query parameters.
         /// </summary>
         /// <param name="databaseId"></param>
         /// <param name="recommId"></param>

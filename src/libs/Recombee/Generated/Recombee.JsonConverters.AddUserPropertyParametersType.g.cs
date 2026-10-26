@@ -3,10 +3,10 @@
 namespace Recombee.JsonConverters
 {
     /// <inheritdoc />
-    public sealed class PutUsersPropertiesTypeNullableJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::Recombee.PutUsersPropertiesType?>
+    public sealed class AddUserPropertyParametersTypeJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::Recombee.AddUserPropertyParametersType>
     {
         /// <inheritdoc />
-        public override global::Recombee.PutUsersPropertiesType? Read(
+        public override global::Recombee.AddUserPropertyParametersType Read(
             ref global::System.Text.Json.Utf8JsonReader reader,
             global::System.Type typeToConvert,
             global::System.Text.Json.JsonSerializerOptions options)
@@ -18,7 +18,7 @@ namespace Recombee.JsonConverters
                     var stringValue = reader.GetString();
                     if (stringValue != null)
                     {
-                        return global::Recombee.PutUsersPropertiesTypeExtensions.ToEnum(stringValue);
+                        return global::Recombee.AddUserPropertyParametersTypeExtensions.ToEnum(stringValue) ?? default;
                     }
 
                     break;
@@ -26,11 +26,11 @@ namespace Recombee.JsonConverters
                 case global::System.Text.Json.JsonTokenType.Number:
                 {
                     var numValue = reader.GetInt32();
-                    return (global::Recombee.PutUsersPropertiesType)numValue;
+                    return (global::Recombee.AddUserPropertyParametersType)numValue;
                 }
                 case global::System.Text.Json.JsonTokenType.Null:
                 {
-                    return default(global::Recombee.PutUsersPropertiesType?);
+                    return default(global::Recombee.AddUserPropertyParametersType);
                 }
                 default:
                     throw new global::System.ArgumentOutOfRangeException(nameof(reader));
@@ -42,19 +42,12 @@ namespace Recombee.JsonConverters
         /// <inheritdoc />
         public override void Write(
             global::System.Text.Json.Utf8JsonWriter writer,
-            global::Recombee.PutUsersPropertiesType? value,
+            global::Recombee.AddUserPropertyParametersType value,
             global::System.Text.Json.JsonSerializerOptions options)
         {
             writer = writer ?? throw new global::System.ArgumentNullException(nameof(writer));
 
-            if (value == null)
-            {
-                writer.WriteNullValue();
-            }
-            else
-            {
-                writer.WriteStringValue(global::Recombee.PutUsersPropertiesTypeExtensions.ToValueString(value.Value));
-            }
+            writer.WriteStringValue(global::Recombee.AddUserPropertyParametersTypeExtensions.ToValueString(value));
         }
     }
 }

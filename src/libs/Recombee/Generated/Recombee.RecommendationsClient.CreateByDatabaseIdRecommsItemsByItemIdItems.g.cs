@@ -52,7 +52,7 @@ namespace Recombee
         /// Besides the recommended items, also a unique `recommId` is returned in the response. It can be used to:<br/>
         /// - Let Recombee know that this recommendation was successful (e.g., user clicked one of the recommended items). See [Reported metrics](https://docs.recombee.com/admin_ui#reported-metrics).<br/>
         /// - Get subsequent recommended items when the user scrolls down (*infinite scroll*) or goes to the next page. See [Recommend Next Items](https://docs.recombee.com/api/recommendations#recommend-next-items).<br/>
-        /// It is also possible to use POST HTTP method (for example in the case of a very long ReQL filter) - query parameters then become body parameters.
+        /// It is also possible to use GET HTTP method - body parameters then become query parameters.
         /// </summary>
         /// <param name="databaseId"></param>
         /// <param name="itemId"></param>
@@ -86,7 +86,7 @@ namespace Recombee
         /// Besides the recommended items, also a unique `recommId` is returned in the response. It can be used to:<br/>
         /// - Let Recombee know that this recommendation was successful (e.g., user clicked one of the recommended items). See [Reported metrics](https://docs.recombee.com/admin_ui#reported-metrics).<br/>
         /// - Get subsequent recommended items when the user scrolls down (*infinite scroll*) or goes to the next page. See [Recommend Next Items](https://docs.recombee.com/api/recommendations#recommend-next-items).<br/>
-        /// It is also possible to use POST HTTP method (for example in the case of a very long ReQL filter) - query parameters then become body parameters.
+        /// It is also possible to use GET HTTP method - body parameters then become query parameters.
         /// </summary>
         /// <param name="databaseId"></param>
         /// <param name="itemId"></param>
@@ -532,7 +532,7 @@ namespace Recombee
         /// Besides the recommended items, also a unique `recommId` is returned in the response. It can be used to:<br/>
         /// - Let Recombee know that this recommendation was successful (e.g., user clicked one of the recommended items). See [Reported metrics](https://docs.recombee.com/admin_ui#reported-metrics).<br/>
         /// - Get subsequent recommended items when the user scrolls down (*infinite scroll*) or goes to the next page. See [Recommend Next Items](https://docs.recombee.com/api/recommendations#recommend-next-items).<br/>
-        /// It is also possible to use POST HTTP method (for example in the case of a very long ReQL filter) - query parameters then become body parameters.
+        /// It is also possible to use GET HTTP method - body parameters then become query parameters.
         /// </summary>
         /// <param name="databaseId"></param>
         /// <param name="itemId"></param>
@@ -599,7 +599,7 @@ namespace Recombee
         /// ```json<br/>
         ///   {<br/>
         ///     "recommId": "6842c725-a79f-4537-a02c-f34d668a3f80",<br/>
-        ///     "recomms": <br/>
+        ///     "recomms":<br/>
         ///       [<br/>
         ///         {<br/>
         ///           "id": "tv-178",<br/>

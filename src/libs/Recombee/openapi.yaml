@@ -3,15 +3,15 @@ info:
   title: Recombee API
   description: "This is the documentation for Recombee Recommendation API (https://docs.recombee.com/api)\n    \nAuthentication details need to be provided with every request to Recombee API. Please refer\
     \ to [Authentication (HMAC) document](https://docs.recombee.com/authentication) for more information.\n"
-  version: 4.1.0
+  version: 6.3.0
 paths:
   /{databaseId}/items/{itemId}:
     put:
       summary: Add Item
-      description: 'Adds new item of the given `itemId` to the items catalog.
+      description: 'Adds a new item of the given `itemId` to the items catalog.
 
 
-        All the item properties for the newly created items are set to null.
+        All the item properties for the newly created item are set to null.
 
         '
       tags:
@@ -74,7 +74,7 @@ paths:
             item was already not present. If there is no additional info in the JSON response, you probably have an error in your URL.
     post:
       summary: Set Item Values
-      description: 'Sets/updates (some) property values of the given item. The properties (columns) must be previously created by [Add item property](https://docs.recombee.com/api/item-properties#add-item-property).
+      description: 'Sets/updates (some) property values of the given item. The properties (columns) must be previously created by [Add Item Property](https://docs.recombee.com/api/item-properties#add-item-property).
 
         '
       tags:
@@ -261,23 +261,12 @@ paths:
         required: true
         schema:
           type: string
-      - name: type
-        in: query
-        description: "Value type of the item property to be created. One of: `int`, `double`, `string`, `boolean`, `timestamp`, `set`, `image` or `imageList`.\n\n* `int`- Signed integer number.\n\n* `double`\
-          \ - Floating point number. It uses 64-bit base-2 format (IEEE 754 standard).\n\n* `string` - UTF-8 string.\n\n* `boolean` - *true* / *false*\n\n* `timestamp` - Value representing date and time.\n\
-          \n* `set` - Set of strings.\n\n* `image` - URL of an image (`jpeg`, `png` or `gif`).\n\n* `imageList` - List of URLs that refer to images. \n"
-        required: true
-        schema:
-          type: string
-          enum:
-          - int
-          - double
-          - string
-          - boolean
-          - timestamp
-          - set
-          - image
-          - imageList
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/AddItemPropertyParameters'
+        description: Parameters of the AddItemProperty request
       responses:
         '201':
           description: Successful operation.
@@ -984,39 +973,12 @@ paths:
         required: true
         schema:
           type: string
-      - name: type
-        in: query
-        description: 'Value type of the user property to be created. One of: `int`, `double`, `string`, `boolean`, `timestamp`, `set`.
-
-
-          * `int` - Signed integer number.
-
-
-          * `double` - Floating point number. It uses 64-bit base-2 format (IEEE 754 standard).
-
-
-          * `string` - UTF-8 string.
-
-
-          * `boolean` - *true* / *false*
-
-
-          * `timestamp` - Value representing date and time.
-
-
-          * `set` - Set of strings.
-
-          '
-        required: true
-        schema:
-          type: string
-          enum:
-          - int
-          - double
-          - string
-          - boolean
-          - timestamp
-          - set
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/AddUserPropertyParameters'
+        description: Add user property definition
       responses:
         '201':
           description: Successful operation.
@@ -2119,7 +2081,7 @@ paths:
         - Get subsequent recommended items when the user scrolls down (*infinite scroll*) or goes to the next page. See [Recommend Next Items](https://docs.recombee.com/api/recommendations#recommend-next-items).
 
 
-        It is also possible to use POST HTTP method (for example in the case of a very long ReQL filter) - query parameters then become body parameters.
+        It is also possible to use GET HTTP method - body parameters then become query parameters.
 
         '
       tags:
@@ -2183,7 +2145,7 @@ paths:
         - Get subsequent recommended items when the user scrolls down (*infinite scroll*) or goes to the next page. See [Recommend Next Items](https://docs.recombee.com/api/recommendations#recommend-next-items).
 
 
-        It is also possible to use POST HTTP method (for example in the case of a very long ReQL filter) - query parameters then become body parameters.
+        It is also possible to use GET HTTP method - body parameters then become query parameters.
 
         '
       tags:
@@ -2251,7 +2213,7 @@ paths:
         The returned items are sorted by relevance (the first item being the most relevant).
 
 
-        It is also possible to use the POST HTTP method (for example, in the case of a very long ReQL filter) — query parameters then become body parameters.
+        It is also possible to use GET HTTP method - body parameters then become query parameters.
 
         '
       tags:
@@ -2299,7 +2261,7 @@ paths:
         \  - [Search Items](https://docs.recombee.com/api/search#search-items)\n\nAll the other parameters are inherited from the base request.\n\n*Recommend next items* can be called many times for a single\
         \ `recommId` and each call returns different (previously not recommended) items.\nThe number of *Recommend next items* calls performed so far is returned in the `numberNextRecommsCalls` field.\n\
         \n*Recommend next items* can be requested up to 30 minutes after the base request or a previous *Recommend next items* call.\n\nFor billing purposes, each call to *Recommend next items* is counted\
-        \ as a separate recommendation request.\n"
+        \ as a separate recommendation request.\n\nIt is also possible to use GET HTTP method - body parameters then become query parameters.\n"
       tags:
       - Recommendations
       parameters:
@@ -2348,7 +2310,7 @@ paths:
       description: 'Gets users similar to the given user, based on the user''s past interactions (purchases, ratings, etc.) and values of properties.
 
 
-        It is also possible to use POST HTTP method (for example in the case of a very long ReQL filter) - query parameters then become body parameters.
+        It is also possible to use GET HTTP method - body parameters then become query parameters.
 
 
         The returned users are sorted by similarity (the first user being the most similar).
@@ -2403,7 +2365,7 @@ paths:
       description: 'Recommends users that are likely to be interested in the given item.
 
 
-        It is also possible to use POST HTTP method (for example in the case of a very long ReQL filter) - query parameters then become body parameters.
+        It is also possible to use GET HTTP method - body parameters then become query parameters.
 
 
         The returned users are sorted by predicted interest in the item (the first user being the most interested).
@@ -2458,8 +2420,7 @@ paths:
       description: "Recommends the top Segments from a [Segmentation](https://docs.recombee.com/segmentations) for a particular user, based on the user's past interactions.\n\nBased on the used Segmentation,\
         \ this endpoint can be used for example for:\n\n  - Recommending the top categories for the user\n  - Recommending the top genres for the user\n  - Recommending the top brands for the user\n  -\
         \ Recommending the top artists for the user\n\nYou need to set the used Segmentation the Admin UI in the [Scenario settings](https://docs.recombee.com/scenarios) prior to using this endpoint.\n\n\
-        The returned segments are sorted by relevance (first segment being the most relevant).\n\nIt is also possible to use POST HTTP method (for example in case of very long ReQL filter) - query parameters\
-        \ then become body parameters.\n"
+        The returned segments are sorted by relevance (first segment being the most relevant).\n\nIt is also possible to use GET HTTP method - body parameters then become query parameters.\n"
       tags:
       - Recommendations
       parameters:
@@ -2508,7 +2469,7 @@ paths:
       description: "Recommends Segments from a [Segmentation](https://docs.recombee.com/segmentations) that are the most relevant to a particular item.\n\nBased on the used Segmentation, this endpoint can\
         \ be used for example for:\n\n  - Recommending the related categories\n  - Recommending the related genres\n  - Recommending the related brands\n  - Recommending the related artists\n\nYou need\
         \ to set the used Segmentation the Admin UI in the [Scenario settings](https://docs.recombee.com/scenarios) prior to using this endpoint.\n\nThe returned segments are sorted by relevance (first\
-        \ segment being the most relevant).\n\nIt is also possible to use POST HTTP method (for example in case of very long ReQL filter) - query parameters then become body parameters.\n"
+        \ segment being the most relevant).\n\nIt is also possible to use GET HTTP method - body parameters then become query parameters.\n"
       tags:
       - Recommendations
       parameters:
@@ -2557,8 +2518,8 @@ paths:
       description: "Recommends Segments from a result [Segmentation](https://docs.recombee.com/segmentations) that are the most relevant to a particular Segment from a context Segmentation.\n\nBased on\
         \ the used Segmentations, this endpoint can be used for example for:\n\n  - Recommending the related brands to particular brand\n  - Recommending the related brands to particular category\n  - Recommending\
         \ the related artists to a particular genre (assuming songs are the Items)\n\nYou need to set the used context and result Segmentation the Admin UI in the [Scenario settings](https://docs.recombee.com/scenarios)\
-        \ prior to using this endpoint.\n\nThe returned segments are sorted by relevance (first segment being the most relevant).\n\nIt is also possible to use POST HTTP method (for example in case of very\
-        \ long ReQL filter) - query parameters then become body parameters.\n"
+        \ prior to using this endpoint.\n\nThe returned segments are sorted by relevance (first segment being the most relevant).\n\nIt is also possible to use GET HTTP method - body parameters then become\
+        \ query parameters.\n"
       tags:
       - Recommendations
       parameters:
@@ -2604,7 +2565,8 @@ paths:
         \  - [Recommend Item Segments to Item Segment](https://docs.recombee.com/api/recommendations#recommend-item-segments-to-item-segment)\n  - [Search Item Segments](https://docs.recombee.com/api/search#search-item-segments)\n\
         \nAll other parameters are inherited from the base request associated with the provided `recommId`.\n\nThis endpoint can be called multiple times for a single `recommId`. Each call returns different\
         \ Item Segments that have not been recommended in previous calls.\nThe number of calls made so far is returned in the `numberNextRecommsCalls` field.\n\nRequests can be made up to 30 minutes after\
-        \ the base request or the most recent Recommend Next Item Segments call.\n\nFor billing purposes, each call to this endpoint is counted as a separate recommendation request.\n"
+        \ the base request or the most recent Recommend Next Item Segments call.\n\nFor billing purposes, each call to this endpoint is counted as a separate recommendation request.\n\nIt is also possible\
+        \ to use GET HTTP method - body parameters then become query parameters.\n"
       tags:
       - Recommendations
       parameters:
@@ -2703,13 +2665,13 @@ paths:
   /{databaseId}/search/users/{userId}/items/:
     post:
       summary: Search Items
-      description: "Full-text personalized search. The results are based on the provided `searchQuery` and also on the user's past interactions (purchases, ratings, etc.) with the items (items more suitable\
-        \ for the user are preferred in the results).\n\nAll the string and set item properties are indexed by the search engine.\n\nThis endpoint should be used in a search box on your website/app. It\
-        \ can be called multiple times as the user is typing the query in order to get the most viable suggestions based on the current state of the query, or once after submitting the whole query. \n\n\
-        The returned items are sorted by relevance (the first item being the most relevant).\n\nBesides the recommended items, also a unique `recommId` is returned in the response. It can be used to:\n\n\
-        - Let Recombee know that this search was successful (e.g., user clicked one of the recommended items). See [Reported metrics](https://docs.recombee.com/admin_ui#reported-metrics).\n- Get subsequent\
-        \ search results when the user scrolls down or goes to the next page. See [Recommend Next Items](https://docs.recombee.com/api/recommendations#recommend-next-items).\n\nIt is also possible to use\
-        \ POST HTTP method (for example in the case of a very long ReQL filter) - query parameters then become body parameters.\n"
+      description: "Personalized search. The results are based on the provided `searchQuery` and also on the user's past interactions (purchases, ratings, etc.) with the items (items more suitable for the\
+        \ user are preferred in the results).\n\nAll the string and set item properties are indexed by the search engine.\n\nThis endpoint should be used in a search box on your website/app. It can be called\
+        \ multiple times as the user is typing the query in order to get the most viable suggestions based on the current state of the query, or once after submitting the whole query. \n\nThe returned items\
+        \ are sorted by relevance (the first item being the most relevant).\n\nBesides the recommended items, also a unique `recommId` is returned in the response. It can be used to:\n\n- Let Recombee know\
+        \ that this search was successful (e.g., user clicked one of the recommended items). See [Reported metrics](https://docs.recombee.com/admin_ui#reported-metrics).\n- Get subsequent search results\
+        \ when the user scrolls down or goes to the next page. See [Recommend Next Items](https://docs.recombee.com/api/recommendations#recommend-next-items).\n\nIt is also possible to use GET HTTP method\
+        \ - body parameters then become query parameters.\n"
       tags:
       - Search
       parameters:
@@ -2756,11 +2718,10 @@ paths:
   /{databaseId}/search/users/{userId}/item-segments/:
     post:
       summary: Search Item Segments
-      description: "Full-text personalized search that returns Segments from a Segmentation. The results are based on the provided `searchQuery` and also on the user's past interactions (purchases, ratings,\
-        \ etc.).\n\nBased on the used Segmentation, this endpoint can be used for example for:\n\n  - Searching within categories or brands\n  - Searching within genres or artists\n\nFor example if the\
-        \ user is searching for \"iPhone\" this endpoint can return \"cell phones\" category.\n\nYou need to set the used Segmentation the Admin UI in the Scenario settings prior to using this endpoint.\n\
-        \nThe returned segments are sorted by relevance (first segment being the most relevant).\n\nIt is also possible to use POST HTTP method (for example in case of very long ReQL filter) - query parameters\
-        \ then become body parameters.\n"
+      description: "Personalized search that returns Segments from a Segmentation. The results are based on the provided `searchQuery` and also on the user's past interactions (purchases, ratings, etc.).\n\
+        \nBased on the used Segmentation, this endpoint can be used for example for:\n\n  - Searching within categories or brands\n  - Searching within genres or artists\n\nFor example if the user is searching\
+        \ for \"iPhone\" this endpoint can return \"cell phones\" category.\n\nYou need to set the used Segmentation the Admin UI in the Scenario settings prior to using this endpoint.\n\nThe returned segments\
+        \ are sorted by relevance (first segment being the most relevant).\n\nIt is also possible to use GET HTTP method - body parameters then become query parameters.\n"
       tags:
       - Search
       parameters:
@@ -3505,6 +3466,134 @@ components:
         type:
           type: string
           description: Type of the property
+        role:
+          $ref: '#/components/schemas/PropertyRole'
+        metadata:
+          type: array
+          description: '[Metadata](https://docs.recombee.com/api/property_roles_metadata#metadata) entries associated with the property.
+
+
+            Metadata provides additional configuration or annotations that influence how the property is processed.
+
+            '
+          items:
+            $ref: '#/components/schemas/PropertyMetadata'
+    PropertyRole:
+      required:
+      - name
+      properties:
+        name:
+          type: string
+          description: Name of the [role](https://docs.recombee.com/api/property_roles_metadata#roles) assigned to the property.
+        settings:
+          type: object
+          description: Optional configuration specific to the selected role.
+      oneOf:
+      - type: string
+      - type: object
+    PropertyMetadata:
+      type: object
+      required:
+      - name
+      properties:
+        name:
+          type: string
+          description: Name of the [metadata](https://docs.recombee.com/api/property_roles_metadata#metadata) assigned to the property.
+        settings:
+          type: object
+          description: Optional configuration for this metadata entry.
+    AddItemPropertyParameters:
+      type: object
+      required:
+      - type
+      properties:
+        type:
+          description: 'Value type of the item property to be created. One of: `int`, `double`, `string`, `boolean`, `timestamp`, `set`, `image` or `imageList`.
+
+
+            * `int` - Signed integer number.
+
+
+            * `double` - Floating point number. It uses 64-bit base-2 format (IEEE 754 standard).
+
+
+            * `string` - UTF-8 string.
+
+
+            * `boolean` - *true* / *false*
+
+
+            * `timestamp` - Value representing date and time. ISO8601-1 pattern (string) or UTC epoch time (number).
+
+
+            * `set` - Set of strings.
+
+
+            * `image` - URL of an image (`jpeg`, `png` or `gif`).
+
+
+            * `imageList` - List of URLs that refer to images.
+
+            '
+          enum:
+          - int
+          - double
+          - string
+          - boolean
+          - timestamp
+          - set
+          - image
+          - imageList
+          type: string
+        role:
+          $ref: '#/components/schemas/PropertyRole'
+        metadata:
+          description: List of [metadata](https://docs.recombee.com/api/property_roles_metadata#metadata) entries to assign to the property.
+          type: array
+          items:
+            $ref: '#/components/schemas/PropertyMetadata'
+    AddUserPropertyParameters:
+      type: object
+      required:
+      - type
+      properties:
+        type:
+          description: 'Value type of the user property to be created. One of: `int`, `double`, `string`, `boolean`, `timestamp`, `set`.
+
+
+            * `int` - Signed integer number.
+
+
+            * `double` - Floating point number. It uses 64-bit base-2 format (IEEE 754 standard).
+
+
+            * `string` - UTF-8 string.
+
+
+            * `boolean` - *true* / *false*
+
+
+            * `timestamp` - Value representing date and time. ISO8601-1 pattern (string) or UTC epoch time (number).
+
+
+            * `set` - Set of strings.
+
+            '
+          enum:
+          - int
+          - double
+          - string
+          - boolean
+          - timestamp
+          - set
+          type: string
+        role:
+          $ref: '#/components/schemas/PropertyRole'
+        metadata:
+          description: List of [metadata](https://docs.recombee.com/api/property_roles_metadata#metadata) entries to assign to the property.
+          type: array
+          items:
+            $ref: '#/components/schemas/PropertyMetadata'
     SeriesItem:
       type: object
       required:
@@ -3580,7 +3669,7 @@ components:
           description: If this detail view is based on a recommendation request, `recommId` is the id of the clicked recommendation.
         additionalData:
           type: object
-          description: A dictionary of additional data for the interaction.
+          description: Additional data associated with the interaction. The expected structure is defined for specific use cases and will be provided by the Recombee Support team when applicable.
         autoPresented:
           type: boolean
           description: Indicates whether the item was automatically presented to the user (e.g., in a swiping feed) or explicitly requested by the user (e.g., by clicking on a link). Defaults to `false`.
@@ -3624,7 +3713,7 @@ components:
           description: If this purchase is based on a recommendation request, `recommId` is the id of the clicked recommendation.
         additionalData:
           type: object
-          description: A dictionary of additional data for the interaction.
+          description: Additional data associated with the interaction. The expected structure is defined for specific use cases and will be provided by the Recombee Support team when applicable.
     Rating:
       type: object
       required:
@@ -3657,7 +3746,7 @@ components:
           description: If this rating is based on a recommendation request, `recommId` is the id of the clicked recommendation.
         additionalData:
           type: object
-          description: A dictionary of additional data for the interaction.
+          description: Additional data associated with the interaction. The expected structure is defined for specific use cases and will be provided by the Recombee Support team when applicable.
     CartAddition:
       type: object
       required:
@@ -3692,7 +3781,7 @@ components:
           description: If this cart addition is based on a recommendation request, `recommId` is the id of the clicked recommendation.
         additionalData:
           type: object
-          description: A dictionary of additional data for the interaction.
+          description: Additional data associated with the interaction. The expected structure is defined for specific use cases and will be provided by the Recombee Support team when applicable.
     Bookmark:
       type: object
       required:
@@ -3719,7 +3808,7 @@ components:
           description: If this bookmark is based on a recommendation request, `recommId` is the id of the clicked recommendation.
         additionalData:
           type: object
-          description: A dictionary of additional data for the interaction.
+          description: Additional data associated with the interaction. The expected structure is defined for specific use cases and will be provided by the Recombee Support team when applicable.
     ViewPortion:
       type: object
       required:
@@ -3755,7 +3844,7 @@ components:
           description: If this view portion is based on a recommendation request, `recommId` is the id of the clicked recommendation.
         additionalData:
           type: object
-          description: A dictionary of additional data for the interaction.
+          description: Additional data associated with the interaction. The expected structure is defined for specific use cases and will be provided by the Recombee Support team when applicable.
         autoPresented:
           type: boolean
           description: Indicates whether the item was automatically presented to the user (e.g., in a swiping feed) or explicitly requested by the user (e.g., by clicking on a link). Defaults to `false`.
@@ -3954,7 +4043,7 @@ components:
           type: boolean
         returnProperties:
           description: "With `returnProperties=true`, property values of the recommended users are returned along with their IDs in a JSON dictionary. The acquired property values can be used to easily\
-            \ display the recommended users. \n\nExample response:\n```json\n  {\n    \"recommId\": \"9cb9c55d-50ba-4478-84fd-ab456136156e\",\n    \"recomms\": \n      [\n        {\n          \"id\": \"\
+            \ display the recommended users. \n\nExample response:\n```json\n  {\n    \"recommId\": \"9cb9c55d-50ba-4478-84fd-ab456136156e\",\n    \"recomms\":\n      [\n        {\n          \"id\": \"\
             user-17\",\n          \"values\": {\n            \"country\": \"US\",\n            \"sex\": \"F\"\n          }\n        },\n        {\n          \"id\": \"user-2\",\n          \"values\": {\n\
             \            \"country\": \"CAN\",\n            \"sex\": \"M\"\n          }\n        }\n      ],\n    \"numberNextRecommsCalls\": 0\n  }\n```\n"
           type: boolean
@@ -4077,7 +4166,7 @@ components:
           type: boolean
         includedProperties:
           description: "Allows specifying which properties should be returned when `returnProperties=true` is set. The properties are given as a comma-separated list.\n\nExample response for `includedProperties=description,price`:\n\
-            ```json\n  {\n    \"recommId\": \"6842c725-a79f-4537-a02c-f34d668a3f80\",\n    \"recomms\": \n      [\n        {\n          \"id\": \"tv-178\",\n          \"values\": {\n            \"description\"\
+            ```json\n  {\n    \"recommId\": \"6842c725-a79f-4537-a02c-f34d668a3f80\",\n    \"recomms\":\n      [\n        {\n          \"id\": \"tv-178\",\n          \"values\": {\n            \"description\"\
             : \"4K TV with 3D feature\",\n            \"price\": 342\n          }\n        },\n        {\n          \"id\": \"mixer-42\",\n          \"values\": {\n            \"description\": \"Stainless\
             \ Steel Mixer\",\n            \"price\": 39\n          }\n        }\n      ],\n    \"numberNextRecommsCalls\": 0\n  }\n```\n"
           type: array
@@ -4190,9 +4279,9 @@ components:
           type: boolean
         returnProperties:
           description: "With `returnProperties=true`, property values of the recommended users are returned along with their IDs in a JSON dictionary. The acquired property values can be used to easily\
-            \ display the recommended users. \n\nExample response:\n```json\n  {\n    \"recommId\": \"039b71dc-b9cc-4645-a84f-62b841eecfce\",\n    \"recomms\":\n      [\n        {\n          \"id\": \"\
-            user-17\",\n          \"values\": {\n            \"country\": \"US\",\n            \"sex\": \"F\"\n          }\n        },\n        {\n          \"id\": \"user-2\",\n          \"values\": {\n\
-            \            \"country\": \"CAN\",\n            \"sex\": \"M\"\n          }\n        }\n      ],\n    \"numberNextRecommsCalls\": 0\n  }\n```\n"
+            \ display the recommended users.\n\nExample response:\n```json\n  {\n    \"recommId\": \"039b71dc-b9cc-4645-a84f-62b841eecfce\",\n    \"recomms\":\n      [\n        {\n          \"id\": \"user-17\"\
+            ,\n          \"values\": {\n            \"country\": \"US\",\n            \"sex\": \"F\"\n          }\n        },\n        {\n          \"id\": \"user-2\",\n          \"values\": {\n       \
+            \     \"country\": \"CAN\",\n            \"sex\": \"M\"\n          }\n        }\n      ],\n    \"numberNextRecommsCalls\": 0\n  }\n```\n"
           type: boolean
         includedProperties:
           description: "Allows specifying which properties should be returned when `returnProperties=true` is set. The properties are given as a comma-separated list.\n\nExample response for `includedProperties=country`:\n\
@@ -4488,7 +4577,7 @@ components:
           type: boolean
         includedProperties:
           description: "Allows specifying which properties should be returned when `returnProperties=true` is set. The properties are given as a comma-separated list.\n\nExample response for `includedProperties=description,price`:\n\
-            ```json\n  {\n    \"recommId\": \"6842c725-a79f-4537-a02c-f34d668a3f80\",\n    \"recomms\": \n      [\n        {\n          \"id\": \"tv-178\",\n          \"values\": {\n            \"description\"\
+            ```json\n  {\n    \"recommId\": \"6842c725-a79f-4537-a02c-f34d668a3f80\",\n    \"recomms\":\n      [\n        {\n          \"id\": \"tv-178\",\n          \"values\": {\n            \"description\"\
             : \"4K TV with 3D feature\",\n            \"price\": 342\n          }\n        },\n        {\n          \"id\": \"mixer-42\",\n          \"values\": {\n            \"description\": \"Stainless\
             \ Steel Mixer\",\n            \"price\": 39\n          }\n        }\n      ],\n    \"numberNextRecommsCalls\": 0\n  }\n```\n"
           type: array
@@ -4786,8 +4875,8 @@ components:
           type: boolean
         returnProperties:
           description: "With `returnProperties=true`, property values of the recommended items are returned along with their IDs in a JSON dictionary. The acquired property values can be used to easily\
-            \ display the recommended items to the user. \n\nExample response:\n```json\n  {\n    \"recommId\": \"ce52ada4-e4d9-4885-943c-407db2dee837\",\n    \"recomms\": \n      [\n        {\n       \
-            \   \"id\": \"tv-178\",\n          \"values\": {\n            \"description\": \"4K TV with 3D feature\",\n            \"categories\":   [\"Electronics\", \"Televisions\"],\n            \"price\"\
+            \ display the recommended items to the user. \n\nExample response:\n```json\n  {\n    \"recommId\": \"ce52ada4-e4d9-4885-943c-407db2dee837\",\n    \"recomms\":\n      [\n        {\n        \
+            \  \"id\": \"tv-178\",\n          \"values\": {\n            \"description\": \"4K TV with 3D feature\",\n            \"categories\":   [\"Electronics\", \"Televisions\"],\n            \"price\"\
             : 342,\n            \"url\": \"myshop.com/tv-178\"\n          }\n        },\n        {\n          \"id\": \"mixer-42\",\n          \"values\": {\n            \"description\": \"Stainless Steel\
             \ Mixer\",\n            \"categories\":   [\"Home & Kitchen\"],\n            \"price\": 39,\n            \"url\": \"myshop.com/mixer-42\"\n          }\n        }\n      ],\n    \"numberNextRecommsCalls\"\
             : 0\n  }\n```\n"
@@ -5187,14 +5276,6 @@ components:
         seriesId:
           type: string
           description: Id of the series
-    Group:
-      type: object
-      required:
-      - groupId
-      properties:
-        groupId:
-          type: string
-          description: Id of the group
     SearchSynonymParams:
       type: object
       required:

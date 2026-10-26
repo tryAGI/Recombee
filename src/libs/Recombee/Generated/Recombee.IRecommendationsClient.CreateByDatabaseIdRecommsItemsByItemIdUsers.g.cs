@@ -7,7 +7,7 @@ namespace Recombee
         /// <summary>
         /// Recommend Users to Item<br/>
         /// Recommends users that are likely to be interested in the given item.<br/>
-        /// It is also possible to use POST HTTP method (for example in the case of a very long ReQL filter) - query parameters then become body parameters.<br/>
+        /// It is also possible to use GET HTTP method - body parameters then become query parameters.<br/>
         /// The returned users are sorted by predicted interest in the item (the first user being the most interested).
         /// </summary>
         /// <param name="databaseId"></param>
@@ -26,7 +26,7 @@ namespace Recombee
         /// <summary>
         /// Recommend Users to Item<br/>
         /// Recommends users that are likely to be interested in the given item.<br/>
-        /// It is also possible to use POST HTTP method (for example in the case of a very long ReQL filter) - query parameters then become body parameters.<br/>
+        /// It is also possible to use GET HTTP method - body parameters then become query parameters.<br/>
         /// The returned users are sorted by predicted interest in the item (the first user being the most interested).
         /// </summary>
         /// <param name="databaseId"></param>
@@ -45,7 +45,7 @@ namespace Recombee
         /// <summary>
         /// Recommend Users to Item<br/>
         /// Recommends users that are likely to be interested in the given item.<br/>
-        /// It is also possible to use POST HTTP method (for example in the case of a very long ReQL filter) - query parameters then become body parameters.<br/>
+        /// It is also possible to use GET HTTP method - body parameters then become query parameters.<br/>
         /// The returned users are sorted by predicted interest in the item (the first user being the most interested).
         /// </summary>
         /// <param name="databaseId"></param>
@@ -62,7 +62,7 @@ namespace Recombee
         /// If an item of the given *itemId* doesn't exist in the database, it creates the missing item.
         /// </param>
         /// <param name="returnProperties">
-        /// With `returnProperties=true`, property values of the recommended users are returned along with their IDs in a JSON dictionary. The acquired property values can be used to easily display the recommended users. <br/>
+        /// With `returnProperties=true`, property values of the recommended users are returned along with their IDs in a JSON dictionary. The acquired property values can be used to easily display the recommended users.<br/>
         /// Example response:<br/>
         /// ```json<br/>
         ///   {<br/>

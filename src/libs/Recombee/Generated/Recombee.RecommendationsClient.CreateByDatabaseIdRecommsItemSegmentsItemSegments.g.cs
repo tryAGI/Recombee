@@ -52,7 +52,7 @@ namespace Recombee
         ///   - Recommending the related artists to a particular genre (assuming songs are the Items)<br/>
         /// You need to set the used context and result Segmentation the Admin UI in the [Scenario settings](https://docs.recombee.com/scenarios) prior to using this endpoint.<br/>
         /// The returned segments are sorted by relevance (first segment being the most relevant).<br/>
-        /// It is also possible to use POST HTTP method (for example in case of very long ReQL filter) - query parameters then become body parameters.
+        /// It is also possible to use GET HTTP method - body parameters then become query parameters.
         /// </summary>
         /// <param name="databaseId"></param>
         /// <param name="request"></param>
@@ -85,7 +85,7 @@ namespace Recombee
         ///   - Recommending the related artists to a particular genre (assuming songs are the Items)<br/>
         /// You need to set the used context and result Segmentation the Admin UI in the [Scenario settings](https://docs.recombee.com/scenarios) prior to using this endpoint.<br/>
         /// The returned segments are sorted by relevance (first segment being the most relevant).<br/>
-        /// It is also possible to use POST HTTP method (for example in case of very long ReQL filter) - query parameters then become body parameters.
+        /// It is also possible to use GET HTTP method - body parameters then become query parameters.
         /// </summary>
         /// <param name="databaseId"></param>
         /// <param name="request"></param>
@@ -529,7 +529,7 @@ namespace Recombee
         ///   - Recommending the related artists to a particular genre (assuming songs are the Items)<br/>
         /// You need to set the used context and result Segmentation the Admin UI in the [Scenario settings](https://docs.recombee.com/scenarios) prior to using this endpoint.<br/>
         /// The returned segments are sorted by relevance (first segment being the most relevant).<br/>
-        /// It is also possible to use POST HTTP method (for example in case of very long ReQL filter) - query parameters then become body parameters.
+        /// It is also possible to use GET HTTP method - body parameters then become query parameters.
         /// </summary>
         /// <param name="databaseId"></param>
         /// <param name="contextSegmentId">

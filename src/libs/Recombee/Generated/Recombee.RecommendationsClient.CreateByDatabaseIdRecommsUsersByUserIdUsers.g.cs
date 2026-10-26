@@ -48,7 +48,7 @@ namespace Recombee
         /// <summary>
         /// Recommend Users to User<br/>
         /// Gets users similar to the given user, based on the user's past interactions (purchases, ratings, etc.) and values of properties.<br/>
-        /// It is also possible to use POST HTTP method (for example in the case of a very long ReQL filter) - query parameters then become body parameters.<br/>
+        /// It is also possible to use GET HTTP method - body parameters then become query parameters.<br/>
         /// The returned users are sorted by similarity (the first user being the most similar).
         /// </summary>
         /// <param name="databaseId"></param>
@@ -79,7 +79,7 @@ namespace Recombee
         /// <summary>
         /// Recommend Users to User<br/>
         /// Gets users similar to the given user, based on the user's past interactions (purchases, ratings, etc.) and values of properties.<br/>
-        /// It is also possible to use POST HTTP method (for example in the case of a very long ReQL filter) - query parameters then become body parameters.<br/>
+        /// It is also possible to use GET HTTP method - body parameters then become query parameters.<br/>
         /// The returned users are sorted by similarity (the first user being the most similar).
         /// </summary>
         /// <param name="databaseId"></param>
@@ -522,7 +522,7 @@ namespace Recombee
         /// <summary>
         /// Recommend Users to User<br/>
         /// Gets users similar to the given user, based on the user's past interactions (purchases, ratings, etc.) and values of properties.<br/>
-        /// It is also possible to use POST HTTP method (for example in the case of a very long ReQL filter) - query parameters then become body parameters.<br/>
+        /// It is also possible to use GET HTTP method - body parameters then become query parameters.<br/>
         /// The returned users are sorted by similarity (the first user being the most similar).
         /// </summary>
         /// <param name="databaseId"></param>
@@ -544,7 +544,7 @@ namespace Recombee
         /// ```json<br/>
         ///   {<br/>
         ///     "recommId": "9cb9c55d-50ba-4478-84fd-ab456136156e",<br/>
-        ///     "recomms": <br/>
+        ///     "recomms":<br/>
         ///       [<br/>
         ///         {<br/>
         ///           "id": "user-17",<br/>

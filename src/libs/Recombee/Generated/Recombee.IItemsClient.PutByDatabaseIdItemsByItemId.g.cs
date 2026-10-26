@@ -6,8 +6,8 @@ namespace Recombee
     {
         /// <summary>
         /// Add Item<br/>
-        /// Adds new item of the given `itemId` to the items catalog.<br/>
-        /// All the item properties for the newly created items are set to null.
+        /// Adds a new item of the given `itemId` to the items catalog.<br/>
+        /// All the item properties for the newly created item are set to null.
         /// </summary>
         /// <param name="databaseId"></param>
         /// <param name="itemId"></param>
@@ -21,8 +21,8 @@ namespace Recombee
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Add Item<br/>
-        /// Adds new item of the given `itemId` to the items catalog.<br/>
-        /// All the item properties for the newly created items are set to null.
+        /// Adds a new item of the given `itemId` to the items catalog.<br/>
+        /// All the item properties for the newly created item are set to null.
         /// </summary>
         /// <param name="databaseId"></param>
         /// <param name="itemId"></param>

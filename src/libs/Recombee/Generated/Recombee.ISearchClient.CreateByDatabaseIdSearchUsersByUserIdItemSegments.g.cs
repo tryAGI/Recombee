@@ -6,14 +6,14 @@ namespace Recombee
     {
         /// <summary>
         /// Search Item Segments<br/>
-        /// Full-text personalized search that returns Segments from a Segmentation. The results are based on the provided `searchQuery` and also on the user's past interactions (purchases, ratings, etc.).<br/>
+        /// Personalized search that returns Segments from a Segmentation. The results are based on the provided `searchQuery` and also on the user's past interactions (purchases, ratings, etc.).<br/>
         /// Based on the used Segmentation, this endpoint can be used for example for:<br/>
         ///   - Searching within categories or brands<br/>
         ///   - Searching within genres or artists<br/>
         /// For example if the user is searching for "iPhone" this endpoint can return "cell phones" category.<br/>
         /// You need to set the used Segmentation the Admin UI in the Scenario settings prior to using this endpoint.<br/>
         /// The returned segments are sorted by relevance (first segment being the most relevant).<br/>
-        /// It is also possible to use POST HTTP method (for example in case of very long ReQL filter) - query parameters then become body parameters.
+        /// It is also possible to use GET HTTP method - body parameters then become query parameters.
         /// </summary>
         /// <param name="databaseId"></param>
         /// <param name="userId"></param>
@@ -30,14 +30,14 @@ namespace Recombee
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Search Item Segments<br/>
-        /// Full-text personalized search that returns Segments from a Segmentation. The results are based on the provided `searchQuery` and also on the user's past interactions (purchases, ratings, etc.).<br/>
+        /// Personalized search that returns Segments from a Segmentation. The results are based on the provided `searchQuery` and also on the user's past interactions (purchases, ratings, etc.).<br/>
         /// Based on the used Segmentation, this endpoint can be used for example for:<br/>
         ///   - Searching within categories or brands<br/>
         ///   - Searching within genres or artists<br/>
         /// For example if the user is searching for "iPhone" this endpoint can return "cell phones" category.<br/>
         /// You need to set the used Segmentation the Admin UI in the Scenario settings prior to using this endpoint.<br/>
         /// The returned segments are sorted by relevance (first segment being the most relevant).<br/>
-        /// It is also possible to use POST HTTP method (for example in case of very long ReQL filter) - query parameters then become body parameters.
+        /// It is also possible to use GET HTTP method - body parameters then become query parameters.
         /// </summary>
         /// <param name="databaseId"></param>
         /// <param name="userId"></param>
@@ -54,14 +54,14 @@ namespace Recombee
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Search Item Segments<br/>
-        /// Full-text personalized search that returns Segments from a Segmentation. The results are based on the provided `searchQuery` and also on the user's past interactions (purchases, ratings, etc.).<br/>
+        /// Personalized search that returns Segments from a Segmentation. The results are based on the provided `searchQuery` and also on the user's past interactions (purchases, ratings, etc.).<br/>
         /// Based on the used Segmentation, this endpoint can be used for example for:<br/>
         ///   - Searching within categories or brands<br/>
         ///   - Searching within genres or artists<br/>
         /// For example if the user is searching for "iPhone" this endpoint can return "cell phones" category.<br/>
         /// You need to set the used Segmentation the Admin UI in the Scenario settings prior to using this endpoint.<br/>
         /// The returned segments are sorted by relevance (first segment being the most relevant).<br/>
-        /// It is also possible to use POST HTTP method (for example in case of very long ReQL filter) - query parameters then become body parameters.
+        /// It is also possible to use GET HTTP method - body parameters then become query parameters.
         /// </summary>
         /// <param name="databaseId"></param>
         /// <param name="userId"></param>
